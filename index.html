@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 4.9.6">
-<title>Holder of Place</title>
-</head>
-<body>
-Place Holder
-</body>
-</html>
+---
+title:    "HTML Tidy Binary Releases"
+---
+
+<h1>HTML Tidy Binary Releases</h1>
+
+<p class="note">
+    Note! These binaries are not yet active or real! This is still a
+    demonstration.
+</p>
+
+{% for release in site.data.tidy %}
+    <table class="directory">
+        <thead>
+            <tr>
+                <td colspan="4">
+                    <p>{{release.heading}} <a href="{{release.notes}}">(release notes)</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Last Modified</td>
+                <td>Size</td>
+                <td>Description</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for binary in release.binaries %}
+            <tr>
+                <td><a href="/binaries/{{release.path}}/{{binary.filename}}">{{binary.filename}}</a></td>
+                <td>{{binary.modified}}</td>
+                <td>{{binary.filesize}}</td>
+                <td>{{binary.describe}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endfor %}
+
+
+
+
+
+

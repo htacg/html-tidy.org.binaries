@@ -1,0 +1,47 @@
+- path: tidy500
+  heading: "HTML Tidy version 5.0.0"
+  notes: http://www.example.com
+  binaries:
+    - filename: linux.deb
+      filesize: 765K
+      modified: "2015-Feb-28 14:41"
+      describe: "Deb file for Debian-style Linuxes."
+
+    - filename: linux.rpm
+      filesize: 784K
+      modified: "2015-Feb-28 14:41"
+      describe: "RPM file for Redhat-style Linuxes."
+
+    - filename: macosx_x64.dmg
+      filesize: 1.2M
+      modified: "2015-Feb-28 14:41"
+      describe: "Mac OS X disk image."
+
+    - filename: windows_x64.msi
+      filesize: 1.3M
+      modified: "2015-Feb-28 14:41"
+      describe: "Windows installer package."
+
+- path: tidy501
+  heading: "HTML Tidy version 5.0.1"
+  notes: http://www.example.com
+  binaries:
+    - filename: linux.deb
+      filesize: 765K
+      modified: "2015-Feb-29 17:22"
+      describe: "Deb file for Debian-style Linuxes."
+
+    - filename: linux.rpm
+      filesize: 784K
+      modified: "2015-Feb-29 17:22"
+      describe: "RPM file for Redhat-style Linuxes."
+
+    - filename: macosx_x64.dmg
+      filesize: 1.2M
+      modified: "2015-Feb-29 17:22"
+      describe: "Mac OS X disk image."
+
+    - filename: windows_x64.msi
+      filesize: 1.3M
+      modified: "2015-Feb-29 17:22"
+      describe: "Windows installer package."

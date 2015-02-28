@@ -1,0 +1,39 @@
+table.directory
+{
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 3ex;
+
+	thead tr:first-child
+	{
+		font-size: 1.2em;
+		font-weight: bold;
+
+		a { font-size: 0.6em; }
+	}
+
+	thead tr + tr td:first-child { padding-left: 2em; }
+
+	tbody
+	{
+		border-bottom: 2px inset lightgray;
+		border-top: 2px inset lightgrey;
+
+		td:first-child { padding-left: 2em; }
+
+		td { width: 15%; min-width: 10em; }
+		td + td { width: 15%; min-width: 10em;}
+		td + td + td{ width: 10%; min-width: 4em; }
+		td  + td + td{ width: auto; }
+	}
+}
+
+.note
+{
+	padding: 1.5em;
+	background-color: yellow;
+	font-weight: bold;
+	font-style: italic;
+	width: 60%;
+	margin: auto;
+}

@@ -1,0 +1,48 @@
+---
+
+port: 4000
+host: localhost
+safe: true
+
+
+### site serving configuration
+exclude: [CNAME, README.md, .gitignore]
+permalink: / ## disables post output
+timezone: null
+lsi: false
+markdown: kramdown
+highlighter: pygments
+
+
+### content configuration ###
+title:       "HTML Tidy Binaries"
+keywords:    "tidy, html tidy, html, htacg"
+description: "HTACG Binaries"
+source_link: "https://github.com/htacg/"
+favicon:     #put a path like: "img/favicon.ico"
+touch_icon:  #put a path like: "img/apple-touch-icon.png"
+
+
+### Defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: posts
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: pages
+    values:
+      layout: "default"
+
+
+### file locations
+source:      .
+data_source: ./_data
+layouts:     ./_layouts
+destination: ./_site
+#plugins:     ./_plugins
+#collections: null
