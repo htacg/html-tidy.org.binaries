@@ -1,3 +1,22 @@
+- path: tidy-4.9.20
+  heading: "HTML Tidy version 4.9.20"
+  notes: http://www.example.com
+  binaries:
+    - filename: tidy5-4.9.20-win64.msi
+      filesize: 815K
+      modified: "06/03/2015  19:42"
+      describe: "Windows MSI installer package."
+
+    - filename: tidy5-4.9.20-win64.exe
+      filesize: 578K
+      modified: "06/03/2015  19:42"
+      describe: "Windows NSIS installer package."
+
+    - filename: tidy5-4.9.20-Source.zip
+      filesize: 363K
+      modified: "06/03/2015  19:42"
+      describe: "Windows ZIP of source."
+
 - path: tidy500
   heading: "HTML Tidy version 5.0.0"
   notes: http://www.example.com
