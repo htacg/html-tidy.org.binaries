@@ -5,12 +5,12 @@
     - filename: tidy5-4.9.20-win64.msi
       filesize: 815K
       modified: "06/03/2015  19:42"
-      describe: "Windows MSI installer package."
+      describe: "Win64 MSI installer package."
 
     - filename: tidy5-4.9.20-win64.exe
       filesize: 578K
       modified: "06/03/2015  19:42"
-      describe: "Windows NSIS installer package."
+      describe: "Win64 NSIS installer package."
 
     - filename: tidy5-4.9.20-Source.zip
       filesize: 363K
@@ -26,7 +26,17 @@
       filesize: 368K
       modified: "07/03/2015  13:20"
       describe: "linux 64-bit RPM."
+
+    - filename: tidy5-4.9.20-win32.exe
+      filesize: 514K
+      modified: "07/03/2015  13:39"
+      describe: "Win32 NSIS installer package."
       
+    - filename: tidy5-4.9.20-win32.msi
+      filesize: 724K
+      modified: "07/03/2015  13:39"
+      describe: "Win32 MSI installer package."
+
 - path: tidy500
   heading: "HTML Tidy version 5.0.0"
   notes: http://www.example.com
