@@ -17,6 +17,16 @@
       modified: "06/03/2015  19:42"
       describe: "Windows ZIP of source."
 
+    - filename: tidy5-4.9.20-64bit.deb
+      filesize: 368K
+      modified: "07/03/2015  13:20"
+      describe: "linux 64-bit DEB."
+
+    - filename: tidy5-4.9.20-64bit.rpm
+      filesize: 368K
+      modified: "07/03/2015  13:20"
+      describe: "linux 64-bit RPM."
+      
 - path: tidy500
   heading: "HTML Tidy version 5.0.0"
   notes: http://www.example.com
