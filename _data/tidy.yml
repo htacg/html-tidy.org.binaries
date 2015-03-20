@@ -1,3 +1,27 @@
+- path: tidy-4.9.23
+  heading: "HTML Tidy version 4.9.23"
+  notes: http://www.example.com
+  binaries:
+    - filename: tidy5-4.9.23-win64.msi
+      filesize: 815K
+      modified: "20/03/2015  13:11"
+      describe: "Win64 MSI installer package."
+
+    - filename: tidy5-4.9.23-win64.exe
+      filesize: 578K
+      modified: "20/03/2015  13:11"
+      describe: "Win64 NSIS installer package."
+
+    - filename: tidy5-4.9.23-win64.zip
+      filesize: 595K
+      modified: "20/03/2015  13:11"
+      describe: "Win64 ZIP package."
+
+    - filename: tidy5-4.9.23-Source.zip
+      filesize: 348K
+      modified: "20/03/2015  13:16"
+      describe: "Windows ZIP of source."
+
 - path: tidy-4.9.20
   heading: "HTML Tidy version 4.9.20"
   notes: http://www.example.com
@@ -37,50 +61,3 @@
       modified: "07/03/2015  13:39"
       describe: "Win32 MSI installer package."
 
-- path: tidy500
-  heading: "HTML Tidy version 5.0.0"
-  notes: http://www.example.com
-  binaries:
-    - filename: linux.deb
-      filesize: 765K
-      modified: "2015-Feb-28 14:41"
-      describe: "Deb file for Debian-style Linuxes."
-
-    - filename: linux.rpm
-      filesize: 784K
-      modified: "2015-Feb-28 14:41"
-      describe: "RPM file for Redhat-style Linuxes."
-
-    - filename: macosx_x64.dmg
-      filesize: 1.2M
-      modified: "2015-Feb-28 14:41"
-      describe: "Mac OS X disk image."
-
-    - filename: windows_x64.msi
-      filesize: 1.3M
-      modified: "2015-Feb-28 14:41"
-      describe: "Windows installer package."
-
-- path: tidy501
-  heading: "HTML Tidy version 5.0.1"
-  notes: http://www.example.com
-  binaries:
-    - filename: linux.deb
-      filesize: 765K
-      modified: "2015-Feb-29 17:22"
-      describe: "Deb file for Debian-style Linuxes."
-
-    - filename: linux.rpm
-      filesize: 784K
-      modified: "2015-Feb-29 17:22"
-      describe: "RPM file for Redhat-style Linuxes."
-
-    - filename: macosx_x64.dmg
-      filesize: 1.2M
-      modified: "2015-Feb-29 17:22"
-      describe: "Mac OS X disk image."
-
-    - filename: windows_x64.msi
-      filesize: 1.3M
-      modified: "2015-Feb-29 17:22"
-      describe: "Windows installer package."
