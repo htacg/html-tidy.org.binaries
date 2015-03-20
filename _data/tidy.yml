@@ -47,6 +47,16 @@
       modified: 2015/03/20 15:59:43
       describe: linux 64-bit RPM.
       
+    - filename: tidy5-4.9.23-32bit.deb
+      filesize: 346K
+      modified: 2015/03/20 18:49:55
+      describe: linux 32-bit DEB.
+      
+    - filename: tidy5-4.9.23-32bit.rpm
+      filesize: 349K
+      modified: 2015/03/20 18:50:00
+      describe: linux 32-bit RPM.
+ 
     - filename: Tidy5-4.9.23-Source.tar.gz
       filesize: 315K
       modified: 2015/03/20 15:59:43
