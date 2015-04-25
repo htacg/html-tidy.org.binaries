@@ -32,6 +32,16 @@
       modified: 2015/04/25 18:56:46
       describe: Win32 NSIS installer package.
 
+    - filename: tidy5-4.9.26-64bit.rpm
+      filesize: 231K
+      modified: 2015/04/25 19:32:02
+      describe: linux 64-bit RPM.
+
+    - filename: tidy5-4.9.26-64bit.deb
+      filesize: 225K
+      modified: 2015/04/25 19:32:02
+      describe: linux 64-bit DEB.
+
 - path: tidy-4.9.23
   heading: "HTML Tidy version 4.9.23"
   notes: http://www.example.com
