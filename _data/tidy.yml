@@ -1,6 +1,6 @@
 - path: tidy-4.9.26
   heading: HTML Tidy version 4.9.26
-  notes: Edging closer to release 5.0.0
+  notes: http://www.htacg.org/binaries/4.9.26.html
   binaries:
     - filename: tidy5-4.9.26-win64.zip
       filesize: 581K
