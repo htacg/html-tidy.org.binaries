@@ -26,7 +26,7 @@ title:    "HTML Tidy Binary Releases"
         <tbody>
             {% for binary in release.binaries %}
             <tr>
-                <td><a href="/binaries/{{release.path}}/{{binary.filename}}">{{binary.filename}}</a></td>
+                <td><a href="/binaries/binaries/{{release.path}}/{{binary.filename}}">{{binary.filename}}</a></td>
                 <td>{{binary.modified}}</td>
                 <td>{{binary.filesize}}</td>
                 <td>{{binary.describe}}</td>
@@ -36,5 +36,4 @@ title:    "HTML Tidy Binary Releases"
 
     </table>
 {% endfor %}
-
 
