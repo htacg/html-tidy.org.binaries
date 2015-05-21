@@ -37,6 +37,16 @@
       modified: 2015/05/21 12:43:49
       describe: Windows ZIP of source.
       
+    - filename: tidy5-4.9.28-64bit.rpm
+      filesize: 433K
+      modified: 2015/05/21 14:03:45
+      describe: linux 64-bit RPM.
+
+    - filename: tidy5-4.9.28-64bit.deb
+      filesize: 431K
+      modified: 2015/05/21 14:03:45
+      describe: linux 64-bit DEB.
+
 - path: tidy-4.9.26
   heading: HTML Tidy version 4.9.26
   notes: /binaries/binaries/tidy-4.9.26/4.9.26.html
