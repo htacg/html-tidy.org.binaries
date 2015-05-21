@@ -1,6 +1,6 @@
 - path: tidy-4.9.26
   heading: HTML Tidy version 4.9.26
-  notes: http://htmlpreview.github.io/?https://github.com/htacg/binaries/blob/gh-pages/binaries/tidy-4.9.26/4.9.26.html
+  notes: /binaries/binaries/tidy-4.9.26/4.9.26.html
   binaries:
     - filename: tidy5-4.9.26-win64.zip
       filesize: 581K
