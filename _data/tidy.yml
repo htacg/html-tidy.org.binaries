@@ -93,7 +93,7 @@
 
 - path: tidy-4.9.23
   heading: "HTML Tidy version 4.9.23"
-  notes: http://www.example.com
+  notes: /binaries/binaries/tidy-4.9.23/4.9.23.html
   binaries:
     - filename: tidy5-4.9.23-win64.msi
       filesize: 815K
