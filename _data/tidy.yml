@@ -157,7 +157,7 @@
       
 - path: tidy-4.9.20
   heading: "HTML Tidy version 4.9.20"
-  notes: http://www.example.com
+  notes: /binaries/binaries/tidy-4.9.20/4.9.20.html
   binaries:
     - filename: tidy5-4.9.20-win64.msi
       filesize: 815K
