@@ -32,6 +32,16 @@
       modified: 2015/06/04 17:22:45
       describe: Win32 MSI installer package.
 
+    - filename: tidy5-4.9.32-64bit.deb
+      filesize: 627K
+      modified: 2015/06/04 18:52:09
+      describe: linux 64-bit DEB.
+
+    - filename: tidy5-4.9.32-64bit.rpm
+      filesize: 628K
+      modified: 2015/06/04 18:52:09
+      describe: linux 64-bit RPM.
+
 - path: tidy-4.9.28
   heading: HTML Tidy version 4.9.28
   notes: /binaries/binaries/tidy-4.9.28/4.9.28.html
