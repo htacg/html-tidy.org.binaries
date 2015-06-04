@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Release 4.9.32</title>
+</head>
+<body>
+<h1>Release 4.9.32</h1>
+<p>Change log for this release</p>
+<pre>
+commit 50c213f37aba0b513c5010e5e1859eadcc7fad0b (HEAD, refs/heads/master)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jun 4 17:42:28 2015 +0200
+
+    Update verhist.log
+
+commit 544f9876cc45b30fd751867d90a5a5ef4fddd7d9 (tag: refs/tags/4.9.32, refs/remotes/origin/master, refs/remotes/origin/HEAD)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jun 4 13:21:00 2015 +0200
+
+    Issue #212 - bump version for this additional change
+
+commit 326f2414fd402f0c1113c90044a105ad38e3e9dc
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jun 4 13:11:54 2015 +0200
+
+    Issue #212 - Further fix to set MixedContent in some cases.
+    
+    In certain circumstances a leading space has to be preverved to allow it
+    to be used to create a text space node to insert before this element to
+    preserve the view in a browser.
+    
+    And added a note asking why is ParseTag called with a hardcoded
+    IgnoreWhitespace when some effort above has set the mode variable to
+    MixedContent in certain cases, but need to think about this 2nd change.
+    
+    Also added some MSVC Debug output when this leading text is used to insert
+    such a created text node before the element just to be reminded of this
+    special event.
+
+commit a278b04a19fcb14ae1208f6d7d2aeeaf2fcf7301
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jun 4 12:57:49 2015 +0200
+
+    Add debug display of text modes.
+    
+    Note this ONLY effects a MSVC Debug build!
+
+commit 0c96ed8af4c4d2aaad04ba7b128e87a844da56ea
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Jun 3 20:27:01 2015 +0200
+
+    Bump version for issue #217 fix
+
+commit c18f27a58792f7fbd0b30a0ff50d6b40a82f940d
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Jun 3 20:26:03 2015 +0200
+
+    Issue #217 - avoid len going negative, ever...
+
+commit 0fb7ccdfc6ea4e066ec60cd5c931e17eaa71d856
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Jun 3 20:22:20 2015 +0200
+
+    Add some mem alloc and free debug to chase Issue #217
+    
+    Such debug is OFF by default, and only added by defining DEBUG_MEMORY. And
+    is only available for the Debug configuration compiled with MSVC, but this
+    could be easily extended...
+
+commit fc696636e2a0818dfc7b561615ddfbcb6782deb6
+Merge: 944b412 c266d36
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Jun 2 20:44:28 2015 +0200
+
+    Merge branch 'master' of github.com:htacg/tidy-html5
+
+commit 944b412fe6d3c4fe16714311ecb39593c4c0e68b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Jun 2 20:44:00 2015 +0200
+
+    Need extra include if UNICODE is defines
+
+commit 5e9eb0b7fd77e03c8eb3e4ca10e947f1116fd064
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Jun 2 20:34:13 2015 +0200
+
+    Small fix in platform.h, just for windows (WIN32)
+    
+    Not sure how this has lasted so long, but I guess there are not too many
+    users wanting to specifically use the static tidy library.
+    
+    Now it is possible to define TIDY_STATIC and the TIDY_EXPORT macro will
+    just be 'external', suitable for linking with the static library, instead
+    of adding the _imp_ MSVC __declspec( dllimport )...
+    
+    This fix does not effect other than the WIN32 platform build.
+
+commit c266d36fad908f6b2e498032226a5873cee34dfb
+Author: Geoff R. McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Jun 2 17:15:05 2015 +0200
+
+    keep a recent gen'ed quickref.html in documentation
+
+commit b8bc88522c9af8fef2ad5c66b34c86622c3c671c
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 25 16:48:39 2015 +0200
+
+    small fix for indent-with-tabs to have a default xml value
+
+commit d9113957d8f8e5d04f009cf9c0a17989947cee64
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 25 13:33:32 2015 +0200
+
+    Reverse option wording to reflect new default ON
+
+commit fb637608fb680871e07ac2faf26f361260233da8
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 25 13:24:50 2015 +0200
+
+    Fix README.md to show now both shared and static libraries are built
+
+commit e13a535a0cbc9e2ab5be31515d6166013d149c09
+Merge: dde78c2 5a28d5f
+Author: Ionel Roiban &lt;skynet _at_ users _dot_ noreply _dot_ github _dot_ com&gt;
+Date:   Sun May 24 16:51:31 2015 -0400
+
+    Merge pull request #216 from denji/patch-1
+    
+    5.0.0
+
+commit 5a28d5f0100010cd9d31206bd666cdbbc0536aa8
+Author: Denis Denisov &lt;denji _at_ users _dot_ noreply _dot_ github _dot_ com&gt;
+Date:   Sun May 24 23:49:00 2015 +0300
+
+    5.0.0
+    
+    htacg/tidy-html5#190
+
+commit dde78c2dbf3cd5ce8e4035d49c7762a353feb696 (tag: refs/tags/4.9.30)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun May 24 15:23:59 2015 +0200
+
+    bump to 4.9.30 adding build shared and static
+
+commit efb8e37664250cf91780efe1764ddb0c161ae9f2
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun May 24 15:10:31 2015 +0200
+
+    Build both static and shared libraries.
+    
+    First many other projects do this, and it seems a good choice.
+    
+    Due mainly to windows where the static and shared libraries have the same
+    name, appended an 's' to the static library.
+    
+    The tidy console app will use the static library, since to build the man
+    page tidy may need to be run before the shared libraries are installed.
+    And this makes the windows tidy exe a stand-alone app. No DLL install
+    issue.
+    
+    This addresses issue #194, and possibly #190
+
+commit bb35166ed02eeefaaf390798969c697dfaa64926
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri May 22 19:06:17 2015 +0200
+
+    update the verhist.log
+
+commit 3686bc53904847e7313d1c6261d24adb40a2b584
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri May 22 16:22:27 2015 +0200
+
+    Issue #108 - merged indent-with-tabs branch into master.
+    
+    Thought there may be some comments on this but nothing for a week.
+    So have merged to master hoping more people will test it, and any
+    remaining issues resolved.
+    
+    Now it will be present from version 4.9.29 onwards.</pre>
+
+<p>This log has  20 commits by 3 authors: Ionel Roiban 1; Denis Denisov 1; Geoff R. McLane 18; </p>
+
+<p>Date: from Fri May 22 16:22:27 2015 +0200 to Thu Jun 4 17:42:28 2015 +0200 (13 days)</p>
+
+<p>eof</p>
+</body>
+</html>
+
+
+<p>eof</p>
+</body>
+</html>
+
