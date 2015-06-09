@@ -1,3 +1,27 @@
+- path: tidy-4.9.35
+  heading: HTML Tidy version 4.9.35
+  notes: /binaries/binaries/tidy-4.9.35/4.9.35.html
+  binaries:
+    - filename: tidy5-4.9.35-win64.zip
+      filesize: 732K
+      modified: 2015/06/09 15:12:09
+      describe: Win64 ZIP package.
+
+    - filename: tidy5-4.9.35-64bit.deb
+      filesize: 628K
+      modified: 2015/06/09 15:13:56
+      describe: linux 64-bit DEB.
+
+    - filename: tidy5-4.9.35-64bit.rpm
+      filesize: 628K
+      modified: 2015/06/09 15:13:58
+      describe: linux 64-bit RPM.
+
+    - filename: tidy5-4.9.35-win32.zip
+      filesize: 623K
+      modified: 2015/06/09 15:06:32
+      describe: Win32 ZIP package.
+
 - path: tidy-4.9.32
   heading: HTML Tidy version 4.9.32
   notes: /binaries/binaries/tidy-4.9.32/4.9.32.html
