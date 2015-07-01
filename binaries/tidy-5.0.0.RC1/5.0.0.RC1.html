@@ -1,0 +1,3313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pre-Release 5.0.0.RC1</title>
+</head>
+<body>
+<h1>Pre-Release 5.0.0.RC1</h1>
+
+<p>Change log for this pre-release candidate. Since it is the culmination of perhaps at least 4 years of effort, 
+by lots of <a href="#authors">people</a>... so this is a FULL log</p>
+
+<pre>
+commit f450263d43ecd20949a7e333a7737f8a2e88ddf6 (HEAD, refs/remotes/origin/master, refs/remotes/origin/HEAD, refs/heads/master)
+Author: geoff
+Date:   Wed Jul 1 15:57:50 2015 +0200
+
+    Update vershist.log
+
+commit 9736aa8af83e91cf6edfed4051e80dbc833e6da1
+Author: geoff
+Date:   Wed Jul 1 15:50:19 2015 +0200
+
+    Adjust batch files for 'tidy5' to 'tidy'
+
+commit 8d70783a63d20fcfbe0ff6d6aaa65ef20ee872fc
+Author: geoff
+Date:   Wed Jul 1 12:08:49 2015 +0200
+
+    clean up the new names
+
+commit 1b461ec6244e81b08c25857d623424800f4f1f69 (tag: refs/tags/5.0.0.RC1)
+Author: geoff
+Date:   Tue Jun 30 20:18:14 2015 +0200
+
+    ignore gcc built items
+
+commit 1e70fc6f15190a0ee497232daeb506241c6f9eba
+Author: geoff
+Date:   Tue Jun 30 19:59:00 2015 +0200
+
+    Rename two headers. Issues #224 #223 #221
+    
+    But this seemed a good time to release 5.0.0.RC1...
+
+commit daef0371563dea562ad09b6dcf060dd457bf275e
+Author: geoff
+Date:   Wed Jun 24 13:12:31 2015 +0200
+
+    Bump version of #207 change
+
+commit 3a524f17104397c0a8886b46863e3c1c15728dc5
+Author: geoff
+Date:   Wed Jun 24 13:05:06 2015 +0200
+
+    Issue #207 - deal with 2 cases of an unambiguous ampersand.
+    
+    html5 allows a naked ampersand unquoted, and now tidy will not issue a
+    warning. This only deals with a &amp; b, and P&amp;&lt;li&gt;O&lt;/li&gt;
+    
+    More may need to be done for other cases.
+
+commit b65988c95a7c19a1f50012d7d24d061e8f343556 (tag: refs/tags/4.9.36)
+Author: geoff
+Date:   Sun Jun 21 19:50:56 2015 +0200
+
+    Bump version for #215 fix
+
+commit 3aa50740da96fbeed1afcb7d651268961a175238
+Author: geoff
+Date:   Sun Jun 21 19:49:44 2015 +0200
+
+    Issue #215 - only issue warning if NOT HTML5 mode
+
+commit 0b0eb328432479345d304284b704f679773cff1b
+Author: geoff
+Date:   Tue Jun 9 20:06:39 2015 +0200
+
+    Begin adding some doxygen syntax for next API doc gen
+
+commit e71bda718f8026e9b7f6fdaf36ffe5e0cb9ad31b
+Author: geoff
+Date:   Tue Jun 9 20:04:49 2015 +0200
+
+    Add TIDY_CALL to tidyLibraryVersion func.
+
+commit c7aca7ec83abd768143acdb986ed7b9bb7bf8275
+Author: geoff
+Date:   Tue Jun 9 16:13:01 2015 +0200
+
+    Seems REPEAT_BRIEF = YES is a better goxygen.cfg
+
+commit b60d82d76636ecf59fd7ad8c06a713d06c6684b9 (tag: refs/tags/4.9.35)
+Author: geoff
+Date:   Tue Jun 9 15:33:50 2015 +0200
+
+    Update verhist.log
+
+commit 016f538d93e0ebb29d952b5c8a64b05eb4bad3fb
+Author: geoff
+Date:   Tue Jun 9 15:27:26 2015 +0200
+
+    Add usual NOPAUSE option to pub-bins.bat files
+
+commit 7b7fbce9ab3814ffe0f8ad39842377ef3562e1e5
+Author: geoff
+Date:   Tue Jun 9 12:32:26 2015 +0200
+
+    #190 &amp; #148 - Bump to version 4.9.35, and add a date
+
+commit 250ce1c6d01a662999d756ad7ae49edea0ffd30a
+Author: geoff
+Date:   Tue Jun 9 12:17:43 2015 +0200
+
+    Issue #190 &amp; #148 - Restore tidyReleaseDate() function.
+    
+    There was an idea to mark this function deprecated, such that if used the
+    developer would see a warning. But this was never implemented in a cross
+    platform way.
+    
+    So for now revert to circa Jan 2015 when Jim added a build date to the
+    version.txt file. And now both LIBTIDY_VERSION and RELEASE_DATE macros are
+    established in CMakeLists.txt, and picked up in version.h.
+    
+    The idea is the date will now march forward with the version number, side
+    by side in version.txt. Although have left tidy.c only emitting the
+    version on the --version command.
+    
+    After this function has been marked deprecated for several release periods,
+    only then should consideration be given to potentially removing it.
+
+commit bea5bb700febc2f4504e4b357cace0a5bec3e4cd
+Author: geoff
+Date:   Mon Jun 8 13:53:38 2015 +0200
+
+    Issue #218 - bump version for this fix
+
+commit 18880eab5551dff617d9a09712468cc275bfe87a
+Author: geoff
+Date:   Mon Jun 8 13:42:45 2015 +0200
+
+    Issue #218 - Do NOT allocate a 1 byte null String buffer.
+    
+    This is when setting a String config value through say tidyOptSetValue
+    using say tidyOptSetValue(tdoc,id,&quot;&quot;).
+    
+    If the length of the new string is zero then do not allocate a 1 byte
+    buffer, set it to 0, for the option. Any previous buffer has already been
+    released.
+    
+    This means API functions like tidyOptSaveSink will not return erroneous
+    null String values!
+
+commit 3f72b6e3355ccbd1084979750f24b30822cac8c3
+Author: geoff
+Date:   Sat Jun 6 11:07:41 2015 +0200
+
+    Issue #210 - Add new warning for summary attr in table if HTML5.
+    
+    This new warning will only be seen if the document remains in HTML5 mode,
+    where the summary attribute is obsolete. The W3C validator flags this as
+    an error, and suggests 'Consider describing the structure of the table in
+    a caption element or in a figure element containing the table; or simplify
+    the structure of the table so that no description is needed'.
+    
+    At the same time this patch also restored the old warning if the document
+    is HTML4--, if the table element lacks a summary attribute. This has been
+    a tidy warning since the beginning of time, although the W3C validator
+    does not presently flag this.
+
+commit f67300963e2bc68eaa5c0ebeb35b63c08e2c2feb
+Author: geoff
+Date:   Sat Jun 6 11:06:37 2015 +0200
+
+    Issue #210 - Bump version for this new warning
+
+commit bc6068c4479ac6d2cd6b30bcf06e3bcf591f2b4b
+Author: geoff
+Date:   Thu Jun 4 20:11:16 2015 +0200
+
+    Add ignore '*.old' to root .gitignore
+
+commit 8dff34cbdc03302fa6d6d224848a4fd203c72741
+Author: geoff
+Date:   Thu Jun 4 19:12:25 2015 +0200
+
+    add convenient pub binaries script
+
+commit a1da576946e6e384b9cf9360029f55ef7a742a7e
+Author: geoff
+Date:   Thu Jun 4 18:01:29 2015 +0200
+
+    Add some convenient bats to publish binaries
+
+commit 50c213f37aba0b513c5010e5e1859eadcc7fad0b
+Author: geoff
+Date:   Thu Jun 4 17:42:28 2015 +0200
+
+    Update verhist.log
+
+commit 544f9876cc45b30fd751867d90a5a5ef4fddd7d9 (tag: refs/tags/4.9.32)
+Author: geoff
+Date:   Thu Jun 4 13:21:00 2015 +0200
+
+    Issue #212 - bump version for this additional change
+
+commit 326f2414fd402f0c1113c90044a105ad38e3e9dc
+Author: geoff
+Date:   Thu Jun 4 13:11:54 2015 +0200
+
+    Issue #212 - Further fix to set MixedContent in some cases.
+    
+    In certain circumstances a leading space has to be preverved to allow it
+    to be used to create a text space node to insert before this element to
+    preserve the view in a browser.
+    
+    And added a note asking why is ParseTag called with a hardcoded
+    IgnoreWhitespace when some effort above has set the mode variable to
+    MixedContent in certain cases, but need to think about this 2nd change.
+    
+    Also added some MSVC Debug output when this leading text is used to insert
+    such a created text node before the element just to be reminded of this
+    special event.
+
+commit a278b04a19fcb14ae1208f6d7d2aeeaf2fcf7301
+Author: geoff
+Date:   Thu Jun 4 12:57:49 2015 +0200
+
+    Add debug display of text modes.
+    
+    Note this ONLY effects a MSVC Debug build!
+
+commit 0c96ed8af4c4d2aaad04ba7b128e87a844da56ea
+Author: geoff
+Date:   Wed Jun 3 20:27:01 2015 +0200
+
+    Bump version for issue #217 fix
+
+commit c18f27a58792f7fbd0b30a0ff50d6b40a82f940d
+Author: geoff
+Date:   Wed Jun 3 20:26:03 2015 +0200
+
+    Issue #217 - avoid len going negative, ever...
+
+commit 0fb7ccdfc6ea4e066ec60cd5c931e17eaa71d856
+Author: geoff
+Date:   Wed Jun 3 20:22:20 2015 +0200
+
+    Add some mem alloc and free debug to chase Issue #217
+    
+    Such debug is OFF by default, and only added by defining DEBUG_MEMORY. And
+    is only available for the Debug configuration compiled with MSVC, but this
+    could be easily extended...
+
+commit fc696636e2a0818dfc7b561615ddfbcb6782deb6
+Merge: 944b412 c266d36
+Author: geoff
+Date:   Tue Jun 2 20:44:28 2015 +0200
+
+    Merge branch 'master' of github.com:htacg/tidy-html5
+
+commit 944b412fe6d3c4fe16714311ecb39593c4c0e68b
+Author: geoff
+Date:   Tue Jun 2 20:44:00 2015 +0200
+
+    Need extra include if UNICODE is defines
+
+commit 5e9eb0b7fd77e03c8eb3e4ca10e947f1116fd064
+Author: geoff
+Date:   Tue Jun 2 20:34:13 2015 +0200
+
+    Small fix in platform.h, just for windows (WIN32)
+    
+    Not sure how this has lasted so long, but I guess there are not too many
+    users wanting to specifically use the static tidy library.
+    
+    Now it is possible to define TIDY_STATIC and the TIDY_EXPORT macro will
+    just be 'external', suitable for linking with the static library, instead
+    of adding the _imp_ MSVC __declspec( dllimport )...
+    
+    This fix does not effect other than the WIN32 platform build.
+
+commit c266d36fad908f6b2e498032226a5873cee34dfb
+Author: geoff
+Date:   Tue Jun 2 17:15:05 2015 +0200
+
+    keep a recent gen'ed quickref.html in documentation
+
+commit b8bc88522c9af8fef2ad5c66b34c86622c3c671c
+Author: geoff
+Date:   Mon May 25 16:48:39 2015 +0200
+
+    small fix for indent-with-tabs to have a default xml value
+
+commit d9113957d8f8e5d04f009cf9c0a17989947cee64
+Author: geoff
+Date:   Mon May 25 13:33:32 2015 +0200
+
+    Reverse option wording to reflect new default ON
+
+commit fb637608fb680871e07ac2faf26f361260233da8
+Author: geoff
+Date:   Mon May 25 13:24:50 2015 +0200
+
+    Fix README.md to show now both shared and static libraries are built
+
+commit e13a535a0cbc9e2ab5be31515d6166013d149c09
+Merge: dde78c2 5a28d5f
+Author: Ionel Roiban &lt;skynet _at_ users _dot_ noreply _dot_ github _dot_ com&gt;
+Date:   Sun May 24 16:51:31 2015 -0400
+
+    Merge pull request #216 from denji/patch-1
+    
+    5.0.0
+
+commit 5a28d5f0100010cd9d31206bd666cdbbc0536aa8
+Author: Denis Denisov &lt;denji _at_ users _dot_ noreply _dot_ github _dot_ com&gt;
+Date:   Sun May 24 23:49:00 2015 +0300
+
+    5.0.0
+    
+    htacg/tidy-html5#190
+
+commit dde78c2dbf3cd5ce8e4035d49c7762a353feb696 (tag: refs/tags/4.9.30)
+Author: geoff
+Date:   Sun May 24 15:23:59 2015 +0200
+
+    bump to 4.9.30 adding build shared and static
+
+commit efb8e37664250cf91780efe1764ddb0c161ae9f2
+Author: geoff
+Date:   Sun May 24 15:10:31 2015 +0200
+
+    Build both static and shared libraries.
+    
+    First many other projects do this, and it seems a good choice.
+    
+    Due mainly to windows where the static and shared libraries have the same
+    name, appended an 's' to the static library.
+    
+    The tidy console app will use the static library, since to build the man
+    page tidy may need to be run before the shared libraries are installed.
+    And this makes the windows tidy exe a stand-alone app. No DLL install
+    issue.
+    
+    This addresses issue #194, and possibly #190
+
+commit bb35166ed02eeefaaf390798969c697dfaa64926
+Author: geoff
+Date:   Fri May 22 19:06:17 2015 +0200
+
+    update the verhist.log
+
+commit 3686bc53904847e7313d1c6261d24adb40a2b584
+Author: geoff
+Date:   Fri May 22 16:22:27 2015 +0200
+
+    Issue #108 - merged indent-with-tabs branch into master.
+    
+    Thought there may be some comments on this but nothing for a week.
+    So have merged to master hoping more people will test it, and any
+    remaining issues resolved.
+    
+    Now it will be present from version 4.9.29 onwards.
+
+commit 843bfae52319ab75c0d81b8ed855367fd3556b46 (refs/remotes/origin/indent-with-tabs, refs/heads/indent-with-tabs)
+Merge: 3f33ba2 763c6a2
+Author: geoff
+Date:   Fri May 22 16:06:48 2015 +0200
+
+    Merge branch 'indent-with-tabs' of github.com:htacg/tidy-html5 into indent-with-tabs
+
+commit 3f33ba2d8840618f31afbe33cabd7ad738e1900e
+Author: geoff
+Date:   Fri May 15 16:17:46 2015 +0200
+
+    Issue #108 - make sure the version indicates this with tabs
+
+commit d923dd7b2dd89694c8a8508c6812ffbbd364618b
+Author: geoff
+Date:   Fri May 15 15:06:52 2015 +0200
+
+    Issue #108 - first cut new option --indent-with-tabs yes.
+
+commit cb790c37abf92066927f0bdbb07aca1c00394cef
+Author: geoff
+Date:   Fri May 22 15:59:51 2015 +0200
+
+    add version history log, verhist.log
+
+commit 8a2a5cc0136ef2a9b4468d773abdf56ef01093fe (tag: refs/tags/4.9.28)
+Author: geoff
+Date:   Wed May 20 20:09:57 2015 +0200
+
+    Add a check for the 'master' branch
+
+commit e98a17a6726712d3be385fc4c2c2bb82a8fb98ec
+Author: geoff
+Date:   Wed May 20 14:07:39 2015 +0200
+
+    correct install location, and build shared library
+
+commit 47df85550ceca0e3725ea6414b2e965506a31832
+Author: geoff
+Date:   Wed May 20 14:06:30 2015 +0200
+
+    clean up some more build components
+
+commit aab1e46cb707c2f993191671af3ef7c01bd5ecde
+Author: geoff
+Date:   Tue May 19 16:53:29 2015 +0200
+
+    ignore some doc building conponents
+
+commit 65d230a16769d0ddb506a83a4303d377796e7de0
+Author: geoff
+Date:   Tue May 19 16:51:15 2015 +0200
+
+    add documentation target
+
+commit 763c6a28a690e348fe2379d08ea24aca328dac75
+Author: geoff
+Date:   Fri May 15 16:17:46 2015 +0200
+
+    Issue #108 - make sure the version indicates this with tabs
+
+commit 231061e90a09ff048943c0c57edafbe6f174e046
+Author: geoff
+Date:   Fri May 15 15:06:52 2015 +0200
+
+    Issue #108 - first cut new option --indent-with-tabs yes.
+
+commit 97853993eccb091b3c7856d14437e2c1e9c84ffd
+Author: geoff
+Date:   Thu May 14 15:03:36 2015 +0200
+
+    add the new testinfo.txt file decription
+
+commit 0851069320617ba142faf3cd4ccb7d1417eee810
+Author: geoff
+Date:   Thu May 14 15:02:46 2015 +0200
+
+    add a brief description of each test
+
+commit 0c65b1c410b2e58f7db9a6d86a9d350ed3669b40
+Author: geoff
+Date:   Thu May 14 14:52:05 2015 +0200
+
+    fix goto target type
+
+commit 59f25fe32a5369470df2c0639769fc669d18880f
+Author: geoff
+Date:   Thu May 14 14:47:02 2015 +0200
+
+    Likewise, add info is onetest2.bat is run
+
+commit 83fe261d58b430523cde4adee62b59a39b7d1917
+Author: geoff
+Date:   Thu May 14 14:34:25 2015 +0200
+
+    More informative output if onetest.cmd run singularly.
+    
+    It was not intended that this cmd file be run separately. It is invoked by
+    alltest1.cmd which in turn is invoked by alltest.cmd. This 'chain' is
+    requierd to set up the appropriate environmnet variables.
+
+commit 8523bb9be5ffa9819fd5521f94c11e5dfc807fa2
+Author: geoff
+Date:   Wed May 13 14:25:29 2015 +0200
+
+    small addition to test/README.md
+
+commit 90d3ae3be5260eb08aae40e6b6c39842035e167f
+Author: geoff
+Date:   Wed May 13 14:13:35 2015 +0200
+
+    add README.md to test folder
+
+commit d0a83f10323fa381c30304b0f3cfb9d8d14b326b
+Author: geoff
+Date:   Wed May 13 14:12:03 2015 +0200
+
+    add another test set that includes a compare to testbase
+
+commit 3ce92cc4061346a4e0e314bf53ded8cfa8119770
+Author: geoff
+Date:   Wed May 13 14:10:29 2015 +0200
+
+    make input = current output in hope git sees no change
+
+commit 79055838d7308cf204ee22d3b7a8e29873fb1fda
+Author: geoff
+Date:   Wed May 13 13:38:40 2015 +0200
+
+    add a testbase output set of file
+
+commit 6f366982688f4025f3822ff5d2deaf77e01e976d
+Author: geoff
+Date:   Wed May 13 13:22:11 2015 +0200
+
+    fix up the xmltest.cmd
+
+commit 40824e9a688c3e6112e06c2264d8e5e1a4e47736
+Author: geoff
+Date:   Wed May 13 12:40:46 2015 +0200
+
+    and also use @ to suppress command output
+
+commit 761964caa8a17e5489fa91b8fe0d74f83fc1cb97
+Author: geoff
+Date:   Wed May 13 12:38:50 2015 +0200
+
+    change access test log to tempacc.txt ignored by git
+
+commit 1c9970deb461d5a35f1821d49aafc689a1b4c8a4
+Author: geoff
+Date:   Wed May 13 12:37:20 2015 +0200
+
+    bump version for #212 fix
+
+commit 5d5e689f1af069145e7a13d16afefff0ca82b4db
+Author: geoff
+Date:   Wed May 13 12:31:23 2015 +0200
+
+    For issue #212, retain mixed mode block parsing.
+    
+    This is particularly for the anchor tag which in html5 mode is parsed in
+    ParseBlock. That is retain a leading space, in case it needs to be
+    moved to in front of the block to keep space rendering.
+
+commit 963caf074145a34c7a1c0192d09dccee9648d2f7
+Author: geoff
+Date:   Tue May 12 17:14:09 2015 +0200
+
+    add counter for in ParseBlock
+
+commit c1a3100cb9a1c5e53a86809b5ac4c2443118e344
+Author: geoff
+Date:   Tue May 12 17:13:23 2015 +0200
+
+    add conveninet break point based on row and column
+
+commit ae8314887a12fe080777b0613273475d920ec064
+Author: geoff
+Date:   Tue May 12 17:11:48 2015 +0200
+
+    add 'install' of debug version also
+
+commit 221e067f9531ddb5c53a151eed6e5314f5720825
+Author: geoff
+Date:   Tue May 12 14:25:12 2015 +0200
+
+    Change relative path to absolute so cmake can be run anywhere.
+    
+    The recommended place to run cmake is in the build/cmake directory,
+    but have changed a relative path to an absolute path which should
+    allow cmake to be run ANYWHERE!. See bottom of Issue #193
+    
+    Also a few other minor tweak to CMakeLists.txt
+
+commit 21ce85afe8461d5c8d1949a75d0da3e23f2b6f11
+Merge: d8a4498 4293c8c
+Author: geoff
+Date:   Tue May 12 13:22:03 2015 +0200
+
+    Merge branch 'master' of github.com:htacg/tidy-html5
+
+commit d8a44988038749b501498582ea8788cae86e6df8
+Author: geoff
+Date:   Tue May 12 13:18:16 2015 +0200
+
+    Add user option -DMAN_INSTALL_DIR=path to CMakeLists.txt - see #193
+    
+    Seems this is required to accomodate different man install directories
+    used by Slackware, BSD and perhaps others.
+
+commit 4293c8cc3e4cc47cb84e63dec957142875ec29b9
+Author: geoff
+Date:   Wed Apr 29 18:23:28 2015 +0200
+
+    Add setting the CMAKE_BUILD_TYPE to build-me.sh.
+    
+    The default MUST set -DCMAKE_BUILD_TYPE=Release - without this addition
+    the -DNDEBUG compiler flag is NOT set, leaving 'asserts' in the code.
+    
+    Asserts are good and necessary for a Debug version, for testing, but
+    with their brutal abort on error should NOT really be in Release code
+    IMHO.
+    
+    And after all this is ONLY in a 'sample' build-me.sh script. Users
+    are free to use whatever options they desire in their own build of
+    tidy, and frequently do.
+
+commit b2b9f1d6f21fe44bd1a2b6e3eb36a87f48fd9adb
+Author: geoff
+Date:   Sun Apr 26 19:19:55 2015 +0200
+
+    spelling error noted in exploration of #207 in localize.c
+
+commit f286dc4ca5544e2da8745c7ec19ad2998f14c8ac
+Merge: d6f9c86 9a3f85d
+Author: geoff
+Date:   Sun Apr 26 13:36:13 2015 +0200
+
+    Merge pull request #206 from d1vanov/support_build_with_mingw
+    
+    Support build with MinGW on Windows
+
+commit 9a3f85d44c7828b4cc81366a8a278a09500bfb94
+Author: Dmitry Ivanov &lt;dm _dot_ vl _dot_ ivanov _at_ gmail _dot_ com&gt;
+Date:   Sun Apr 26 13:17:43 2015 +0300
+
+    Support build with MinGW 4.9.1
+
+commit d6f9c868ec881fa3d044e08cb5158fff3600981c
+Author: geoff
+Date:   Sat Apr 25 20:37:35 2015 +0200
+
+    add link to WIP binaries to README.md
+
+commit 4a4f209c67edb24bf84edf328c5aa05e439bebe1 (tag: refs/tags/4.9.26)
+Author: geoff
+Date:   Sat Apr 25 19:20:16 2015 +0200
+
+    add x bit to testhtml5.sh
+
+commit 35c8a12a8f0ac545370e56add3cd97db34c54d0e
+Author: geoff
+Date:   Sat Apr 25 19:19:24 2015 +0200
+
+    add /usr to build-me.sh
+
+commit 4a654c07c4334c6d493dd08c5f95ae905089293d
+Author: geoff
+Date:   Sat Apr 25 19:17:27 2015 +0200
+
+    add convenient binary build batch files
+
+commit bfd22e84fa36d80bbc83f01f2018359426d35d3e
+Author: geoff
+Date:   Sat Apr 25 18:45:18 2015 +0200
+
+    update .gitignore to ignore more built components
+
+commit 6b66b65ec83b84ca1f2f0736cba06fe715d41bf2
+Author: geoff
+Date:   Wed Apr 22 21:27:23 2015 +0200
+
+    PR #202 - bumped version for #198 #199 fixes by lacombar
+
+commit 2f6b3d49b6025b61da7ee60a04dedfb81ea2dff4
+Merge: 032bf42 c05661d
+Author: geoff
+Date:   Wed Apr 22 21:24:12 2015 +0200
+
+    Merge pull request #202 from aerilon/master
+    
+    Please pull fix for #198 and #199
+
+commit 032bf4264dfbf3c03751a3f7d8f7f9f12b4aa4c2
+Author: geoff
+Date:   Wed Apr 15 15:05:45 2015 +0200
+
+    Issue #193 - install tidy doc in share/man/man1
+
+commit a8e98412b5e8e73704adb56c1d8c7656fd535883 (tag: refs/tags/tag-4.9.25)
+Author: geoff
+Date:   Tue Apr 14 02:12:22 2015 +0200
+
+    Issue #192 - no need to check architecture
+
+commit f5eb2cf26a8b69b12f4918ca669bbe7a014e6470
+Author: geoff
+Date:   Sat Apr 11 15:22:55 2015 +0200
+
+    Issue #196 - expand comment and bump version.
+    
+    Thanks to @willydee for this PR.
+
+commit 253a7e54c312232d9860e996127e5accef1999d7
+Author: willydee &lt;willydee _at_ users _dot_ noreply _dot_ github _dot_ com&gt;
+Date:   Thu Apr 9 23:51:23 2015 +0800
+
+    Fix for #196: HTML5 allows block elements in &lt;CAPTION&gt;
+
+commit c05661df11fd7a1c692050fbb2aca7927828afc7
+Author: Arnaud Lacombe &lt;al _at_ aerilon _dot_ ca&gt;
+Date:   Fri Apr 10 15:42:49 2015 -0700
+
+    Issue #199 - Add support for html5's template tag
+
+commit ff03476ca13a14e07b7cccc3b0b583182c1efaf6
+Author: Arnaud Lacombe &lt;al _at_ aerilon _dot_ ca&gt;
+Date:   Fri Apr 10 15:42:44 2015 -0700
+
+    Issue #199 - Add failing test case for html5's template tag
+
+commit e4880ad6b4c9acafb9f64fe276db8a4280b84f7b
+Author: Arnaud Lacombe &lt;al _at_ aerilon _dot_ ca&gt;
+Date:   Fri Apr 10 15:42:37 2015 -0700
+
+    Issue #198 - Implement Unix version of html5 test script
+
+commit ca06201c3abb3829d6be6465e433ac72c8b15449
+Author: geoff
+Date:   Wed Apr 8 18:47:08 2015 +0200
+
+    bump version for items indicated in #191
+    
+    While these are non-critical changes, still bump version so can be sure
+    which tidy is being used.
+
+commit e78c0105d316303330c2e040cc39f666461fa1ee
+Author: geoff
+Date:   Wed Apr 8 18:45:31 2015 +0200
+
+    Indicated by #191, why show doctype warning if omitted in output
+
+commit 5cbd3ee95b67c3d41c2c29f495de234e670e72fa
+Author: geoff
+Date:   Wed Apr 8 17:55:12 2015 +0200
+
+    From issue #191, saw need to revert to 'master' branch
+
+commit dd8c13db4caeae7fbf20b5efd9175cf182489d3b
+Author: geoff
+Date:   Thu Apr 2 17:36:05 2015 +0200
+
+    add more to clean up
+
+commit cb85793ede991fbef67ec66bb83aac1fc3c25855
+Author: geoff
+Date:   Thu Apr 2 13:54:44 2015 +0200
+
+    add some options to build-me.sh script
+
+commit 26f1d933790e1b8040f8b37906582eb064ac1af5
+Author: geoff
+Date:   Thu Apr 2 13:17:14 2015 +0200
+
+    prepare for changing the lib name
+
+commit 17cb520f587ed4f9e61e708012b93e265646bf9f
+Author: geoff
+Date:   Fri Mar 20 13:56:20 2015 +0100
+
+    add windows zip binary installer
+
+commit 3585d4c31ad6b0c0bd058cf9d94193f4d243b8c6
+Author: geoff
+Date:   Thu Mar 19 19:14:27 2015 +0100
+
+    Issue #186 - Move FreeLexer() to near last
+
+commit 12b0fc74a90c00815a3d4b0bacd16e9e19315cbc
+Author: geoff
+Date:   Thu Mar 19 18:06:49 2015 +0100
+
+    Issue #187 - correction for unix man page
+
+commit 47df5fddbc8a486132fde55ef82a76f6bc59e483
+Author: geoff
+Date:   Thu Mar 19 16:32:19 2015 +0100
+
+    Issue #188 - Add some user config items
+
+commit 09fa036b311abd3fb5ef89fa3d8aa509a0f7f0c2
+Author: geoff
+Date:   Fri Mar 13 19:48:31 2015 +0100
+
+    bump version for Issue #185 fix
+
+commit 79ac8b25542de6894f1b1291ccf15f681d119bd6
+Author: geoff
+Date:   Fri Mar 13 19:47:28 2015 +0100
+
+    Issue #185 - Treat elements ids as case-sensitive if in HTML5 mode
+
+commit 66a597f5b7a131f1a4b7e60b82bb4532dc489117
+Author: geoff
+Date:   Tue Mar 10 12:27:29 2015 +0100
+
+    related to issue #180 - remove additional line unless 'classic'
+
+commit 9caab688f14fb781cf79a65484483539b9a8af09
+Author: geoff
+Date:   Mon Mar 9 16:12:59 2015 +0100
+
+    debug - avoid duplicae output if to stdout
+
+commit eeb469ffc5d13062ac527d3f7d0d3cd0abb509d9
+Author: geoff
+Date:   Sun Mar 8 12:46:00 2015 +0100
+
+    add install to build me batch
+
+commit f4071047e9083f71ac8b1cb890d5bcde154b140e
+Author: geoff
+Date:   Sun Mar 8 12:35:41 2015 +0100
+
+    Output only to build folder
+
+commit da5da0ab35668a2cb4811f77f8e9b71238984b1d
+Author: geoff
+Date:   Sun Mar 8 12:34:21 2015 +0100
+
+    add cpack built to clean up
+
+commit 085064e8ad148bf3676b72ffdfceb503cc02176a
+Author: geoff
+Date:   Sun Mar 8 12:33:43 2015 +0100
+
+    ignore cpack built items
+
+commit e0833dc8ab2f40f0ed338e1cbb9fbcbf7be5e790
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 15:39:48 2015 +0800
+
+    Fixed #183
+
+commit 3df5b60ca19e6a892d6da2684ba1ea59d011e5d1
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 13:48:02 2015 +0800
+
+    Bash doesn't like the extra space after the slash.
+
+commit 08fb836a1d8ce69af5b79cb61cba8929da97cf08
+Merge: 08d037b e593852
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 13:47:08 2015 +0800
+
+    Merge pull request #182 from pedromorgan/pedro2
+    
+    Docs missing bits - Pedro2
+
+commit 08d037b6af630b40c4c9df7569a9a30a56d7c332
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 13:39:46 2015 +0800
+
+    Fix for Cmake &gt; 3.0.0
+
+commit d5d880279ed0489c9b00ca674522e4cb68ea5fad
+Merge: 6d84c5a c013fa9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 13:37:45 2015 +0800
+
+    Merge pull request #181 from pedromorgan/man
+    
+    Create man page as part of cmake build
+
+commit e593852ef1023866b1ea22554b074f61a34a4d23
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Sun Mar 8 04:37:35 2015 +0000
+
+    fix missing links
+
+commit be79293a45730340802d9ceda93d685eeb0b1151
+Merge: 6d84c5a 16fa656
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Sun Mar 8 04:34:17 2015 +0000
+
+    Fix up docs merge
+
+commit 6d84c5a6ec906208de5cc808e26d14d56d95625f
+Merge: fd7b4f8 6099f13
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:52:17 2015 +0800
+
+    Merge branch 'pedromorgan-pedro'
+
+commit 6099f132e758c975b8d8878fbbabc89a05d1f028
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:51:54 2015 +0800
+
+    Tweaked the colors a bit to eliminate the illegible text shadow effect.
+
+commit 6e2411120e1ccf2753406efa23e44f4924c6f676
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:35:59 2015 +0800
+
+    Add another examples directory.
+
+commit 817c7752096d444dde07813c38e6dc61806165cc
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:35:46 2015 +0800
+
+    Use the temporary directory variable.
+
+commit 424c9d782bf939a067e3826c9a0db0a8bf5cd0ee
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:34:49 2015 +0800
+
+    Removed unused reference causing warnings.
+
+commit 52ef5f89ce46573f26bffba6fb9cbd1ab1afb4ef
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:34:17 2015 +0800
+
+    Squelch documentation building errors.
+
+commit 9a5ba3a4e897b9f36724ff6b466b4dd44dbceab7
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:12:36 2015 +0800
+
+    Moved generated output to temp
+
+commit f2cecf75646c7e33fbee928139c26ad1f13e12fc
+Merge: 04beaee 50e8d7f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 8 11:01:33 2015 +0800
+
+    Merge git://github.com/pedromorgan/tidy-html5 into pedromorgan-pedro
+
+commit c013fa97d9fd7ba4257eda6c967c7b1cd9a453d8
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Sat Mar 7 22:28:58 2015 +0000
+
+    Make man filename into a cmake variable
+
+commit 3f8a95601ef8a331f053f00616e4ec190ab1cfc1
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Sat Mar 7 22:27:02 2015 +0000
+
+    Make man filename into a cmake variable
+
+commit b39a953f69f74da60b34cf5185603f94a7bb62bd
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Sat Mar 7 22:11:51 2015 +0000
+
+    Add note re using manpath
+
+commit b6caf8f7a5bcc1b66c532de672f60c61634f8d10
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Sat Mar 7 22:08:39 2015 +0000
+
+    Create man page as part of cmake build
+
+commit fd7b4f858927b019918b1752b8db7c7df7dd258a
+Author: geoff
+Date:   Fri Mar 6 19:28:52 2015 +0100
+
+    just some more DEBUG on text nodes
+
+commit 90c9e81ba19e2f92255f53d87a09bd31dbb4493e
+Author: geoff
+Date:   Fri Mar 6 19:14:24 2015 +0100
+
+    bump version for furhter fix on #167
+
+commit c0cad3aeba44da022662e781660a9fad787211b5
+Author: geoff
+Date:   Fri Mar 6 19:13:06 2015 +0100
+
+    Issue #167 - further fixes for HTML5 mode
+
+commit 389ce178148b53a1ce5cf90f5e9ea1f4c58424bd
+Author: geoff
+Date:   Fri Mar 6 18:36:01 2015 +0100
+
+    add attr to dbg_show_node
+
+commit 592f81b606dd92e43239bf3fdf6f585b7a44242f
+Author: geoff
+Date:   Fri Mar 6 16:52:45 2015 +0100
+
+    ignore some cpack built items
+
+commit 01d35cb22daf998cd22a86d8244447c977588969
+Author: geoff
+Date:   Fri Mar 6 15:36:42 2015 +0100
+
+    add txt and html, since md not supported by WiX (MSI)
+
+commit 59aad805e529a508faa5e754cda10025b1644201
+Author: geoff
+Date:   Fri Mar 6 15:29:12 2015 +0100
+
+    Initial cpack building releases.
+    
+    Thanks to pedromorgan PR #174 for the initial addition of this to
+    CMakeLists.txt.
+
+commit 960f87582405082e2161451f021b503b49f9b36d
+Merge: 7ffcce2 6c04feb
+Author: geoff
+Date:   Fri Mar 6 13:59:20 2015 +0100
+
+    Merge branch 'pedromorgan-cpack'
+
+commit 6c04febc889f840f8d2b6bd05a8b85970869ac37
+Merge: 7ffcce2 648b20e
+Author: geoff
+Date:   Fri Mar 6 13:44:51 2015 +0100
+
+    Merge branch 'cpack' of https://github.com/pedromorgan/tidy-html5 into pedromorgan-cpack
+
+commit 7ffcce2241ae1a4cd551c7b8dce2a224d62a3c3e
+Author: geoff
+Date:   Fri Mar 6 13:09:12 2015 +0100
+
+    bump version for fix of issues #167 and #169
+
+commit 0dc68d6cb1afbd68c27102484eaf7d40e2d581b2
+Author: geoff
+Date:   Fri Mar 6 12:49:30 2015 +0100
+
+    Issue #167 &amp; #169 - default to HTML5 mode.
+    
+    Revert TidyTag_A to HTML5 mode, but allow the table to be modified if the
+    DOCTYPE given is found to NOT be HTML5, through a service TY_(AdjustTags).
+    Care is taken to clear any previous hash cached tags.
+    
+    At present this only effects the anchor tag, but could be applied to
+    others that need to change their parsing due to an identified DOCTYPE.
+
+commit 16fa65662be42c12a4843b5a1c6275e986885bfd
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 07:38:16 2015 +0000
+
+    add history diagram and style to directory tables
+
+commit 32af35602d5a1bba94d30ecfb0093010fa736d34
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 07:02:47 2015 +0000
+
+    Add tableofcontents and generally nitpick things
+
+commit 6455593ab0c8c51b5cec19e9046a4b2a489078ce
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 06:38:57 2015 +0000
+
+    tidy quickref and other nitpicking docs
+
+commit 3d9085c6f1269db89ef49692df21b369cfbdf520
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 05:34:12 2015 +0000
+
+    cleanup formatting of quickref
+
+commit e016418fe686cd008b8af7b52444d67db1573caf
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 04:29:06 2015 +0000
+
+    Output tidy.tags file to docs output
+
+commit 18c197a3cf518eedb5c20d7df3c92429bbc003ea
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 04:08:08 2015 +0000
+
+    Use new  quickref.include.xsl to format html for \htmlinclude
+
+commit 77995953d5a9cbc542ee369987b5848eaa37cb89
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 01:43:53 2015 +0000
+
+    Cleanup some configuration and add tag files
+
+commit 0e5f18b9e3df36c538752eea4ccd5943260d21c1
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 01:36:20 2015 +0000
+
+    Add background logo image to banner and cleaup style
+
+commit a358365d7b1850d17054a3aa1c46fc888c108e2f
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 01:21:05 2015 +0000
+
+    adding summaries to pages and minor tweaks
+
+commit 5fde57fcd45b9097bc4acf43c7cb0f136cb38d34
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 01:01:22 2015 +0000
+
+    Add featured options, and include config list
+
+commit 00969b063124667eb395679bce3194ffea85a36f
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Fri Mar 6 00:24:10 2015 +0000
+
+    create zip file of the docs
+
+commit 2be07760fdb815a2e168599d95d3ce42731a1143
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 23:58:13 2015 +0000
+
+    add subpage scripting
+
+commit 09a57d41b276aceb43b2e7ac05ece8afcfae7c17
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 23:55:59 2015 +0000
+
+    add pages for quiskstart, configuration and scripting
+
+commit 93bbd948eef5b62cf595746b482566247ff204b5
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 23:28:52 2015 +0000
+
+    Split up pages into seperate files for easier nav, added description to home and a configuration page
+
+commit 2b05e9fdd7d1c2e9d12f04717a1a7e3071832707
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 22:48:00 2015 +0000
+
+    Add TODO list
+
+commit 648b20e622808c3fcd0c830716d41b3ed3dd96fd
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 22:20:46 2015 +0000
+
+    Create zips and tarballs
+
+commit ae49dab6e72fc743d4a393e10f2e2558e11b76e0
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 22:08:54 2015 +0000
+
+    Create deb and rpm packages using cpack
+
+commit 1d56d545a48c35571a42b2e592238a02cf8c4929
+Merge: 616cafb 50e8d7f
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 21:22:04 2015 +0000
+
+    merge with head
+
+commit 616cafb2e4c67103e65214aeebd66420c47607e8
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 21:01:49 2015 +0000
+
+    add some style to make it more readable
+
+commit 895411023216905525a35bdd6fb819d07658cc8a
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 20:35:51 2015 +0000
+
+    add link to modules and fix tidy5 example
+
+commit f15bcf8808ad10ef982d8f379f6ced176e334910
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 20:22:32 2015 +0000
+
+    Set correct tify5 path in build_docs, include License and tweaks
+
+commit e5f029cda60314510966d0c1a71907c3a400c439
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 18:27:23 2015 +0000
+
+    create examples directory for doxygen
+
+commit 7565be0ceb50e4b67769f03eae1a5b630a4edff0
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 18:21:26 2015 +0000
+
+    TidyLib = tidylib in the docs
+
+commit 50e8d7fe693d053fa9d1e76e4dbcc5185fcbd4d9
+Author: geoff
+Date:   Thu Mar 5 13:19:07 2015 +0100
+
+    Issue #168 alter 2 cases, 5-5-1-3 and 5-6-1-3 to expect what is output now.
+    
+    Sometime long ago, prior 2009, tidy cleaned ALL leading, trailing spaces
+    from attribute values, thus can no longer distinguish between a fully
+    blank value like &quot;&quot;, and a value consisting of all spaces like &quot;   &quot;.
+    
+    So in these two tests, there is a preceeding test which tests the blank case,
+    and tidy reports it as blank, but will no longer report the all spaces as
+    all spaces, but repeats the blank case.
+    
+    Have amended the accesscases.txt to reflect what tidy has output for more
+    than the last 6+ years...
+
+commit 04beaeed0205a716c2703fef07d653efc0ce3e7d
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 05:30:48 2015 +0000
+
+    extract example.c into its own file and include
+
+commit 81187629c31c71174e233e082937a066471df911
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 05:14:21 2015 +0000
+
+    extract more api data via some doxy settings and test to comments
+
+commit 4a5b360847ed4e16680cf5bdec8dfa674a0c8119
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 03:07:36 2015 +0000
+
+    home sweet home
+
+commit 1af91f985c3a5e301bc18648f03ed08e6f134bd1
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 02:03:48 2015 +0000
+
+    add example
+
+commit f62049e4d250265d3e02c8424cfa123e8c7175a8
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Thu Mar 5 01:19:03 2015 +0000
+
+    add basic pages and install
+
+commit 334a09b1cf7586bc76fe8e1ef7e1c20baafb5f5c
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Wed Mar 4 23:36:33 2015 +0000
+
+    Add quickref.html to doxygen build site
+
+commit 1e60415120a82c6429c61a2250fd2b002cfbae44
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Wed Mar 4 22:58:32 2015 +0000
+
+    Add layout dile for doxygen with links to websites
+
+commit 9488c2fdb761d8344b08f5129b6cda52f09343f8
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Wed Mar 4 22:38:56 2015 +0000
+
+    Read doxygen version from version.txt file
+
+commit c8506c3095002662787c5ae4f9603c51518e4fe1
+Author: Pedro &lt;pete _at_ daffodil _dot_ uk _dot_ com&gt;
+Date:   Wed Mar 4 22:36:10 2015 +0000
+
+    Read doxygen version from version.txt file
+
+commit 606ffebd478843ee7bba73b3ea809dd60bbd4f8c
+Author: geoff
+Date:   Wed Mar 4 19:38:59 2015 +0100
+
+    Issue #168 - Fix for access test 5.2.1.2
+
+commit 2fef5ba820b4d84beda1e2bf913dc4f930946a2c
+Author: geoff
+Date:   Wed Mar 4 19:33:34 2015 +0100
+
+    Adjust to new exe cmake build location
+
+commit 2e383c602957245ff4bc566d1760b525924234cb
+Author: geoff
+Date:   Sat Feb 28 20:32:38 2015 +0100
+
+    bump version for fix of Issue #167
+
+commit 86f626cd674d09c9215c59c4cdad1d4e7887e00b
+Author: geoff
+Date:   Sat Feb 28 20:30:56 2015 +0100
+
+    Issue #167 - revert anchor tag to inline only
+
+commit 0b4fc1b6bb7defcb6c18b60eeab504b82597cb29
+Author: geoff
+Date:   Fri Feb 27 18:36:38 2015 +0100
+
+    Small fix in test 505770
+
+commit 6497e7b2019ffb8d3bfe9b138216dd4a0b6d11e6
+Author: geoff
+Date:   Fri Feb 27 17:50:43 2015 +0100
+
+    correct spelling and add options
+
+commit fb29686a2ed241069f3a6455927898e6fcf7dc6c
+Merge: a968a09 a9361a1
+Author: geoff
+Date:   Fri Feb 27 12:53:53 2015 +0100
+
+    merge of develop-500 into master
+
+commit a9361a1c5b286b30ff31c571a855de8f3d359ec5
+Author: geoff
+Date:   Tue Feb 24 17:53:58 2015 +0100
+
+    bump version for #162 fix
+
+commit 4b2943edb32e300675ab1233a79fe749fb3d98b3
+Author: geoff
+Date:   Tue Feb 24 17:47:09 2015 +0100
+
+    Issue #162 - fix for this while hopefully maintaining #111 fix.
+    
+    The fix for #111 added an end tag for all StartEnd tags, when outputting
+    HTML5, but there should be some exceptions to this.
+    
+    Added a new service, isVoidElement(node) for the void elements. Perhaps
+    this service could be further optimised.
+
+commit 25d38e1dcf7dfd26a5eed2c16e6a3483d85a6420
+Author: geoff
+Date:   Tue Feb 24 15:07:36 2015 +0100
+
+    bump version for fix to Issue #166
+
+commit cfffe7765ffee43f6616c2ad4528ba28e5dd32d6
+Author: geoff
+Date:   Tue Feb 24 14:58:43 2015 +0100
+
+    Issue #166 - repeated main element.
+    
+    With this fix introduced two new services, FindNodeById and
+    FindNodeWithId. The former does a total tree search for a TidyTagId.
+    
+    Maybe there is a way to optimise this search...
+    
+    Also change the uint badForm from an on/off to a bit field, so could be
+    extended to other document format errors.
+
+commit a5629443e6d7ce24697fd33e90bb94c472d1ef49
+Author: geoff
+Date:   Tue Feb 24 13:20:26 2015 +0100
+
+    Just improve some debug output
+
+commit 70d7e58d8d516d5e60fdd7b0c41ac24a43646ebb
+Author: geoff
+Date:   Sun Feb 22 20:53:14 2015 +0100
+
+    Add macro nodeIsMAIN(n)
+
+commit 0aa81eb256dae0777df7055ba07eb6a0f14687ae
+Author: geoff
+Date:   Sun Feb 22 18:44:14 2015 +0100
+
+    Issue #130 - MathML attr and entity fix!
+    
+    This is a set of kludgy fixes for MathML attribute and entities support.
+    
+    It is intended that a full HTML5 entity table be added at some time, but
+    at present ALL entities are accepted as written when within the math
+    element.
+    
+    Likewise all attributes are accepted on MathML elements without any check
+    of their name or value, even if they match attributes outside MathML.
+    
+    And in the pprinter such entities are written as is from the lexer, using
+    a new PPrintMathML service added, using the new mode OtherNameSpace.
+    
+    It is hoped all these fixes will NOT effect tidy outside the math element.
+    
+    ALL fixes in the set a clearly marked '#130 - MathML attr and entity fix!'
+    for easy searching, and improving if possible.
+
+commit 84f1f4351b895f2f88732b4ead8cbf7a33f21961
+Author: geoff
+Date:   Sun Feb 22 18:42:55 2015 +0100
+
+    add install to build
+
+commit 3871707d6bba2eaba68f845f646fb96c24df11c4
+Merge: 339f493 fe51244
+Author: geoff
+Date:   Sun Feb 22 13:25:17 2015 +0100
+
+    Merge pull request #165 from fred-wang/lang-rang
+    
+    Use HTML5 mapping for entities &amp;lang; and &amp;rang;
+
+commit fe51244d4a973c789ca4cd12283cdb6027456380
+Author: Frédéric Wang &lt;fred _dot_ wang _at_ free _dot_ fr&gt;
+Date:   Sat Feb 21 19:33:24 2015 +0100
+
+    Use HTML5 mapping for entities &amp;lang; and &amp;rang; (http://www.w3.org/TR/xml-entity-names/#diff-xhtml1). #130
+
+commit 339f493e0d65e13f206b6a09d946e7bf8d93af8f
+Author: geoff
+Date:   Thu Feb 19 19:17:13 2015 +0100
+
+    remove destructive drop-fonts-tags option from default
+
+commit b144b834cd73bf148cee79b2a619f66dc65deedf
+Author: geoff
+Date:   Thu Feb 19 19:14:40 2015 +0100
+
+    Add a show_all_nodes debug service
+
+commit 94c38e4d2be1fb80c0ef0a1ce46e43560fbed6c6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 13:55:39 2015 +0800
+
+    .gitignore cleanup
+
+commit acc116477de3ef6e02f9f1c9616f2c09d2a4c976
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 13:50:05 2015 +0800
+
+    Github hates definition lists.
+
+commit 698768391e6972ff506b721692f1513802fac025
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 13:39:37 2015 +0800
+
+    Removed obsolete output directory.
+
+commit 96349aedd5a73edf68aab4d9210b318558cf146f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 13:38:16 2015 +0800
+
+    Simplified document build system to single file. Updated README.
+
+commit 07f90ccc81350a1b74df01a8923ede7b029f3082
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 12:12:15 2015 +0800
+
+    Moved htmldoc to build/documentation
+
+commit 99eb5c9e3e28f55fac6d4bddf5ce110575fa93e7
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 12:08:18 2015 +0800
+
+    Removed unneeded quickref.css -- now built into the xslt.
+
+commit 0b910e042058cafc9e1225de7406b39587b0156a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 12:07:29 2015 +0800
+
+    Removed in-source build of documentation.
+
+commit fc0ec7c1cfebba9c23d0543401e6d41df150f440
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Feb 14 12:06:58 2015 +0800
+
+    Removed external stylesheet dependency.
+
+commit 6e3b29398556c3f2040974e789678b44d339fb39
+Author: geoff
+Date:   Fri Feb 13 18:37:07 2015 +0100
+
+    Issue #130 - Add TidyAttr_DISPLAY for math tag
+
+commit cb0b61da702f570576aa583eec1f40c545562e11
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 13 19:43:40 2015 +0800
+
+    Access test tidy path.
+
+commit ca2324ac7c797ef449930b996615704bc499059f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 13 19:19:51 2015 +0800
+
+    Changed text to point to html-tidy.org
+
+commit 04f68a032ff6c6702fbf99423d376bc7cfec2552
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 13 19:17:25 2015 +0800
+
+    Changed text to point to html-tidy.org
+
+commit 212db633f861192118822f71e097352e85a26817
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 13 15:13:31 2015 +0800
+
+    New API documentation generated. README with instructions. Updated doxygen.cfg to current version. Fixed broken doxygen paths. Added shell scripts to build quickref and tidy.1.
+
+commit d9ceece50daa0b328cca29214ca4e1f83f3e82b3
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 13 15:10:59 2015 +0800
+
+    Ignore Mac OS X .DS_Store files.
+
+commit ca9eb839aabb4eec20538b8bf25f4f9937c83a07
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 13 10:35:14 2015 +0800
+
+    Changed license to markdown.
+    Moved license to top level.
+    Purged outdated documentation files.
+
+commit 7bf364624f1c43b364f7ac88ad6d284aab64897c
+Author: geoff
+Date:   Thu Feb 12 15:38:06 2015 +0100
+
+    bump version for hopefully better fix of #133
+
+commit cff3fdd30846fdd5d24274f0d9921aa5b5847007
+Author: geoff
+Date:   Thu Feb 12 15:20:16 2015 +0100
+
+    Issue #133 - hopefully a better fix.
+    
+    As predicted the previous fix had adverse consequences on say script text,
+    which then lost the indent, and was reverted.
+    
+    This introduces a new service, nodeIsTextLike, which naturally returns yes
+    if it is text, but also is an AspTag.
+    
+    Maybe other text like nodes need to be added.
+
+commit 5d2cbd10dc1b56362553dac1e9188b74b5ea1e9e
+Author: geoff
+Date:   Thu Feb 12 14:56:51 2015 +0100
+
+    Revert &quot;Issue #133 - ever increasing indent!&quot;
+    
+    This reverts commit 0f80c083559265a99c24d1f7833fb4fafb0a84ab.
+    
+    This commit had other BAD consequences
+
+commit b14e3a3a1db10ce7e36c03f4bfc9811193505bcc
+Merge: ebc8dce 071407b
+Author: geoff
+Date:   Thu Feb 12 13:32:55 2015 +0100
+
+    Merge branch 'develop-500' of github.com:htacg/tidy-html5 into develop-500
+
+commit ebc8dce0aaa8ea4ef62df8c9738b95751735be23
+Author: geoff
+Date:   Thu Feb 12 13:32:30 2015 +0100
+
+    remove development stuff from build script
+
+commit a968a09de2dc461d5f8dadab48ce3bdfd289720b
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Feb 12 20:11:06 2015 +0800
+
+    Update README.md
+
+commit 071407bc249942f694c2268ac20853ec72195dff
+Merge: ea50bd3 3ff823e
+Author: geoff
+Date:   Tue Feb 10 15:32:29 2015 +0100
+
+    Merge branch 'develop-500' of github.com:htacg/tidy-html5 into develop-500
+
+commit ea50bd30e7678771e37f4a0c157c712574ebded6
+Author: geoff
+Date:   Tue Feb 10 15:32:05 2015 +0100
+
+    add comment only for potential fix of Issue #8
+
+commit 8b362b5f37392bd7be50366a6d2f20a1f3a98282
+Author: geoff
+Date:   Tue Feb 10 15:30:35 2015 +0100
+
+    bump point on revert to 880221e fix this issue #20
+
+commit 279c29bf8d7ad835f017d4d761629bfebfd7800f
+Author: geoff
+Date:   Tue Feb 10 15:28:56 2015 +0100
+
+    Issue #20 - revert to 880221e fix this issue
+
+commit 3ff823e766eb2eaaddd9b64add0f8d1010de0256
+Author: geoff
+Date:   Sat Feb 7 15:51:35 2015 +0100
+
+    ignore test71 build
+
+commit d2cc284456e5e9c1961613620ac83c5c9256333e
+Author: geoff
+Date:   Sat Feb 7 15:50:00 2015 +0100
+
+    allow additional commands
+
+commit 4bb9418c7c0d3ac1baa8c5319539923ac90e378b
+Author: geoff
+Date:   Sat Feb 7 15:33:13 2015 +0100
+
+    add small 'sample' API use, optional build
+
+commit 53dda446d404607a27275454a85fbaed7e523ac8
+Author: geoff
+Date:   Sat Feb 7 15:31:26 2015 +0100
+
+    allow for additional command line input
+
+commit 97470ce459a069540d08fa54420783a9840912f9
+Author: geoff
+Date:   Sat Feb 7 13:57:31 2015 +0100
+
+    bump version for issue #155 fix
+
+commit cbd9eb79038fa33b749e0053319aee16d2c7bb99
+Author: geoff
+Date:   Sat Feb 7 13:56:13 2015 +0100
+
+    Issue #155 - issue warnings unless --show-body-only yes
+
+commit 0cf21fb5590e85d733acae3e08a4530ecf433c0c
+Author: geoff
+Date:   Sat Feb 7 13:43:09 2015 +0100
+
+    bump to 4.9.12 for addition of picture element
+
+commit b26291ec6b9c555dddf651948e3eb33c61cbb0de
+Author: geoff
+Date:   Sat Feb 7 13:39:16 2015 +0100
+
+    Issue #151 - Initial implementation of picture element.
+    
+    TODO: check, verify the picture attribute list.
+
+commit bef3b08c186a247c8ec78d302a70258032780191
+Author: geoff
+Date:   Fri Feb 6 19:26:45 2015 +0100
+
+    bump point to 11 for adding srcset and sizes attr to img
+
+commit d72e681d324b5c5795cf0fdcaa2e6a1aa30c6888
+Author: geoff
+Date:   Fri Feb 6 19:24:04 2015 +0100
+
+    Issue #152 - add srcset and sizes to img tag
+
+commit 906d858f9ea29fe4c669e741eedfd48af7f43ce5
+Author: geoff
+Date:   Thu Feb 5 19:03:25 2015 +0100
+
+    bump version point for endif section fix
+
+commit 2172a498f63c67b55cd0e9ef1e5fe717a52e3e83
+Author: geoff
+Date:   Thu Feb 5 19:01:34 2015 +0100
+
+    Issue #153 - fix for endif section no conforming to what tidy expects
+
+commit 66951a562a6bd110f00e3b0969f915d0e20e821a
+Author: geoff
+Date:   Thu Feb 5 18:24:02 2015 +0100
+
+    add row/col to DEBUG output
+
+commit 383a901990e93ed08ca7e26d51238784828ce927
+Author: geoff
+Date:   Thu Feb 5 12:22:14 2015 +0100
+
+    bumped version point for MathML support
+
+commit 1be5ccbb63ee8e599d022da3a90b6d93fd31e40f
+Author: geoff
+Date:   Thu Feb 5 12:21:08 2015 +0100
+
+    Issue #130 - initial MathML support
+
+commit 5f470763c505cd33c3f3ffc8726f84970a10222e
+Author: geoff
+Date:   Tue Feb 3 13:39:51 2015 +0100
+
+    bump point of Issue #149 fix
+
+commit 698396eaa04ee014714d4fd0ad4c44c1d3df5564
+Author: geoff
+Date:   Tue Feb 3 13:38:20 2015 +0100
+
+    Issue #149 - avoid crash on null attr value
+
+commit d38c5c5d78d0406c24490c85924fc926481c07a3
+Author: geoff
+Date:   Mon Feb 2 17:37:49 2015 +0100
+
+    bump version point for this svg support
+
+commit 885c7caab7cd2fc2ea550662dbb325d2fd5f17cc
+Author: geoff
+Date:   Mon Feb 2 17:25:49 2015 +0100
+
+    Issue #70 - Initial implmentation of SVG support.
+    
+    An immense thanks to Ger Hobbelt who had already done this
+    in his github.com/GerHobbelt/htmltidy fork.
+    
+    The two sources have diverges so was not a simple cut
+    an paste. But again thanks Ger for this.
+
+commit 201f3cb49eec17ba00c1cd7797727dfe4871e99c
+Author: geoff
+Date:   Sun Feb 1 18:36:30 2015 +0100
+
+    bump version point for fix of Issue #126
+
+commit 63c6671f590df9fd03ec45a166fc9bbfcebb5a8d
+Author: geoff
+Date:   Sun Feb 1 18:35:28 2015 +0100
+
+    Issue #126 - partial fix for indenting style
+
+commit 8497326dc3a61a441096e922a8cf27064bc55f41
+Author: geoff
+Date:   Sun Feb 1 16:08:31 2015 +0100
+
+    bump version point on Issue #132 fix
+
+commit 7a3afd41ca410837e463c7191abd2cc7f16e0911
+Author: geoff
+Date:   Sun Feb 1 15:41:52 2015 +0100
+
+    Issue #132 - avoid warning if configured to omit-optional-tags.
+    Difficult decision to avoid head warning.
+
+commit 3e0cfbb88dc152964a53b3745f9eae1c95d6c0a5
+Merge: 22a3924 3c721d8
+Author: geoff
+Date:   Sun Feb 1 14:40:30 2015 +0100
+
+    Merge branch 'develop-500' of github.com:htacg/tidy-html5 into develop-500
+
+commit 22a39244840a5614aaf4a4704f903ddb7c76562b
+Author: geoff
+Date:   Sun Feb 1 14:39:51 2015 +0100
+
+    Bump point to 4 for this Issue #133 fix
+
+commit 0f80c083559265a99c24d1f7833fb4fafb0a84ab
+Author: geoff
+Date:   Sun Feb 1 14:27:02 2015 +0100
+
+    Issue #133 - ever increasing indent!
+    This is a simple but profound change in pprint.c.
+    Since leading space is preserved on script code, after tidy indents
+    the code once, a second run on that tidied file would add more indent
+    to already indented code. This fix should be carefully checked,
+    and removed if there are other bad consequences.
+    Bump the version point to 4 for this change.
+
+commit 3c721d8bf871b1a930727191187a103f9d3497c9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Feb 1 21:16:17 2015 +0800
+
+    #72, avoid showing some warnings when show-body-only.
+
+commit e6930feb02dfe1d6b60463322c77a0ae1cab5897
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Feb 1 19:28:38 2015 +0800
+
+    Fixes #78 by treating canvas as a block level tag.
+
+commit 6f9dc2327ed2c61bd375e7815efe855b6bcf33bb
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Feb 1 18:46:31 2015 +0800
+
+    Fix for #103 - don't drop empty dd tags.
+
+commit 5897b66e1e6c7cd3f192a0199f6c5d07afa5431a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Feb 1 18:09:17 2015 +0800
+
+    Fixed #42.
+
+commit de97628f8fa2248f36db41fc0f509becd98ba609
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Feb 1 14:20:41 2015 +0800
+
+    Deprecated tidyReleaseDate(). Returns epoch time (tdb). Removed dates from help, manpage, output, cmake, etc.
+
+commit 72c23bed534e8519b1e70213f456d62f17b62ecf
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Feb 1 11:31:48 2015 +0800
+
+    Removed xcode project
+
+commit 049272ce58d6d9a5c84b8a818ea5d25708fc1539
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Feb 1 00:03:04 2015 +0800
+
+    Added a clean Xcode project for Mac OS X.
+
+commit 362c71ee2ed8da57ee2ad9c919ba871a1b36a082
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Jan 31 18:11:26 2015 +0800
+
+    Added build date to version.txt and use CMakeLists.txt to build that, too.
+
+commit e112abfea20826f56538580a2ff4183a9a3a8b54
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Jan 31 18:09:33 2015 +0800
+
+    Removed unnecessary README.html (redundant).
+    Updated README.md for legibility. Will add deleted credits to documentation.
+
+commit e2cbd9e89fc3a73e25b7abd4f59d3a1eccaca035
+Author: geoff
+Date:   Thu Jan 29 18:25:57 2015 +0100
+
+    Move version out to a version.txt file
+
+commit 0eb1407818bce06e179ec0315745d14dbd32320d
+Author: geoff
+Date:   Thu Jan 29 18:25:19 2015 +0100
+
+    Issue #102 - fix this regression bug
+
+commit 85070acd8c6ef444e155bdd42183ea269d7e38b3
+Author: geoff
+Date:   Wed Jan 28 17:15:44 2015 +0100
+
+    fix windows DLL build
+
+commit 59974e0bb0003a61df73c95a95a9d9452e7362d6
+Author: geoff
+Date:   Wed Jan 28 12:15:27 2015 +0100
+
+    When adding meta element for Tidy prefer library version over date
+
+commit ec4d4cd1f1653649e8de87498ea66a82907f06f9
+Author: geoff
+Date:   Wed Jan 28 11:48:29 2015 +0100
+
+    Issue #92 - OLD problem of ins and del
+    These are marked as CM_INLINE, but also CM_BLOCK,
+    so should not be stacked for insertion
+
+commit d905b1037f98068da1c1b7f6ea3319ee73b69bfb
+Author: geoff
+Date:   Tue Jan 27 19:11:01 2015 +0100
+
+    Back up version to 4.9.1
+    Need to be able to clearly separate versions as we move forward towards
+    the final 5.0.0 release... Will try to remember to bump the point
+    as each fix is added so issue reports can be clear in which
+    version the problem exists.
+
+commit 11d8dbd952102a920b23b56ccdf2d1e74090c0c6
+Author: geoff
+Date:   Tue Jan 27 18:09:32 2015 +0100
+
+    add convenient updexe.bat, until install used...
+
+commit f83c604ad04341a216d85c151367d6fd1c5416eb
+Author: geoff
+Date:   Tue Jan 27 18:07:56 2015 +0100
+
+    add some more messy debug output
+
+commit acdaa6769652476d495cb49a3ada1beceaf03017
+Author: geoff
+Date:   Tue Jan 27 18:06:55 2015 +0100
+
+    small adjust in updexe.bat
+
+commit 9fb90f55d4e29dd26c0f63380b6dca0fdb2fd093
+Author: geoff
+Date:   Mon Jan 26 12:23:41 2015 +0100
+
+    Oops, that fix should be after a potential new line in head
+
+commit 813f1c8a13a5aef91d54aaba8f706b05e4540e91
+Author: geoff
+Date:   Sun Jan 25 21:00:13 2015 +0100
+
+    Issue #56 - long outstanding bug on script tag
+    Added a PCondFlushLine before emitting the script tag
+    Certainly looks better, but need to check for any regression
+
+commit f1297f718c9e95b1dbd430af8a72710441f77dc0
+Author: geoff
+Date:   Sun Jan 25 20:18:36 2015 +0100
+
+    remove a msvc warning
+
+commit 60d8271ecf52a8f9af8e88b49c176875a1797fff
+Author: geoff
+Date:   Sun Jan 25 20:10:41 2015 +0100
+
+    Issue #132 - no warning when inserting a BODY tag
+
+commit 27bc76732551ab75b4491dc0c030f4b0ef170331
+Author: geoff
+Date:   Sat Jan 24 16:39:57 2015 +0100
+
+    Fix some more info messages
+
+commit ff947e036e4ee50bfdd8bb6f74d8919b11917130
+Author: geoff
+Date:   Sat Jan 24 15:34:17 2015 +0100
+
+    correct spelling
+
+commit b0bfed61062461a68b355eb744085c6ca1a07442
+Author: geoff
+Date:   Sat Jan 24 15:16:20 2015 +0100
+
+    Show not only 'expected', add 'got'
+
+commit 182720be857f9df537390e15f20b6bd68a31f1cb
+Author: geoff
+Date:   Sat Jan 24 13:25:27 2015 +0100
+
+    adjust clean up text to match new names
+
+commit ef69056959452e5dbb9b4b97b2c928085a315bfe
+Author: geoff
+Date:   Sat Jan 24 13:21:33 2015 +0100
+
+    seems windows has no problem with unix set_target_properties
+
+commit d37c7e7cabe6862c9cce27415e7c0e58a1b9a5eb
+Author: geoff
+Date:   Sat Jan 24 13:15:02 2015 +0100
+
+    ignore changed lib name
+
+commit aa32c5e5573dc386cf916c2c2b04881ec376339a
+Author: geoff
+Date:   Sat Jan 24 13:14:12 2015 +0100
+
+    change library name to 'tidy5'
+
+commit 1262dcc71116e8b75d08fb4cc19818f36c8ea035
+Author: geoff
+Date:   Sat Jan 24 12:40:55 2015 +0100
+
+    remove this now OLD patch
+
+commit 23cc4c04323e46405e3652ca24daae1c4927d4ba
+Author: geoff
+Date:   Fri Jan 23 20:29:43 2015 +0100
+
+    remove some deleted folders
+
+commit 4a3f5ecf0736849e2d0c87ba42583a13b4124638
+Author: geoff
+Date:   Thu Jan 22 13:40:50 2015 +0100
+
+    make this version 5.0.0
+
+commit 7c1211c879146120a8d5ba4ce9cff21a1a0faacf
+Author: geoff
+Date:   Thu Jan 22 13:11:16 2015 +0100
+
+    return info message to former glory
+
+commit daee86302a6b177653ae1e80f3a2b2d1c96e5410
+Merge: 8b454f5 ce7c705
+Author: geoff
+Date:   Wed Jan 21 17:34:01 2015 +0100
+
+    merge with tidy-fork/geoffmcl-restart branch
+
+commit ce7c70532c2dd1f60f042cc1e0d185cf5717fcfd
+Author: geoff
+Date:   Tue Jan 20 18:10:57 2015 +0100
+
+    Remove what seems like a regression
+
+commit f884da577d20d5c52791957d6eaf0c96a3b33ecb
+Author: geoff
+Date:   Tue Jan 20 18:10:13 2015 +0100
+
+    Small fix for TidyAttr_ASYNC to CH_BOOL
+
+commit 0fc802960017f37529a939f01988590d4b61f04f
+Author: geoff
+Date:   Tue Jan 20 18:09:01 2015 +0100
+
+    adjust the version
+
+commit 3f46000197bfe505545716346edfa0d0c53cc6f6
+Author: geoff
+Date:   Sun Jan 18 20:59:27 2015 +0100
+
+    add allowfullscreen attribute exception
+
+commit 82fc65686378be7526249b92ddf9214a314bb8f8
+Author: geoff
+Date:   Sun Jan 18 14:46:12 2015 +0100
+
+    exception attr tabindex can begin with '-'
+
+commit 995a6122f2ec9b6e9e787983cd5ed6498fed5c7a
+Merge: 48da10c 935f775
+Author: geoff
+Date:   Sun Jan 18 12:25:20 2015 +0100
+
+    merge with with balthisar/tidy-html5 repo
+
+commit 935f775a476655320670b635a7b1f13b79777000
+Author: geoff
+Date:   Sat Jan 17 19:31:25 2015 +0100
+
+    remove ALL old build systems
+
+commit 43cdfd9c6532b86e0f5fe9a18387975e54283255
+Author: geoff
+Date:   Sat Jan 17 19:30:44 2015 +0100
+
+    Merge README files
+
+commit 8b454f53c6c5b0462677271d7bc8ec319d690c54
+Merge: 0cf6d99 1e1f4f0
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Jan 16 09:12:10 2015 +0800
+
+    Merge pull request #140 from sebgod/patch-2
+    
+    README.md: Code highlighting now balanced
+
+commit 1e1f4f0685aaec178474270e7711a9993af0ec3a
+Author: Sebastian Godelet &lt;sebastian _dot_ godelet _at_ outlook _dot_ com&gt;
+Date:   Fri Jan 16 08:37:30 2015 +0800
+
+    README.md: Code highlighting now balanced
+
+commit 48da10c0aab328be6dd3ce34bbb74225de2d1b62
+Author: geoff
+Date:   Fri Dec 5 18:51:26 2014 +0100
+
+    trash lots of old build stuff
+
+commit 4dfb825a0b3c9e0758387ef37ff7281851b15f16
+Author: geoff
+Date:   Fri Dec 5 18:47:45 2014 +0100
+
+    remove OLD readme.txt
+
+commit e0041162e8d0d4460dcb89969e0b809d36b06323
+Author: geoff
+Date:   Fri Dec 5 18:44:35 2014 +0100
+
+    ignore *.bak files
+
+commit c08894195eae1969d47ea0744d40bc2922fb2fc3
+Author: geoff
+Date:   Fri Dec 5 18:43:42 2014 +0100
+
+    continue process of cleaning up build instructions
+
+commit f6f807be1a9c67088698f71a1dda33b82df90f69
+Author: geoff
+Date:   Fri Dec 5 18:01:16 2014 +0100
+
+    some relining
+
+commit 24f4f89c9552e562215719c51adeed88bed011d0
+Author: geoff
+Date:   Fri Dec 5 17:57:07 2014 +0100
+
+    Commence to clean up the build instructions
+
+commit 06189c60337cf2b710406f1f29604fc47d59759a
+Author: geoff
+Date:   Thu Nov 27 16:43:25 2014 +0100
+
+    remove old Makefile
+
+commit e026b8ff3c3ac2a6f1953dfe0af722fed3f86b43
+Author: geoff
+Date:   Thu Nov 27 16:41:42 2014 +0100
+
+    add cmd file to test one html file
+
+commit b8608380a20c748618120355ba94062a7131e781
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 20:44:38 2014 +0800
+
+    Add support for 'role' attribute. #115
+
+commit 08d490f406dc325cc8f853218094b801d828bf5b
+Merge: edb185a 3d4c402
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 20:08:00 2014 +0800
+
+    Print end tag for self-closing tag #113
+
+commit edb185a3082f58ff9e07a4fda0d937b9ce1d2661
+Merge: 9a0b05c 7fc3255
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 19:39:06 2014 +0800
+
+    Use a hash table for anchors #64
+
+commit 9a0b05cb69286ff507b0461f3ffb91ad10a3fb11
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 19:32:30 2014 +0800
+
+    Added HTML Microdata (itemprop, etc.) support.
+
+commit 77548028844475c6dc8dc95d77fe7cd01d6fc6e9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 17:39:17 2014 +0800
+
+    Updated Aria attributes to geoffmcl's added tags; added missing aria-orientation.
+
+commit e4f7aa074881d1158cb7c41454cca61f12a7fa3b
+Merge: e279302 27d8ca6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 17:38:22 2014 +0800
+
+    Merged changes from andrewle, #96, support Aria attributes.
+
+commit e279302eafe48e6327424d7996bff54831b5f59b
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 15:43:11 2014 +0800
+
+    Added TidyReportFilter2
+
+commit 6aaf826476c497ac995423d52e9b6a74dfb6881a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Nov 22 15:42:28 2014 +0800
+
+    Restart with geoffmcl's fork
+
+commit 0f04eaa7d61cae8e7233fcd2c6d01e025dc84a36
+Author: geoff
+Date:   Sun Sep 14 20:53:34 2014 +0200
+
+    Remove debug alloc msgs, and show attributes
+
+commit 2faeefbc228d00e81e124d5f99755ba1fee242b1
+Author: geoff
+Date:   Sun Sep 14 20:52:30 2014 +0200
+
+    Remove append to log for debug
+
+commit 20da40d2e8c9d8ceb7168f837a9ff6c7341e884f
+Author: geoff
+Date:   Sun Sep 14 19:06:19 2014 +0200
+
+    Always show DOCTYPE found
+
+commit a08c7c9444bcae919c0d2c4e5e31a56498741e74
+Author: geoff
+Date:   Fri Aug 8 19:52:03 2014 +0200
+
+    add marquee test
+
+commit 6c37493c75f28bb5833434c0a97933663affa71e
+Author: geoff
+Date:   Fri Aug 8 19:20:28 2014 +0200
+
+    get list of tags WITHOUT HT50 version
+
+commit 277db6e1458c9d886309c61bf0efc1fbef6938d9
+Author: geoff
+Date:   Fri Aug 8 18:12:44 2014 +0200
+
+    add teststrile and adjust files to local context
+
+commit 09f0ec136bd2d1ddeb5b81e849f5da762ca6fe48
+Author: geoff
+Date:   Fri Aug 8 18:00:08 2014 +0200
+
+    ignore all *.bak files
+
+commit 0674fcaf6119bd67fe286ef8e6c4a4306de4cbed
+Author: geoff
+Date:   Fri Aug 8 17:55:56 2014 +0200
+
+    Some more README updates
+
+commit 8ec8fd9302c2978088470dda2c3f191c09423438
+Author: geoff
+Date:   Fri Aug 8 17:50:12 2014 +0200
+
+    add some more HTML4 to HTML5 test files
+
+commit 5e718329b3b289913fd152f3785f1c52a2706e42
+Author: geoff
+Date:   Fri Aug 8 17:15:44 2014 +0200
+
+    just to update exe to my C:/MDOS folder
+
+commit 786b6a99a9968933c65693c309927062a71e57fb
+Author: geoff
+Date:   Fri Aug 8 17:14:28 2014 +0200
+
+    raft of changes to CheckHTML5, and clean
+
+commit 7a6a86503ec2897bb4885adb718f99734187ee17
+Author: geoff
+Date:   Thu Aug 7 14:09:48 2014 +0200
+
+    Update some more information strings to suit this fork
+
+commit 18ef6b6aa2beddabeb831ff0a7b761795ada5f5a
+Author: geoff
+Date:   Wed Aug 6 19:22:28 2014 +0200
+
+    lose the word 'experimental' and bring help text inot line with this fork
+
+commit ec9249f3ad9c5199beeadbbeaeb203dcb0ef2424
+Author: geoff
+Date:   Wed Aug 6 16:17:37 2014 +0200
+
+    yet another item to ignore
+
+commit 6acff15b674d24edd6b707d66da5ff54150fd92a
+Author: geoff
+Date:   Wed Aug 6 16:16:28 2014 +0200
+
+    show debug output file
+
+commit c5e6e922ce55bbf256b077427522ecd7cde5afff
+Author: geoff
+Date:   Wed Aug 6 15:34:37 2014 +0200
+
+    bump the build day
+
+commit 9999a9695ab820c3810e55c2477f6a2acd25ec01
+Author: geoff
+Date:   Wed Aug 6 15:33:42 2014 +0200
+
+    ignore the msvc ipch folder
+
+commit b57a230f335c4590f0ce6531102e814dc0eb1d83
+Author: geoff
+Date:   Wed Aug 6 15:07:00 2014 +0200
+
+    Detect 64-bit, and set WIN64 for windows
+
+commit 19d2f034483c6f344cd9bf5a15f3593bfca75246
+Author: geoff
+Date:   Wed Aug 6 14:56:08 2014 +0200
+
+    clean up install manifest
+
+commit 3f0ecbfbae0711bb47345aaa5fa8b3e7e57d0379
+Author: geoff
+Date:   Wed Aug 6 14:39:55 2014 +0200
+
+    ignore install manifest
+
+commit aeb74e923858c463ea42f8de7fb9e8fea2a73602
+Author: geoff
+Date:   Wed Aug 6 14:38:21 2014 +0200
+
+    set install to local folder for testing
+
+commit 8b73e96eae05f7a7c866780a7219fff1c4caf3a0
+Author: geoff
+Date:   Wed Aug 6 14:36:33 2014 +0200
+
+    set SOVERSION for install
+
+commit 2904dcd03e16fe43411a34890d0b72b359f0b6b7
+Author: geoff
+Date:   Wed Aug 6 13:00:02 2014 +0200
+
+    ignore win64 built products
+
+commit c37297427c6ab1b4d50a13b299cb29b5dcc494dc
+Author: geoff
+Date:   Wed Aug 6 12:55:23 2014 +0200
+
+    clean up shared library
+
+commit f65cdc6af3f1f557968341779b86063bafa75aa6
+Author: geoff
+Date:   Wed Aug 6 12:54:39 2014 +0200
+
+    ignore built shared library
+
+commit db0770ab8b5b9a4f617c3a75aefb8f26bba97a0c
+Author: geoff
+Date:   Wed Aug 6 12:51:04 2014 +0200
+
+    default to shared library for unix
+
+commit b940ad595607d787f948c9bc729a93ee701360e7
+Author: geoff
+Date:   Wed Aug 6 12:50:06 2014 +0200
+
+    fix GTDBG macro for gcc
+
+commit 32836fd2189afef8dc538b8dcf299b9b9fdbf77b
+Author: geoff
+Date:   Wed Aug 6 12:12:49 2014 +0200
+
+    add output to compare script
+
+commit d64dbf5ea105a2eacc2d88bd8e810295813cdf5e
+Author: geoff
+Date:   Wed Aug 6 12:10:29 2014 +0200
+
+    Add a Windows 64-bit build
+
+commit 2a134030ec4b1607711c3e081d330c91ce19fc82
+Author: geoff
+Date:   Wed Aug 6 12:09:13 2014 +0200
+
+    Add install to cmake
+
+commit 885cace8e89a089354425479dae6bc6f9f191374
+Author: geoff
+Date:   Tue Aug 5 19:08:53 2014 +0200
+
+    soem tweaks to the shell test scripts
+
+commit 90ddaa3662fdccc8047673fe774f45f206b10ba7
+Author: geoff
+Date:   Tue Aug 5 16:36:37 2014 +0200
+
+    finalize lexer.c
+
+commit 5a3dbd5383399e4a8c606597ea20489559682a7b
+Author: geoff
+Date:   Tue Aug 5 15:42:43 2014 +0200
+
+    small FIX that makes a BIG difference
+
+commit d15ffb026b6a3777b0fd23185d8a6408b520d22d
+Author: geoff
+Date:   Tue Aug 5 13:25:27 2014 +0200
+
+    add a README for the HTML4 to 5 tests
+
+commit 1a3fda1c335f280a7305bf336b7210ba4f2fcb12
+Author: geoff
+Date:   Tue Aug 5 13:11:09 2014 +0200
+
+    add a html4 removed tags test folder
+
+commit 4b371a4bc77c9c46df8e0c6622538de2d29c6882
+Author: geoff
+Date:   Tue Aug 5 13:09:44 2014 +0200
+
+    add a cleanup bach file
+
+commit a51d9a8a6933ffdf60aecb727dd6ec21ba4c0173
+Author: geoff
+Date:   Tue Aug 5 13:08:24 2014 +0200
+
+    minor changes in batch file
+
+commit 9544d442af16443415b5617800885d0c00615bed
+Author: geoff
+Date:   Tue Aug 5 12:28:43 2014 +0200
+
+    add a README for the HTML5 tests
+
+commit ec35caf1f38340791ddb0ae3a885d045f5c193ce
+Author: geoff
+Date:   Mon Aug 4 17:02:54 2014 +0200
+
+    add more 'ugly' diagnostic code to chase down a BUG
+
+commit 51f87aee07729c4762657bb7c82bcb568719947a
+Author: geoff
+Date:   Mon Aug 4 17:02:16 2014 +0200
+
+    some improvement in the test cmd file
+
+commit 246a8d7e5c8f4c55a06a43ec62857b73dd485d79
+Author: geoff
+Date:   Mon Aug 4 17:01:27 2014 +0200
+
+    ignore some more
+
+commit 50e2e56703e02ce350e7ce2e245c775e6d744c80
+Author: geoff
+Date:   Mon Aug 4 16:53:21 2014 +0200
+
+    minor tweak for linux build
+
+commit 2725eb73e0d11303cf56c45dfe6ac3c36193eeb7
+Author: geoff
+Date:   Sun Aug 3 21:14:48 2014 +0200
+
+    update README.md for using cmake
+
+commit ba37ecd7d6606e26d07e70b9a9a5ae778e4619d7
+Author: geoff
+Date:   Sun Aug 3 21:04:36 2014 +0200
+
+    Add abt 30 test files, and a testhtml5.cmd
+
+commit 57315266f731c49ff197d35a2da95818cf7c9bd1
+Author: geoff
+Date:   Sun Aug 3 20:53:18 2014 +0200
+
+    more to ignore
+
+commit f528b216d5753ed8e3f1a105598f2e009c3f21b3
+Author: geoff
+Date:   Sun Aug 3 20:52:10 2014 +0200
+
+    No output unless not NDEBUG and _MSC_VER
+
+commit 4090d0b119b9199179bc186d28c223b3181bc0ed
+Author: geoff
+Date:   Sun Aug 3 20:38:31 2014 +0200
+
+    Update of some test cases
+
+commit 78c0080eb84c197835e5b0c1591688981001796a
+Author: geoff
+Date:   Sun Aug 3 20:33:29 2014 +0200
+
+    main code updates to do HTML5
+
+commit 292145c8e2f3d7458a417feaa99818dbc775072c
+Author: geoff
+Date:   Sun Aug 3 20:16:57 2014 +0200
+
+    ignore all built products
+
+commit 6bdd7722c61d4c9bdcb65cf9757c2b59b8477c1d
+Author: geoff
+Date:   Sun Aug 3 20:11:10 2014 +0200
+
+    Add a build batch for cmake
+
+commit 8829dd860eb522adb3afe30923b9d98efb2994c4
+Author: geoff
+Date:   Sun Aug 3 20:09:37 2014 +0200
+
+    Update version to use date from cmake
+
+commit f8e807f1ca10b88d3398c551c04c6495e93519c2
+Author: geoff
+Date:   Sun Aug 3 20:08:57 2014 +0200
+
+    Add a cmake build system
+
+commit aca1e92aceb476c9a8b3098d25349cd8d2a2114b
+Author: geoff
+Date:   Sun Aug 3 19:36:45 2014 +0200
+
+    Some minor adjustments to the README.md
+
+commit 19d9585598ac3675fe1ec9e76e0829369a0a278c
+Author: geoff
+Date:   Sun Aug 3 19:31:32 2014 +0200
+
+    More documentation updates, but to be corrected later
+
+commit 06871fa96b27f8d02df4f3ed0098cf038071ca4a
+Author: geoff
+Date:   Sun Aug 3 19:26:43 2014 +0200
+
+    Another OLD Makefile update
+
+commit 3d6f092684723d21e03505a1b1bf3492b9af04dd
+Author: geoff
+Date:   Sun Aug 3 19:25:09 2014 +0200
+
+    some documentation updates, but not checked
+
+commit 54159932d092b788000d51d23a59eb34fe5ccd87
+Author: geoff
+Date:   Sun Aug 3 19:17:01 2014 +0200
+
+    Update the doxygen.cfg vers 1.7.5.1 but no check done of the contents
+    changes. This is generally not used in Windows/MSVC build.
+
+commit 86a72f98bf85f83ac65f497a2ef50b97e1b3b049
+Author: geoff
+Date:   Sun Aug 3 19:13:03 2014 +0200
+
+    Update OLD build files for new gdoc.* source
+
+commit c3167c67ab984d8dcfa55752c5bf174b0d8f2d5b
+Author: geoff
+Date:   Sun Aug 3 18:52:46 2014 +0200
+
+    add diag output to file for MSVC use
+
+commit e0a61e9b06932dd3beaecd6ecf8e773070f1a886
+Author: geoff
+Date:   Sun Aug 3 18:50:51 2014 +0200
+
+    add another 'cleaner' of html from google docs
+
+commit 39b860b1a7e04e91b63372681d31aeb15e596eb1
+Author: geoff
+Date:   Sun Aug 3 18:46:37 2014 +0200
+
+    Continue to remove CVS Info from source
+
+commit f6f7190f80e5728d23689e27c1d1bf97d13ff534
+Author: geoff
+Date:   Sun Aug 3 18:13:58 2014 +0200
+
+    removed more CVS Info
+
+commit 3b2cf509b71e385e1e70e0d1dbb3622e605f41cf
+Author: geoff
+Date:   Sun Aug 3 18:06:49 2014 +0200
+
+    commence to remove CVS info from each file
+
+commit 3bcf49cfde4f2984a7e00b2c751cee27f61471c2
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Apr 27 18:16:13 2014 +0800
+
+    Preserve  for both filters.
+
+commit f3cc89d2341901b7fbc2cc82a45dcfb5f28b28c0
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Apr 27 18:11:50 2014 +0800
+
+    Correctly use a copy of args so both filters can work.
+
+commit 5786a5afb5d448cf2ee05b51f67240fedf072108
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Apr 27 16:07:20 2014 +0800
+
+    Implement TidyReportFilter2 using raw strings to support library localization.
+
+commit 3d4c4021ae7730867cf1ec4e3b33cbf5d2de9129
+Author: Eberhard Beilharz &lt;eb1 _at_ sil _dot_ org&gt;
+Date:   Thu Jan 9 17:38:41 2014 +0100
+
+    Print end tag for self-closing tag
+    
+    When we output HTML5 and we encounter a self-closing tag we have to
+    output an end tag to be standard conform.
+    
+    This fixes issue #111.
+
+commit 27d8ca6a69a93523bf98b92cf4bba42d29fc0eb8
+Author: Andrew Le &lt;andrew _at_ andrewdle _dot_ com&gt;
+Date:   Fri Jun 28 16:20:02 2013 -0700
+
+    Add support for aria attributes
+    
+    Reference: http://dev.w3.org/html5/markup/aria/aria.html#aria-attrs-all
+
+commit 1ecf6b2074a0cc9350e94a44a509e87e1c878f33
+Author: geoff
+Date:   Tue Mar 5 17:32:14 2013 +0100
+
+    Just added a small README.txt to check a push to this repo
+
+commit 0cf6d998431a61f1bd630e7883d4d43df4ad8ccc
+Merge: f53193f 76c2b57
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Tue Aug 21 20:37:24 2012 +0900
+
+    Merge branch 'master' of github.com:w3c/tidy-html5
+
+commit f53193f13648a0dea3b150094851b0f54e68554c
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Tue Aug 21 20:36:34 2012 +0900
+
+    Whitespace change please ignore.
+
+commit 7fc32555428add36e44e1b1ea9ee810a317f86eb
+Author: Peter Kelly &lt;peter _at_ uxproductivity _dot_ com&gt;
+Date:   Mon Aug 20 10:06:30 2012 +0700
+
+    Applied hash table optimisation to RemoveAnchorByNode. This function now takes
+    the anchor name as a parameter, so it can look in the correct bin.
+    
+    In the case of FreeAttrs, we have the name already (since we found a name or
+    id attribute). In the case of FixAnchors, the anchor name could come from
+    either the name or id attribute, so we call the function separately for each
+    case, passing the appropriate attribute value.
+
+commit 11a86488182fefffadb4c4632eb3d9c8c45890be
+Author: Peter Kelly &lt;peter _at_ uxproductivity _dot_ com&gt;
+Date:   Mon Aug 20 00:29:16 2012 +0700
+
+    Use a hash table for anchors
+
+commit 76c2b57fa6775032a65a99ebd77a6dfaced17c0d
+Merge: 1b4dcd0 ce27a72
+Author: Andy Lester &lt;andy _at_ petdance _dot_ com&gt;
+Date:   Wed Aug 8 09:41:04 2012 -0700
+
+    Merge pull request #60 from craigbarnes/cvsclean
+    
+    Remove CVS info blocks
+
+commit ce27a729dc01b4fa89cc8165af637239a781db24
+Author: Craig Barnes &lt;cr _at_ igbarn _dot_ es&gt;
+Date:   Wed Aug 8 17:27:29 2012 +0100
+
+    Remove CVS info blocks
+
+commit 1b4dcd0e4374cd466f3d02e3534289c7a43acd88
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Jul 21 14:23:38 2012 +0900
+
+    Update version.
+
+commit c63cc3924b2aa52aaac2faa73b1fd42c258e210c
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Jul 21 14:17:13 2012 +0900
+
+    Allow block content in address. Fixes #55.
+    
+    Thanks Craig Barnes.
+
+commit fad2769449f69f27278e4571dff3885351283c54
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Jul 21 13:37:07 2012 +0900
+
+    Minor cleanup.
+
+commit 08c12634e929f60ac346c7f563c543ba9344dcec
+Merge: 79439b0 46e8e9d
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Jul 20 21:33:19 2012 -0700
+
+    Merge pull request #57 from johnweldon/master
+    
+    Better MSVC 2010 fix for CleanGoogleDocument unresolved externals.
+
+commit 46e8e9d2547e4da68d6a62597b71563a8755a7f5
+Author: John Weldon &lt;johnweldon4 _at_ gmail _dot_ com&gt;
+Date:   Thu Jul 12 10:41:05 2012 -0700
+
+    Better fix than 0d41d42, the gdoc.(c|h) files weren't included in the msvc2010 project
+
+commit 379a54c49d8f030faf6c333c17c82d57481f0868
+Merge: ca623c9 79439b0
+Author: John Weldon &lt;johnweldon4 _at_ gmail _dot_ com&gt;
+Date:   Thu Jul 12 10:18:55 2012 -0700
+
+    Merge branch 'master' of https://github.com/w3c/tidy-html5
+
+commit 79439b0b9ea25ef387fc5e8408fd4ad6f70a9920
+Author: John Weldon &lt;johnweldon4 _at_ gmail _dot_ com&gt;
+Date:   Tue Jul 3 12:11:26 2012 -0700
+
+    more msvc ignores
+    
+    Signed-off-by: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+
+commit b5d8088cf504604b2753175872b82a2bbfa0ea72
+Merge: 0d41d42 cd0eff4
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Jul 6 15:47:52 2012 +0900
+
+    Merge branch 'master' of github.com:w3c/tidy-html5
+
+commit 0d41d4247ec10b7373b5060a0062518607d9021f
+Author: John Weldon &lt;johnweldon4 _at_ gmail _dot_ com&gt;
+Date:   Tue Jul 3 12:10:53 2012 -0700
+
+    Fix tidylib.obj : error LNK2019: unresolved external symbol _prvTidyCleanGoogleDocument referenced in function _tidyDocCleanAndRepair
+    
+    Signed-off-by: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+
+commit cd0eff4562cbebeeb864cd053db6361fe0591bb0
+Merge: d3440ed 7311bbe
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Jul 5 23:36:54 2012 -0700
+
+    Merge pull request #52 from craigbarnes/master
+    
+    Fix for autotools build
+
+commit 7311bbef48feff96ba14052699beb7c31e49df4f
+Author: Craig Barnes &lt;cr _at_ igbarn _dot_ es&gt;
+Date:   Fri Jul 6 03:05:46 2012 +0100
+
+    Fix autotools build
+
+commit d3440ed9f79938ed327016f324d27ecb6684c039
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jul 4 16:38:17 2012 +0900
+
+    Regenerated quickref.
+
+commit 6ef8d92b0f00cfe80c789d023049ced77343d23a
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jul 4 16:35:34 2012 +0900
+
+    Bring docs up to date with code. Fixes #41.
+    
+    Thanks ralfjunker.
+
+commit ca623c911683a6b5840447f24eb1b2b9fbed01f6
+Author: John Weldon &lt;johnweldon4 _at_ gmail _dot_ com&gt;
+Date:   Tue Jul 3 12:11:26 2012 -0700
+
+    more msvc ignores
+
+commit 046a40da34a02849730d44d3a7c2bed5962e1605
+Author: John Weldon &lt;johnweldon4 _at_ gmail _dot_ com&gt;
+Date:   Tue Jul 3 12:10:53 2012 -0700
+
+    Fix tidylib.obj : error LNK2019: unresolved external symbol _prvTidyCleanGoogleDocument referenced in function _tidyDocCleanAndRepair
+
+commit a61504c57ad6a14b3c69298f2e60a7965b85705c
+Merge: 5220d8f d942983
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Tue Jun 26 20:01:02 2012 -0700
+
+    Merge pull request #40 from stevenle/master
+    
+    Remove WbrToSpace from being cleaned
+
+commit d942983fb00f0e842d238987dc7ba8d0c60463cf
+Author: Steven Le &lt;stevenle08 _at_ gmail _dot_ com&gt;
+Date:   Fri Jun 22 10:35:43 2012 -0700
+
+    Remove WbrToSpace since &lt;wbr&gt; is HTML5 valid.
+
+commit 5220d8fe2e0d35f50542538e4787e5d433d09220
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jun 20 17:08:44 2012 +0900
+
+    Minor quickref formatting problem.
+
+commit 68a9e741a1802e5063e0fdb3ea2aec23cc1ffd3b
+Merge: 664f95b 57a98b9
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jun 20 01:05:42 2012 -0700
+
+    Merge pull request #39 from stevenle/master
+    
+    Remove &lt;wbr&gt; as a proprietary tag.
+
+commit 664f95ba5b037a3a0bf7372a46e001ec70b11512
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jun 20 16:58:34 2012 +0900
+
+    Update the generated API docs.
+
+commit a772bbb17f969a8afba3a538648e4404797de545
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jun 20 16:55:42 2012 +0900
+
+    Let's actually commit the -gdoc feature this time.
+
+commit 45fce5e3c2205fece230219c24d868121f4d3c20
+Merge: 09e310b 491f3df
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jun 20 16:51:43 2012 +0900
+
+    Merge branch 'master' of github.com:w3c/tidy-html5
+    Forgot to pull.
+
+commit 09e310b50c6a0c176cb3bf7e5fd8a64c52a08828
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Jun 20 16:48:12 2012 +0900
+
+    -gdoc opt, clean Google Docs HTML; fr Dave Raggett
+
+commit 57a98b97b64ef61bc482e6a9720d77060af78192
+Author: Steven Le &lt;stevenle08 _at_ gmail _dot_ com&gt;
+Date:   Tue Jun 19 15:42:48 2012 -0700
+
+    Changed W3CAttrsFor_VIDEO -&gt; W3CAttrsFor_WBR
+
+commit e8013a74b8ec87cd595077b4ff5f9d209be47d00
+Author: Steven Le &lt;stevenle08 _at_ gmail _dot_ com&gt;
+Date:   Tue Jun 19 09:39:06 2012 -0700
+
+    Remove &lt;wbr&gt; as a proprietary tag.
+
+commit 491f3df396e1a78eb7dad1c34dd1f70a546c54be
+Merge: f212c3f f91a020
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Jun 7 23:08:56 2012 -0700
+
+    Merge pull request #37 from e98cuenc/input-html5
+    
+    Accept HTML5 input types.
+
+commit f91a020894b364633f29bd0ec3c63248aea524c5
+Author: Joaquin Cuenca Abela &lt;e98cuenc _at_ gmail _dot_ com&gt;
+Date:   Thu Jun 7 16:54:04 2012 +0200
+
+    Accept HTML5 input types.
+
+commit f212c3f380790e8c68950dd9b73faa690b97ab74
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Apr 26 00:31:18 2012 +0900
+
+    Update version.
+
+commit 8025154e3060e007216492edaaa8628773d25d95
+Author: Ryan Kistner &lt;azuisleet _at_ gmail _dot_ com&gt;
+Date:   Thu Apr 12 14:18:10 2012 -0600
+
+    Check for NULL pointer before calling strcasecmp in GetVersFromFPI
+
+commit 21f5b687781418be503bd978282f197f47f25a26
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Mon Apr 23 11:39:38 2012 +0900
+
+    Removed some bad/obsolete test cases. Fixes #32.
+
+commit 869ab4a4e5764cc504b6066603eb0f4291daec3f
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Tue Apr 10 14:57:15 2012 +0900
+
+    Fix C90 compatibility issue.
+
+commit 666d5bb1f49f32b95cf7d53f77bb0bc3207a32ad
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Apr 7 16:49:19 2012 +0900
+
+    Another minor editorial change.
+
+commit d1934207297364827ae4c82c5eff480dbd7d535f
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Apr 7 16:41:06 2012 +0900
+
+    Minor editorial update.
+
+commit 4408516c3298a7cb5ed04648be3ca4d8e732bf01
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Apr 7 16:33:10 2012 +0900
+
+    Clarify doc for wrap-attributes option.
+
+commit c66f165f008c7c75e522a64b49088819ea94ec3e
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Apr 7 15:58:28 2012 +0900
+
+    Don't line-wrap title attr. Thx Oliver Prygotzki.
+    
+    Fixes #28.
+
+commit d194e8726e6ca703a650b13fcd8834c9c9d52c84
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Mon Apr 2 16:41:05 2012 +0900
+
+    Added show-info option. Fixes #6.
+
+commit 880221e26d46b19fa9b79e28e9a420d7250e6ecb
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 29 14:00:24 2012 +0900
+
+    Don't eat whitespace after CM_MIXED end tags.
+    
+    Fixes #20.
+
+commit 1f2162553a4e5ff1d96fbee312e11d9660002b35
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 29 12:17:13 2012 +0900
+
+    Back out fix for #20.
+
+commit abc1e3faa4986d8e713241494b5504b7be96db4e
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Mar 28 04:48:31 2012 +0900
+
+    Markup updates.
+
+commit 547d84ed16c026d1884ea80f167e78fc5beb144f
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Mar 28 01:16:42 2012 +0900
+
+    Minor editorial/markup fixes to index.html.
+
+commit e8de511a64bd6bc4765af0cf0d2a91860151f520
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Mar 28 01:07:27 2012 +0900
+
+    Added build info to index.html.
+
+commit ccc80bcdc422ec6bf5c41863362bab36274c67ca
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Mar 28 00:41:17 2012 +0900
+
+    Add info about building shared lib. Fixes #25.
+    
+    Thanks Chris Love.
+
+commit 1636edd2ba5250259afa79a6b05bf4da8f20f55e
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 24 19:18:32 2012 +0900
+
+    Minor update to index page.
+
+commit 507124664193909f53ea14159d9ad07403d1997f
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 24 19:09:59 2012 +0900
+
+    Minor update to quickref.
+
+commit 895fbb13f0e49e47b59373844ccb44df107b4d97
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 24 19:08:04 2012 +0900
+
+    Minor rewording.
+
+commit 2cd21a66937b89638e5965c141e1cfe53bfdda81
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 24 19:04:46 2012 +0900
+
+    Added omit-optional-tags option. Fixes #22.
+    
+    Thanks towolf.
+
+commit f5c273910c1b72a4a61af98062a013b56f0b78cc
+Merge: 87d8cb5 a3d49a7
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Mar 23 23:52:01 2012 +0900
+
+    Merge branch 'master' of github.com:w3c/tidy-html5
+
+commit 87d8cb52816a0ad1768331fc747b88d5ca585a77
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Mar 23 23:50:41 2012 +0900
+
+    Don't hoist style into head. Relates to #23.
+
+commit a3d49a71434d84ed882b164c178fe2878f246fd8
+Author: Thies C. Arntzen &lt;thieso _at_ gmail _dot_ com&gt;
+Date:   Tue Mar 20 17:43:41 2012 +0400
+
+    fix &lt;a&gt;hallo&lt;/a&gt; world WS destruction
+
+commit 4ff3234431990b47dc42afc15787fcb971bccb3a
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 17 17:24:01 2012 +0900
+
+    List new options on the index page.
+
+commit ddb5702a08de22ea8ca3620dc04020b85ae84265
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 17 17:07:48 2012 +0900
+
+    Point to http://w3c.github.com/tidy-html5/ where appropriate.
+
+commit 47c144748966a6746591be06fc6568e8d0859161
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 17 16:48:07 2012 +0900
+
+    Add a more prominent link to the quickref.
+
+commit 1052c2b81e2e58eec6e2fb08a5ffa48e19073c89
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Mar 17 16:26:41 2012 +0900
+
+    New merge-emphasis &amp; coerce-endtags options added.
+    
+    Fixes #19.
+
+commit 3ed33a18237386f2d16b3db9db970da4c1a2c7df
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Mar 16 20:55:59 2012 +0900
+
+    Merge in TidyAttr_XML_LANG change.
+
+commit 3a9a794d8b98bdb7bdcde0dce544bf45d7d3dd78
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 15 14:12:41 2012 +0900
+
+    Minor formatting edit.
+
+commit 0c8b587067611136e48a28e940a2b72ffb923804
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 15 14:11:01 2012 +0900
+
+    Added --doctype=html5 option value. Fixes #17.
+
+commit 5c4d2e5b33399e6f7877839feaef0512519ed436
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 15 11:52:28 2012 +0900
+
+    Minor edit.
+
+commit a52b901d470e9cbf2844e133183388fb4ba69aa7
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 15 11:49:03 2012 +0900
+
+    Link to home page in readme.
+
+commit a1bb2d24b1a770e66f53d0714e45f6ad3d3c5d88
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 15 11:15:11 2012 +0900
+
+    Updated version and quickref.
+
+commit bf1c2f67a91c8ecc349a41a01c7d13debcafda67
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 15 10:58:10 2012 +0900
+
+    Added drop-empty-elements options. Fixes #19.
+
+commit 5b9d25dcf9af9af3cc85a4ca066485f193789bcb
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 15 10:30:11 2012 +0900
+
+    source in video. Fixes #8. Fixes #9.
+
+commit 879e6cf909460d4d3fd9edb94e1e98e503430f59
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Mar 14 20:05:12 2012 +0900
+
+    Put &quot;experimental&quot; in the meta@generator output too.
+
+commit c331917c311d5060510159f6f899f540b195786b
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Mar 14 19:38:18 2012 +0900
+
+    Make the doctype handling work the way it should.
+
+commit 9412ef6eba886a3ec48ac95ce9f51503b176625b
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 23:03:24 2012 +0900
+
+    Never automatically re-make the API docs.
+
+commit c9aa86ddf5c078ca8bb46baac9ee77f2b504540a
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 23:02:14 2012 +0900
+
+    Force remake of the quickref file also.
+
+commit 40f486ce5a8f4fd79c0ea8ce2998ecbd4733c07b
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 23:00:01 2012 +0900
+
+    Force-remake of the README.md file.
+
+commit f2825b96453c5553de6e097021eb357b5bf9c67c
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 22:57:11 2012 +0900
+
+    More cleanup.
+
+commit 378c31fa2e68b8ca4abb52e4703dbc9549148447
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 22:55:17 2012 +0900
+
+    Cruft.
+
+commit db464df7d96f51b2d4f7b25078cc5f5d2995d556
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 22:53:12 2012 +0900
+
+    Updated the docs.
+
+commit 701a17400af211272bc8ff8f692c3ebbfa79f979
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 18:17:51 2012 +0900
+
+    Made minor build changes.
+
+commit ccf2a6c7fe0e4c628dae18f6ffb2ff240b08717c
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 17:54:20 2012 +0900
+
+    Added the API docs.
+
+commit 1c4d43ad2af65a82a8b2a2f085293bb47357f561
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Mar 1 17:22:03 2012 +0900
+
+    Deal with version reporting better.
+
+commit 82bada20383151566c8373a02376de143bb917d1
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Feb 29 01:36:29 2012 +0900
+
+    Added VERSION file.
+
+commit 35f2516a0bc0d2a81568a53a09700b61ca88a907
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Feb 29 01:22:23 2012 +0900
+
+    Updated .gitignore file.
+
+commit 47ef78487d27d26cb630db4f62ff9984c34f5ce4
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Feb 29 01:19:37 2012 +0900
+
+    embed, keygen &amp; wbr are not proprietary.
+
+commit f4edfc693b9123e07aab67f37ec738217c177a6e
+Merge: 481166e 722ae0b
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Tue Feb 28 08:18:25 2012 -0800
+
+    Merge pull request #10 from stevenle/master
+    
+    Empty &lt;progress&gt; tags no longer stripped. Fixes #10.
+
+commit 481166ef873d9a60234a82b42010b6be702c3d39
+Merge: f6a3bbe 8727af8
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Tue Feb 28 08:12:13 2012 -0800
+
+    Merge pull request #12 from user-none/master
+    
+    Fix for issue #11
+
+commit 8727af8a7c8a2d11743bb6d35f07f4a21ade7266
+Author: John Schember &lt;john _at_ nachtimwald _dot_ com&gt;
+Date:   Sun Feb 26 11:53:53 2012 -0500
+
+    Fix format string warnings.
+
+commit 722ae0b360312dc0fd9638818f8d45bad86fa452
+Author: Steven Le &lt;stevenle _at_ google _dot_ com&gt;
+Date:   Fri Feb 24 16:26:09 2012 -0800
+
+    Empty &lt;progress&gt; no longer stripped.
+
+commit b554dc12efc513dcbff664c935d255af87a95fde
+Author: Steven Le &lt;stevenle _at_ google _dot_ com&gt;
+Date:   Fri Feb 24 16:23:32 2012 -0800
+
+    Empty &lt;progress&gt; no longer stripped.
+
+commit f6a3bbecdbf3bc2832e6bffc8f86b8de6ed3f2d2
+Author: Dominique Hazael-Massieux &lt;dom _at_ w3 _dot_ org&gt;
+Date:   Fri Feb 24 13:31:23 2012 +0100
+
+    fix for ISSUE #7: empty canvas no longer stripped
+
+commit b0997b2c48712d2548579190685b6962362189d0
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sun Feb 19 20:04:23 2012 +0900
+
+    Allow the &lt;a&gt; element to contain block content.
+    
+    Thanks Steven Le.
+    http://lists.w3.org/Archives/Public/html-tidy/2012JanMar/0017.html
+
+commit 0dbac2535bd2327d27d60471e286c678ae8b1a31
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Feb 18 19:40:37 2012 +0900
+
+    Update the man page a bit.
+
+commit 184f41154412a3609b8af10a5cf954a4d76d8ef8
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Feb 18 18:17:43 2012 +0900
+
+    Update general-info message tidy emits at end.
+
+commit 6c9895de3034d06406c82db97cf53a4e6fa2a6bb
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Feb 16 12:07:03 2012 +0900
+
+    Make UTF-8 the default.
+
+commit 4ad0d1f2f73d70b4c09d1a92c17198e9fe7a49ea
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Feb 16 11:39:54 2012 +0900
+
+    Don't emit errors for void elements.
+
+commit 73834b84127b860a3a682a65d7ce10b449d03412
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Feb 10 15:40:33 2012 +0900
+
+    Correct meta@name=generator output.
+
+commit b26db41c865a21c3e62e59df501c012a3dc05fc1
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Feb 10 15:33:21 2012 +0900
+
+    Do not mess with &lt;!doctype html&gt;. Fixes #2.
+
+commit 33ba8038fdf53dbb8fbf9cc57164ed92ef45ece7
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Feb 10 14:44:18 2012 +0900
+
+    Allow noscript in head, &amp; meta + link in head.
+
+commit 9e10a82ab15de8e7b6ef32033f1bc16e117e6992
+Author: Geoff &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jan 19 18:59:34 2012 +0100
+
+    Add more msvc folders and files to .gitignore
+
+commit 951347740d2de94d53375e800108ea56eb0517e6
+Author: Geoff &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jan 19 12:02:18 2012 +0100
+
+    Adjust MSVC outputs, and remove DLL build
+
+commit 8877662b54a0dfef070480bc5218186a17944927
+Author: geoff
+Date:   Tue Jan 17 15:54:00 2012 +0100
+
+    Bring fork up to html5.patch patched version
+
+commit 31b61a69f045c997e405285bf94cd8c42916f177
+Merge: 264c9bc 692ac7a
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sun Jan 1 23:21:12 2012 -0800
+
+    Merge pull request #1 from ermshiperete/master
+    
+    Build files for Visual Studio 2010
+
+commit 264c9bc043ba2ed3089b4c281bbeedb177cac3c2
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Mon Jan 2 16:12:51 2012 +0900
+
+    HTML IDs can contain anything except whitespace.
+    
+    Introduced TY_(IsHTMLSpace)(uint c), which checks to see if c is one of the
+    chars that the HTML spec (and browsers) treat as a space in attribute
+    values: 0x020 (space), 0x009 (tab), 0x00a (LF), 0x00c (FF), or 0x00d (CF).
+    Can't use ANSI C isspace(int c) here because like standard functions for
+    many other langs, it also treats 0x00b as a space.
+
+commit e84a6d272e99302fc288ad8c524965d54d830936
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Dec 10 12:21:43 2011 +0900
+
+    Make msvc build files have dos line endings.
+    
+    Thanks Petko Kafedjiski.
+
+commit c1be54071d095245c42b781ead1a295af1b67eb4
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sat Dec 10 12:21:10 2011 +0900
+
+    Make action not required on form.
+
+commit 692ac7a5c86965c46f52ca7eafef327e39d9a23f
+Author: Eberhard Beilharz &lt;eb1 _at_ sil _dot_ org&gt;
+Date:   Mon Dec 5 10:36:17 2011 +0100
+
+    Add build files for VS 2010
+
+commit 4fdc30c120612ccefad034de7a8f1f031587873f
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Mon Nov 21 12:34:05 2011 +0900
+
+    summary attribute is not required on table in HTML5
+
+commit dd7c635278de042667e3872e3745fe822e8cf92e
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sun Nov 20 20:59:23 2011 +0900
+
+    cruft removal
+
+commit 34305a13d1027c54399ffe40d8f1ff2e032d4606
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sun Nov 20 20:58:35 2011 +0900
+
+    report missing href &amp; rel for link elements
+
+commit 585769b5ba52a6d01ef97b272d1351ff3a6de9da
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sun Nov 20 20:58:13 2011 +0900
+
+    markup fix
+
+commit 2144093509225cbf513a3139561dcf28e74b3b8e
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sun Nov 20 19:42:54 2011 +0900
+
+    script does not require a type attribute
+
+commit 0b77bd1e655879c168c3ada29058b1eef22b94f3
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Sun Nov 20 19:42:28 2011 +0900
+
+    makefile tweak
+
+commit 5fc78fa72294d1a7708da5f02c72b022e624222c
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Nov 18 22:58:14 2011 +0900
+
+    further tweak build instructions
+
+commit f466a83688aa30505267cb4f06a5ece0e35f8779
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Fri Nov 18 22:53:51 2011 +0900
+
+    fixed &quot;make install&quot; build instructions
+
+commit 8d58ea12f370d99565626dcde183f5af0d7ec407
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Nov 17 16:33:32 2011 +0900
+
+    updated
+
+commit 1cacb8c8c9bbf3fd440fbf810d4618ea8d2df685
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Nov 17 16:21:24 2011 +0900
+
+    reference github location on version output
+
+commit 7ea0d7cec2569ad2ee5d8bcfb0390b8ed4952b9a
+Merge: 6c1695f 35414a0
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Wed Nov 16 23:09:34 2011 -0800
+
+    Merge pull request #1 from pitulloz/master
+    
+    fix build on mingw, but not test on linux again.
+
+commit 6c1695fb5ae98b0c26c91e4fc70a1485b9b84595
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Nov 17 16:06:29 2011 +0900
+
+    style doesn't need type; meta doesn't need content
+
+commit 35414a0213a929921c1193383893838caa6cd57b
+Author: Yanito Candra &lt;pitulloz _at_ gmail _dot_ com&gt;
+Date:   Thu Nov 17 12:47:44 2011 +0700
+
+    fix build with mingw
+    
+    Signed-off-by: Yanito Candra &lt;pitulloz _at_ gmail _dot_ com&gt;
+
+commit 0424e12dac98ccb7b957e60513a50817c5012c33
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Nov 17 13:14:22 2011 +0900
+
+    clean OSX cruft
+
+commit 3660559ca9d2b0fa47c62b119d206a2e5dfe71fd
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Nov 17 12:16:11 2011 +0900
+
+    new
+
+commit ff7a980d9de76329cd2c38fadeac9b7565de0b0f
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Nov 17 11:58:38 2011 +0900
+
+    new
+
+commit b92d7aab88780c418dbe63ebf841fdbdf8c33fd6
+Author: Michael[tm] Smith &lt;mike _at_ w3 _dot_ org&gt;
+Date:   Thu Nov 17 11:44:16 2011 +0900
+
+    new</pre>
+
+    <a name="authors" id="authors"></a>
+<p>This log has  493 commits by 26 authors: Dominique Hazael-Massieux 1; Craig Barnes 2; Andy Lester 1; Eberhard Beilharz 2; Sebastian Godelet 1; Pedro 38; Steven Le 5; Jim Derry 49; John Schember 1; Yanito Candra 1; Arnaud Lacombe 3; Frédéric Wang 1; Geoff 2; Ryan Kistner 1; Joaquin Cuenca Abela 1; Andrew Le 1; Michael[tm] Smith 94; Dmitry Ivanov 1; Geoff R. McLane 275; Ionel Roiban 1; Thies C. Arntzen 1; John Weldon 6; willydee 1; Denis Denisov 1; geoff mclane 1; Peter Kelly 2; </p>
+
+<p>Date: from Wed Nov 16 23:09:34 2011 -0800 to Wed Jul 1 15:57:50 2015 +0200 (1322 days)</p>
+
+<p>eof</p>
+</body>
+</html>
+
