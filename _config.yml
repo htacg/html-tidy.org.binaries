@@ -6,6 +6,7 @@ safe: true
 
 
 ### site serving configuration
+baseurl: http://binaries.html-tidy.org
 exclude: [CNAME, README.md, .gitignore]
 permalink: / ## disables post output
 timezone: null
@@ -17,7 +18,7 @@ highlighter: pygments
 ### content configuration ###
 title:       "HTML Tidy Binaries"
 keywords:    "tidy, html tidy, html, htacg"
-description: "HTACG Binaries"
+description: "HTACG HTML Tidy Binaries"
 source_link: "https://github.com/htacg/"
 favicon:     #put a path like: "img/favicon.ico"
 touch_icon:  #put a path like: "img/apple-touch-icon.png"

@@ -21,10 +21,10 @@ table.directory
 
 		td:first-child { padding-left: 2em; }
 
-		td { width: 15%; min-width: 10em; }
-		td + td { width: 15%; min-width: 10em;}
-		td + td + td{ width: 10%; min-width: 4em; }
-		td  + td + td{ width: auto; }
+		td { width: 15%; min-width: 12em; }
+		td + td { width: 15%; min-width: 11em;}
+		td + td + td { width: 10%; min-width: 4em; }
+		td + td + td + td { width: auto; }
 	}
 }
 
