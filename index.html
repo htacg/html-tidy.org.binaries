@@ -13,7 +13,12 @@ title:    "HTML Tidy Binary Releases"
         <thead>
             <tr>
                 <td colspan="4">
-                    <p>{{release.heading}} <a href="{{site.baseurl}}/binaries/{{release.path}}/{{release.notes}}">(release notes)</a></p>
+                    <p>
+                    	{{release.heading}} <a href="{{site.baseurl}}/binaries/{{release.path}}/{{release.notes}}" class="release_notes">(release notes)</a>
+                    	{% if {{release.release != null}} %}
+                    	<a href="https://github.com/htacg/tidy-html5/releases/{{release.release}}" class="release_path">(official release)</a>
+                    	{% endif %}
+                    </p>
                 </td>
             </tr>
             <tr>

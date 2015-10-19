@@ -129,6 +129,3 @@ DEPENDENCIES
   github-pages (= 39)
   jekyll-mentions
   jekyll-sitemap
-
-BUNDLED WITH
-   1.10.6
