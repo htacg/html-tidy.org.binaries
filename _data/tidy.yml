@@ -46,6 +46,11 @@
       modified: 2015/09/06 20:09:10
       describe: Win64 ZIP package.
 
+    - filename: HTMLTidy5.1.8.dmg
+      filesize: 810K
+      modified: 2015/10/19 13:19:00
+      describe: Mac OS X Disk Image.
+
 - path: tidy-5.0.0
   heading: HTML Tidy version 5.0.0
   notes: 5.0.0.html
