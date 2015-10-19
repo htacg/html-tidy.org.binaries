@@ -75,6 +75,11 @@
       modified: 2015/09/07 11:55:56
       describe: Win32 MSI installer package.
 
+    - filename: HTMLTidy5.0.0.dmg
+      filesize: 810K
+      modified: 2015/10/19 12:00:00
+      describe: Mac OS X Disk Image.
+
 - path: tidy-5.0.0.RC1
   heading: HTML Tidy version 5.0.0.RC1
   notes: 5.0.0.RC1.html
