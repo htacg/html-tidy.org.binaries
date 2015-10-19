@@ -1,6 +1,7 @@
 - path: tidy-5.1.14
   heading: HTML Tidy version 5.1.14
   notes: 5.1.14.html
+  release:
   binaries:
     - filename: tidy-5.1.14-win64.zip
       filesize: 585K
@@ -30,6 +31,7 @@
 - path: tidy-5.1.8
   heading: HTML Tidy version 5.1.8
   notes: 5.1.8.html
+  release: tag/5.1.8
   binaries:
     - filename: tidy-5.1.8-64bit.rpm
       filesize: 630K
@@ -59,6 +61,7 @@
 - path: tidy-5.0.0
   heading: HTML Tidy version 5.0.0
   notes: 5.0.0.html
+  release: tag/5.0.0
   binaries:
     - filename: tidy-5.0.0-win32.zip
       filesize: 624K
@@ -93,6 +96,7 @@
 - path: tidy-5.0.0.RC1
   heading: HTML Tidy version 5.0.0.RC1
   notes: 5.0.0.RC1.html
+  release: tag/5.0.0.RC1
   binaries:
     - filename: tidy-5.0.0-win32.zip
       filesize: 624K
@@ -137,6 +141,7 @@
 - path: tidy-4.9.35
   heading: HTML Tidy version 4.9.35
   notes: 4.9.35.html
+  release: tag/4.9.35
   binaries:
     - filename: tidy5-4.9.35-win64.zip
       filesize: 732K
@@ -161,6 +166,7 @@
 - path: tidy-4.9.32
   heading: HTML Tidy version 4.9.32
   notes: 4.9.32.html
+  release: tag/4.9.32
   binaries:
     - filename: tidy5-4.9.32-win64.zip
       filesize: 731K
@@ -205,6 +211,7 @@
 - path: tidy-4.9.28
   heading: HTML Tidy version 4.9.28
   notes: 4.9.28.html
+  release: tag/4.9.28
   binaries:
     - filename: tidy5-4.9.28-win64.exe
       filesize: 565K
@@ -254,6 +261,7 @@
 - path: tidy-4.9.26
   heading: HTML Tidy version 4.9.26
   notes: 4.9.26.html
+  release: tag/4.9.26
   binaries:
     - filename: tidy5-4.9.26-win64.zip
       filesize: 581K
@@ -298,6 +306,7 @@
 - path: tidy-4.9.23
   heading: "HTML Tidy version 4.9.23"
   notes: 4.9.23.html
+  release:
   binaries:
     - filename: tidy5-4.9.23-win64.msi
       filesize: 815K
@@ -362,6 +371,7 @@
 - path: tidy-4.9.20
   heading: "HTML Tidy version 4.9.20"
   notes: 4.9.20.html
+  release:
   binaries:
     - filename: tidy5-4.9.20-win64.msi
       filesize: 815K
