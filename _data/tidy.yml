@@ -22,6 +22,11 @@
       modified: 2015/10/01 15:15:12
       describe: linux 64-bit DEB.
 
+    - filename: HTMLTidy5.1.14.dmg
+      filesize: 812K
+      modified: 2015/10/19 13:34:00
+      describe: Mac OS X Disk Image.
+
 - path: tidy-5.1.8
   heading: HTML Tidy version 5.1.8
   notes: 5.1.8.html
