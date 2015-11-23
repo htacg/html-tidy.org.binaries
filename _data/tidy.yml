@@ -1,6 +1,6 @@
 - path: tidy-5.1.25
   heading: HTML Tidy version 5.1.25
-  notes: /binaries/binaries/tidy-5.1.25/5.1.25.html
+  notes: 5.1.25.html
   binaries:
     - filename: tidy-5.1.25-64bit.deb
       filesize: 634K
