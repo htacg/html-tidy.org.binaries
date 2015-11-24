@@ -23,14 +23,9 @@
       modified: 2015/11/23 14:44:10
       describe: linux 64-bit RPM.
 
-- path: tidy-5.1.24
-  heading: HTML Tidy version 5.1.24
-  notes:
-  release:
-  binaries:
-    - filename: HTMLTidy5.1.24.dmg
+    - filename: HTMLTidy5.1.25.dmg
       filesize: 814K
-      modified: 2015/11/23 10:23:00
+      modified: 2015/11/24 12:40:00
       describe: Mac OS X Disk Image.
 
 - path: tidy-5.1.14
