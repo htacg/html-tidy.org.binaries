@@ -11,8 +11,6 @@ exclude: [CNAME, README.md, .gitignore]
 permalink: / ## disables post output
 timezone: null
 lsi: false
-markdown: kramdown
-highlighter: pygments
 
 
 ### content configuration ###
