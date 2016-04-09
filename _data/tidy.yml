@@ -1,3 +1,43 @@
+- path: tidy-5.2.0
+  heading: HTML Tidy version 5.2.0
+  notes: 5.2.0.html
+  release: tag/5.2.0
+  binaries:
+    - filename: HTMLTidy5.2.0.dmg
+      filesize: 1 MB
+      modified: 2016/04/09 14:13:00
+      describe: Mac OS X Disk Image.
+
+    - filename: tidy-5.2.0-32bit.deb
+      filesize: 688K
+      modified: 2016/04/09 14:13:00
+      describe: linux 32-bit DEB.
+
+    - filename: tidy-5.2.0-64bit.deb
+      filesize: 728K
+      modified: 2016/04/09 14:13:00
+      describe: linux 64-bit DEB.
+
+    - filename: tidy-5.2.0-64bit.rpm
+      filesize: 728K
+      modified: 2016/04/09 14:13:00
+      describe: linux 64-bit RPM.
+
+    - filename: tidy-5.2.0-arm7.deb
+      filesize: 643K
+      modified: 2016/04/09 14:13:00
+      describe: linux 32-bit/arm7 DEB.
+
+    - filename: tidy-5.2.0-win32.zip
+      filesize: 750K
+      modified: 2016/04/09 14:13:00
+      describe: Win32 ZIP package.
+
+    - filename: tidy-5.2.0-win64.zip
+      filesize: 862K
+      modified: 2016/04/09 14:13:00
+      describe: Win64 ZIP package.
+
 - path: tidy-5.1.25
   heading: HTML Tidy version 5.1.25
   notes: 5.1.25.html
