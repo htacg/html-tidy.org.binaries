@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Release 5.4.0</title>
+</head>
+<body>
+<a id="top"></a>
+<h1>Release 5.4.0</h1>
+<p>Change log for this release.</p>
+<pre>
+commit 17b33753aea197e510ce48a93c9f0448c508a474
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 1 15:04:22 2017 +0100
+
+    version.txt - Update to 5.4.0 release
+
+diff --git a/version.txt b/version.txt
+index e232944..6cf22d7 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,3 +1,2 @@
+-5.3.21
++5.4.0
+ 2017.03.01
+-
+
+commit c39b1cb42306b5d6c67b4791fcca13fefcbe432d
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 1 14:51:53 2017 +0100
+
+    Issue #498 - Bump to 5.3.21 for merge #502
+
+diff --git a/version.txt b/version.txt
+index 76aab01..e232944 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,3 @@
+-5.3.20
+-2017.02.24
++5.3.21
++2017.03.01
++
+
+commit d07134140a404d10dbf8819544424a33818b7bac
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Feb 24 14:39:46 2017 +0100
+
+    Issue #497 - version.txt - Bump to 5.3.20 for this fix
+
+diff --git a/version.txt b/version.txt
+index 2742ca7..76aab01 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.19
+-2017.02.23
++5.3.20
++2017.02.24
+
+commit 13c92bce3855209672b26e86ac9d79db3aea8661
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Feb 23 16:29:44 2017 +0100
+
+    Issue #468 - version.txt - Bump to 5.3.19 for this fix
+
+diff --git a/version.txt b/version.txt
+index 5892180..2742ca7 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.18
++5.3.19
+ 2017.02.23
+
+commit b97b2f0d453a9f017d8dd3183f1d57711f212574
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Feb 23 15:28:40 2017 +0100
+
+    Issue #329 - version.txt - bump to 5.3.18 for this fix
+
+diff --git a/version.txt b/version.txt
+index e20f7e1..5892180 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.17
+-2017.02.12
++5.3.18
++2017.02.23
+
+commit b7c84b1b576e498d9c7b76ceafd4a3fadfafa9bf
+Merge: 73bf561 23c4686
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Feb 13 08:49:06 2017 -0500
+
+    Merge branch 'surrogates'
+
+commit 73bf5616458a8c26cbc662af7aad9a95690c56fa
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Feb 12 17:40:48 2017 +0100
+
+    Bump version to 5.3.16 for SPRTF fixes
+
+diff --git a/version.txt b/version.txt
+index 3860123..59fb6dd 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.15
+-2017.01.29
++5.3.16
++2017.02.12
+
+commit 259d3307805797e0a0655acae2894bfc7d00de30
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Feb 1 13:46:25 2017 +0100
+
+    Issue #483 - First cut dealing with 'surrogate pairs'.
+    
+    Only deals with a successful case.
+    
+    TODO: Maybe add a warning/error if the trailing surrogate not found, and
+    maybe consider substituting to avoid invalid utf-8 output.
+
+diff --git a/version.txt b/version.txt
+index 3860123..2b48503 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.15
+-2017.01.29
++5.3.16I483
++2017.02.01
+
+commit 10fd44d101d6cf77e76c0b55d0b53cdc408d06ab
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Jan 29 19:21:46 2017 +0100
+
+    Issue #478 PR #480 - Bump to 5.3.15
+
+diff --git a/version.txt b/version.txt
+index 0315198..3860123 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.14
+-2017.01.09
++5.3.15
++2017.01.29
+
+commit 0cbbd555359e7ff0f4dac10822cfa9f2ae4243c5
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jan 9 17:07:13 2017 +0100
+
+    Issue #463, a step in #460, bump to v.5.3.14 for this merge
+
+diff --git a/version.txt b/version.txt
+index ed19d3c..0315198 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.13
+-2017.01.08
++5.3.14
++2017.01.09
+
+commit 2243510592448c62a9cc4278182a7d48dde11cb8
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Jan 8 18:24:17 2017 +0100
+
+    Issue #469 #473 Bump to 5.3.13
+
+diff --git a/version.txt b/version.txt
+index f9c3f12..ed19d3c 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.12
+-2016.10.14
++5.3.13
++2017.01.08
+
+commit fd0ccb2bbf3f907e5425d5849409fbf1558197bc
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Oct 30 23:37:31 2016 +0100
+
+    Bad, repeated node iteration! closes #459
+
+diff --git a/version.txt b/version.txt
+index 9c3783d..f9c3f12 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.11
+-2016.09.11
++5.3.12
++2016.10.14
+
+commit 4edbc2424b311359e825c8c854a92735e44e5403
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 11 17:09:09 2016 +0200
+
+    Issue #428 - Bump to 5.3.11 for this merge
+
+diff --git a/version.txt b/version.txt
+index c5b09c9..9c3783d 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.10
++5.3.11
+ 2016.09.11
+
+commit f1ac2dba580b31d97e3635900ca00c6411bc941f
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 11 15:50:42 2016 +0200
+
+    Issue #449, merge #450 - Bump to 5.3.10 for this fix.
+
+diff --git a/version.txt b/version.txt
+index c9a735c..c5b09c9 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.9
+-2016.08.04
++5.3.10
++2016.09.11
+
+commit d2fc25259859abd8c7d0e29dd23e790d48167a2c
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Aug 4 15:54:14 2016 +0200
+
+    Issue #443, merge #445 - Bump to 5.3.9 for this fix
+
+diff --git a/version.txt b/version.txt
+index 0b34ced..c9a735c 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.8
+-2016.07.29
++5.3.9
++2016.08.04
+
+commit 09caae3b9c4cd66c2f74b668a1cfbb18fc750529
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Jul 29 02:58:24 2016 +0200
+
+    Issue #441 - add 'integrity' attribute.
+    
+    Bumped to 5.3.8 for this change...
+    
+    See also #418 and the merge #442
+    
+    Thanks @bdesham and @dengeist...
+
+diff --git a/version.txt b/version.txt
+index 9d65f3c..0b34ced 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.7
+-2016.07.11
++5.3.8
++2016.07.29
+
+commit 4a483fd0663e966ac61382f1555113974a8cb4cb
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 15:32:55 2016 +0200
+
+    Issue #433 #429 #426 - bump to 5.3.7 - avoid crash when no doc
+    
+    This bump also includes merge of #424 - licence fix, and #423 - add
+    __GLIBC__ to long HAS_FUTIME list.
+    
+    And coincidentally #427 - an improved french translation!
+
+diff --git a/version.txt b/version.txt
+index 4025a1e..9d65f3c 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.6
++5.3.7
+ 2016.07.11
+
+commit 3b73cc12c572710bd85b2dd7b24bcc1201d4e27f
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 00:26:07 2016 +0200
+
+    Issue #420 - Bump to 5.3.6 for this merge
+
+diff --git a/version.txt b/version.txt
+index 5075da1..4025a1e 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.5
+-2016.07.01
++5.3.6
++2016.07.11
+
+commit d332908e5d09e53191b656402bfd9f743fc82737
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Jul 1 15:54:10 2016 +0200
+
+    Issue #418 - Bump to 5.3.5 for this enum fix
+
+diff --git a/version.txt b/version.txt
+index 6a24dc9..5075da1 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.4
+-2016.06.30
++5.3.5
++2016.07.01
+
+commit 6b3b1624eada2b0d88193cc14d8349be98deae23
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jun 30 18:36:10 2016 +0200
+
+    Issue #422 - Bump to 5.3.4 for this fix.
+
+diff --git a/version.txt b/version.txt
+index 15277cb..6a24dc9 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.3
+-2016.06.18
++5.3.4
++2016.06.30
+
+commit eca76889416ebef7b527e84147d21942ee77b501
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Jun 18 18:57:09 2016 +0200
+
+    Issue #410 - Bump to 5.3.3 for this fix.
+
+diff --git a/version.txt b/version.txt
+index 4591513..15277cb 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.2
++5.3.3
+ 2016.06.18
+
+commit 676b36eff50f3efad2accc5bbba045ca7c82c886
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Jun 18 18:26:23 2016 +0200
+
+    Issue #418 - add crossorigin attributes
+
+diff --git a/version.txt b/version.txt
+index e9f0bdf..4591513 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.1
+-2016.04.16
++5.3.2
++2016.06.18
+
+commit 60c1dd1744914335f787148b4b31024ae56a9685
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Apr 16 20:16:50 2016 +0200
+
+    Issue #396, #398 - Bump version.txt to 5.3.1 for this merge
+
+diff --git a/version.txt b/version.txt
+index d6763a7..e9f0bdf 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.3.0
+-2016.04.07
++5.3.1
++2016.04.16
+
+commit fdf2169ebf4ba5dbdba5f3715189d0697fd1abaa
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Apr 7 16:36:06 2016 +0200
+
+    Issue #394 - master reset to 5.3.0
+
+diff --git a/version.txt b/version.txt
+index 4901f78..d6763a7 100644
+--- a/version.txt
++++ b/version.txt
+@@ -1,2 +1,2 @@
+-5.1.52
+-2016.04.04
++5.3.0
++2016.04.07</pre>
+
+<p>Date: from Thu Apr 7 16:36:06 2016 +0200 to Wed Mar 1 15:04:22 2017 +0100</p>
+
+<p>eof <a href="#top">top</a></p>
+</body>
+</html>
