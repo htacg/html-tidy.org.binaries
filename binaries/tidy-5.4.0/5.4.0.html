@@ -7,23 +7,19 @@
 <body>
 <a id="top"></a>
 <h1>Release 5.4.0</h1>
-<p>Change log for this release.</p>
+<p>Change log for this release. List of <a href="#authors">authors</a></p>
 <pre>
+commit 0016e0083505ccee25a5c76dcf64cfe336765128 (HEAD -&gt; refs/heads/release/5.4, tag: refs/tags/5.4.0, refs/remotes/origin/release/5.4, refs/remotes/origin/master, refs/remotes/origin/HEAD, refs/heads/master)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 1 15:06:30 2017 +0100
+
+    Update verhist.log to 5.4.0 release
+
 commit 17b33753aea197e510ce48a93c9f0448c508a474
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
 Date:   Wed Mar 1 15:04:22 2017 +0100
 
     version.txt - Update to 5.4.0 release
-
-diff --git a/version.txt b/version.txt
-index e232944..6cf22d7 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,3 +1,2 @@
--5.3.21
-+5.4.0
- 2017.03.01
--
 
 commit c39b1cb42306b5d6c67b4791fcca13fefcbe432d
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -31,16 +27,41 @@ Date:   Wed Mar 1 14:51:53 2017 +0100
 
     Issue #498 - Bump to 5.3.21 for merge #502
 
-diff --git a/version.txt b/version.txt
-index 76aab01..e232944 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,3 @@
--5.3.20
--2017.02.24
-+5.3.21
-+2017.03.01
-+
+commit 323ddacf5d9747de93d78f687523cd8dd7acfe24
+Merge: 6574225 a49890e
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 1 14:47:40 2017 +0100
+
+    Merge pull request #502 from htacg/issue-498
+    
+    Issue #498 - parser.c - if a &lt;table&gt; in a &lt;table&gt; just close. This fixes #498
+
+commit 6574225f146917dfddc89bba0ca08622d75d2b74
+Merge: d071341 bb2cb26
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 1 14:36:59 2017 +0100
+
+    Merge pull request #500 from htacg/readme_540
+    
+    Update README documents with information for the upcoming 5.4.0 release.
+
+commit bb2cb2637223ea3c03edae01ae95be4e84b1b679
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 24 11:58:30 2017 -0500
+
+    Update README documents with information for the upcoming 5.4.0 release.
+
+commit a49890ee55025cb4a3097ad63a2fcd79459f2156 (refs/remotes/origin/issue-498, refs/heads/issue-498)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Feb 24 16:19:58 2017 +0100
+
+    Issue #498 - parser.c - if a &lt;table&gt; in a &lt;table&gt; just close.
+    
+    The previous action was to discard the second, while it is the second
+    table that browsers will render.
+    
+    This conforms to the principle that the html output by tidy should render
+    in a browser like the original html.
 
 commit d07134140a404d10dbf8819544424a33818b7bac
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -48,15 +69,20 @@ Date:   Fri Feb 24 14:39:46 2017 +0100
 
     Issue #497 - version.txt - Bump to 5.3.20 for this fix
 
-diff --git a/version.txt b/version.txt
-index 2742ca7..76aab01 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.19
--2017.02.23
-+5.3.20
-+2017.02.24
+commit c4b5904e1c194a01db52be2a4531207a246c12f1
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Feb 24 14:38:20 2017 +0100
+
+    Issue #497 - lexer.c - Add comment for this PR @seaburg
+
+commit e44f4d146925cdfa066a5252208f5be21fdef4d5
+Merge: 13c92bc bb1d62d
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Feb 24 14:30:39 2017 +0100
+
+    Merge pull request #497 from seaburg/fix_value_trimming
+    
+    Fix leading white spaces trimming
 
 commit 13c92bce3855209672b26e86ac9d79db3aea8661
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -64,14 +90,11 @@ Date:   Thu Feb 23 16:29:44 2017 +0100
 
     Issue #468 - version.txt - Bump to 5.3.19 for this fix
 
-diff --git a/version.txt b/version.txt
-index 5892180..2742ca7 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.18
-+5.3.19
- 2017.02.23
+commit 27fe0548b9dfe18e6d6f263df9202558acf4c389
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Feb 23 16:28:19 2017 +0100
+
+    Issue #468 - config.c - use `RAW` encoding for all cases
 
 commit b97b2f0d453a9f017d8dd3183f1d57711f212574
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -79,15 +102,33 @@ Date:   Thu Feb 23 15:28:40 2017 +0100
 
     Issue #329 - version.txt - bump to 5.3.18 for this fix
 
-diff --git a/version.txt b/version.txt
-index e20f7e1..5892180 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.17
--2017.02.12
-+5.3.18
-+2017.02.23
+commit 569ae4b4350ecbe94e6bcee3d9ed28eff5d3c69b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Feb 23 15:27:03 2017 +0100
+
+    Issue #329 - lexer.c - do not discard this newline here
+
+commit bb1d62d3bdebcf95a1950d3bb717607012a15f83
+Author: Evgeniy Yurtaev &lt;evgeniyyurt _at_ gmail _dot_ com&gt;
+Date:   Wed Feb 22 14:09:11 2017 +0300
+
+    Fix leading white spaces trimming
+
+commit 0bd6ba30b449a4c7bcaec0ad68da57d1ebe73632
+Merge: e1f066f 45a6062
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Feb 13 08:49:33 2017 -0500
+
+    Merge branch 'tidy_version'
+    
+    Note: this is a triple merge. Version bumped only once.
+
+commit e1f066fe14a02a025df78cb20f449f28a96732c8
+Merge: b7c84b1 1ac50fc
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Feb 13 08:49:13 2017 -0500
+
+    Merge branch 'empretty_script'
 
 commit b7c84b1b576e498d9c7b76ceafd4a3fadfafa9bf
 Merge: 73bf561 23c4686
@@ -102,15 +143,82 @@ Date:   Sun Feb 12 17:40:48 2017 +0100
 
     Bump version to 5.3.16 for SPRTF fixes
 
-diff --git a/version.txt b/version.txt
-index 3860123..59fb6dd 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.15
--2017.01.29
-+5.3.16
-+2017.02.12
+commit ea49ca0b1d1833e94b1d7f0b343c7af7b568702c
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Feb 12 17:37:14 2017 +0100
+
+    Fix license for SPRTF modules.
+    
+    Also correct the coding style to conform to HTML Tidy standard.
+
+commit 23c4686b0f950cfe3cc2723146a8cdb0abeaacf5 (refs/remotes/origin/surrogates, refs/heads/surrogates)
+Merge: 7f73d4f c789ca8
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Feb 11 18:34:38 2017 +0100
+
+    Merge branch 'surrogates' of github.com:htacg/tidy-html5 into surrogates
+
+commit 7f73d4f429cfe68a0c7384c7f9e577e13500d7fe
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Feb 11 18:33:45 2017 +0100
+
+    Issue #483 - Add ReportSurrogateError() service and connect.
+
+commit 45a6062b4a581fd824be9a0352160a0665824e09 (refs/remotes/origin/tidy_version)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 10 14:21:24 2017 -0500
+
+    VERSION.md cleanup.
+
+commit c789ca8311badcdab43b40c924f170a782b3b223
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Feb 10 10:24:11 2017 -0500
+
+    Cleanup of MESSAGES.md again, this time with correct information.
+
+commit 91e27b14f3ddf0610408714b92c50b7686ea358e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Feb 9 16:46:18 2017 -0500
+
+    Cleaned up MESSAGES.md just a bit per Geoff's request.
+
+commit 75bc1f06c7156535056652cf970e0fb7b0ae6903
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Feb 9 20:55:23 2017 +0100
+
+    More updates for Issue #483 - Start warning msgs - WIP
+
+commit 3ca117550a2dbb578acdd282a67f2fed4fb95dae
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Feb 9 20:54:11 2017 +0100
+
+    Initial start on a README/MESSAGES.md
+
+commit 1ac50fccb3838b094732f11fc1a211dc719cd284 (refs/remotes/origin/empretty_script)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Feb 8 13:53:37 2017 -0500
+
+    Pretty up output of empty script tags.
+    
+      - No longer break script tags up on two lines if there is content. However
+        output is still subject to the `--wrap` behavior.
+      - Previous behavior intact if there is content.
+    
+    Todo.
+    
+      - Associate this with a new Tidy option.
+
+commit 6a83918d335cbce262f4c2cf2145b929c2526a91
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Feb 5 17:27:28 2017 +0100
+
+    Add README for new 'attributes' and 'elements', 'tags'
+
+commit 9dc76c1e77177c5748ff0bf47d27a7828d25b67c
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Feb 2 16:43:10 2017 +0100
+
+    Issue #483 - Some fixes for error condition
 
 commit 259d3307805797e0a0655acae2894bfc7d00de30
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -123,31 +231,20 @@ Date:   Wed Feb 1 13:46:25 2017 +0100
     TODO: Maybe add a warning/error if the trailing surrogate not found, and
     maybe consider substituting to avoid invalid utf-8 output.
 
-diff --git a/version.txt b/version.txt
-index 3860123..2b48503 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.15
--2017.01.29
-+5.3.16I483
-+2017.02.01
-
 commit 10fd44d101d6cf77e76c0b55d0b53cdc408d06ab
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
 Date:   Sun Jan 29 19:21:46 2017 +0100
 
     Issue #478 PR #480 - Bump to 5.3.15
 
-diff --git a/version.txt b/version.txt
-index 0315198..3860123 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.14
--2017.01.09
-+5.3.15
-+2017.01.29
+commit deebc93f97da50e8924f23d8dd44adea0e8296ee
+Merge: 0cbbd55 da27b5e
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Jan 29 19:17:43 2017 +0100
+
+    Merge pull request #480 from onnimonni/feature-fix-xmlns-xlink
+    
+    Add optional xmlns:xlink attributes as valid to support inline svg
 
 commit 0cbbd555359e7ff0f4dac10822cfa9f2ae4243c5
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -155,15 +252,21 @@ Date:   Mon Jan 9 17:07:13 2017 +0100
 
     Issue #463, a step in #460, bump to v.5.3.14 for this merge
 
-diff --git a/version.txt b/version.txt
-index ed19d3c..0315198 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.13
--2017.01.08
-+5.3.14
-+2017.01.09
+commit cdf3f8846c64e0a4fddd2e0753b39e1683d647c3
+Merge: 2243510 91da8c6
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jan 9 16:59:43 2017 +0100
+
+    Merge pull request #463 from marcoscaceres/ansi_compliance
+    
+    style: ansi conforming comments
+
+commit da27b5e339fb4f470c40cccc6eea681dddf079d0
+Author: Onni Hakala &lt;onni _at_ keksi _dot_ io&gt;
+Date:   Mon Jan 9 01:38:16 2017 +0200
+
+    Add optional xmlns:xlink attributes as valid to support inline svg
+    fixes #478
 
 commit 2243510592448c62a9cc4278182a7d48dde11cb8
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -171,15 +274,410 @@ Date:   Sun Jan 8 18:24:17 2017 +0100
 
     Issue #469 #473 Bump to 5.3.13
 
-diff --git a/version.txt b/version.txt
-index f9c3f12..ed19d3c 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.12
--2016.10.14
-+5.3.13
-+2017.01.08
+commit 7593d7b58f4417289abec8317a68e2df5b7102ef
+Author: Eric Bréchemier &lt;github _at_ eric _dot_ brechemier _dot_ name&gt;
+Date:   Sun Jan 8 18:19:36 2017 +0100
+
+    Merge documentation of &quot;command-line&quot; and &quot;configuration&quot; options (Issue #469) (#473)
+    
+    * Track tidy.1 before merging duplicate sections
+    
+    I am adding the file to the git repository to track and review
+    the changes to this generated file. I will then update the XSLT
+    transformation which produces this file to remove duplicate sections.
+    As a first step, I will stop outputting duplicate sections; I will
+    then merge them into existing sections. I will commit the changes
+    to the generated file at each step.
+    
+    Related issue: #469
+    
+    * Also track changes in text rendering of the man page tidy.1
+    
+    The rendering to text was done with following command:
+    
+      /usr/bin/groff -Tascii -mandoc -c tidy.1
+    
+    This format should make the review of differences more readable.
+    
+    Related issue: #469
+    
+    * Remove duplicate sections: temporarily discard detailed options
+    
+    Related issue: #469
+    
+    * Generalize command line given in SYNOPSIS
+    
+    The new SYNOPSIS expresses the fact that multiple files can
+    be provided as argument, and that options and files can be mixed
+    (options apply only to the files specified after, not the ones before).
+    
+    It does not explain that there are actually two types of options; this
+    shall be detailed afterwards: simple options (aka standard options) start
+    with single dash while configuration options start with a double dash.
+    Only the latter can be defined in configuration files, using their name
+    without the double dash.
+    
+    I have also reformatted the terms 'options' and 'file' to be underlined,
+    to follow conventions that I observed in other man pages (ls, grep, wget...)
+    
+    Related issue: #469
+    
+    * Regroup sentences related to options at the start of OPTIONS section
+    
+    This is an intermediate step before adapting the text to its new
+    location. I will probably start the section with a paragraph to
+    introduce the two different kinds of options. Then describe the
+    &quot;standard&quot; options in more details. Then list the standard options.
+    Then describe the configuration options in more details. Then list
+    the configuration options, using a format similar to the one used
+    for standard options.
+    
+    Related issue: #469
+    
+    * Describe &quot;standard&quot; and &quot;expanded&quot; options part of OPTIONS section
+    
+    The section now starts with a description of both types of options,
+    and explains that the first part of the section concerns with the
+    &quot;standard&quot; options while the second part of the section concerns with
+    the &quot;expanded&quot; options.
+    
+    More details are provided about &quot;standard&quot; options, which are then
+    listed individually.
+    
+    More details are then provided about &quot;expanded&quot; options and their
+    usage on the command line and in configuration files. The configuration
+    options are not listed yet. In order to avoid repeating a lot of
+    information with every separate configuration option, I will first
+    describe common values and formats; I will then describe each option
+    more succinctly, like &quot;standard&quot; options.
+    
+    Related issue: #469
+    
+    * Remove redundant USAGE section
+    
+    The fact that the input file defaults to standard input
+    and the output file to standard output is already indicated
+    in the DESCRIPTION section. This was the only information
+    left in this section at this point.
+    
+    Related issue: #469
+    
+    * Delete separation line
+    
+    The line used to separate &quot;standard&quot; usage from &quot;extended&quot; usage.
+    Both forms are now integrated in the common description of OPTIONS.
+    
+    Related issue: #469
+    
+    * Delete DETAILED CONFIGURATION OPTIONS section
+    
+    The detailed configuration options are now described together
+    with standard options in a common OPTIONS section.
+    
+    Related issue: #469
+    
+    * Delete duplicate SYNOPSIS section
+    
+    A single generalized SYNOPSIS now encompasses both kinds of options.
+    
+    Related issue: #469
+    
+    * Delete WARNING section, no longer relevant
+    
+    The WARNING referred to a separate section for the description
+    of &quot;standard&quot; options. They are now described in the same OPTIONS
+    section as &quot;extended&quot; options.
+    
+    Related issue: #469
+    
+    * Copy details of configuration options and file format to OPTIONS
+    
+    Just before listing all the configuration options, this is the
+    expected place to describe the &quot;extended&quot; options in more details.
+    The description was already worded as an introduction to the list
+    of configuration options. I will update this description after having
+    compacted entries which describe individual configuration options.
+    
+    Related issue: #469
+    
+    * Delete duplicate DESCRIPTION section
+    
+    This section has been merged into the generalized OPTIONS section.
+    
+    Related issue: #469
+    
+    * List configuration options at the end of the OPTIONS section
+    
+    This list is very long, with lots of duplicate information
+    repeated for entries of the same type. The description of
+    configuration options should be compacted to match as closely
+    as possible the description of &quot;standard&quot; options.
+    
+    Related issue: #469
+    
+    * Delete duplicate OPTIONS section
+    
+    I contained the list of configuration options, which is now included
+    at the end of the generalized OPTIONS section.
+    
+    Related issue: #469
+    
+    * Delete config-section template
+    
+    The template was now empty. Its contents have been merged
+    into the cmdline-section template.
+    
+    Related issue: #469
+    
+    * Remove redundant sentence
+    
+    The sentence listed the five categories of configuration options.
+    This kind of made sense when the options were listed in the following
+    section. Now that they are listed just below, it has become redundant.
+    
+    Related issue: #469
+    
+    * Remove colon ':' at the end of configuration options categories
+    
+    The categories of &quot;standard&quot; options do not end with a colon;
+    no title does actually.
+    
+    Related issue: #469
+    
+    * Remove extra lines before the list of configuration options
+    
+    Related issue: #469
+    
+    * Add double space after period '.  ' where missing
+    
+    For consistency with usage, sentences within paragraphs shall be
+    separated by a double space rather than a single space. This was
+    done in most places in the document, with only a few places missing.
+    
+    Related issue: #469
+    
+    * Delete irrelevant comment
+    
+    The comment refers to cmdline section at the start of the processing
+    of configuration options. The cmdline options are opposed to
+    config options in the context of this transformation. They are
+    provided through two separate XML input files.
+    
+    Related issue: #469
+    
+    * Delete extra blank line before sample configuration file
+    
+    Related issue: #469
+    
+    * Remove multiple empty lines after heading of each options category
+    
+    Related issue: #469
+    
+    * Remove duplicate empty line before 'See also:' lines
+    
+    Related issue: #469
+    
+    * Clarify the terms used for both kinds of options
+    
+    I removed references to &quot;standard&quot; (or regular) command-line options
+    and &quot;extended&quot; (or detailed) options. I used the terms featured in
+    the description of the options which output XML files describing
+    each kind of options:
+    
+      -xml-help
+            list the command line options in XML format
+    
+      -xml-config
+            list all configuration options in XML format
+    
+    The term for single-dash options is now (purely) command-line options
+    while double-dash options are referred to as configuration options.
+    
+    Related issue: #469
+    
+    * Update copyright year to 2016
+    
+    * Clarify configuration options equivalent to command-line options
+    
+    I added a paragraph to explain the equivalence of a command-line
+    option with a configuration option and value, and to explicit the
+    format used to describe this equivalence in the description of
+    command-line parameters.
+    
+    I moved the parentheses, which were on the last line, at the end
+    of the description, to the first line at the end of the list of
+    names for the command-line option.
+    
+    Related issue: #469
+    
+    * Use underlines (I) instead of bold (B) for option names in config example
+    
+    This is for consistency with the format used for the option names in
+    the equivalent command-line example above, and in the other example
+    of configuration file.
+    
+    Related issue: #469
+    
+    * Update copyright year to 2017
+    
+    * Add double dash before the name of configuration options
+    
+    This is a first step for the harmonization of the descriptions
+    of command-line and configuration options.
+    
+    Related issue: #469
+    
+    * Reformat logically to separate formatting (bold) from text (option name)
+    
+    Related issue: #469
+    
+    * Move Type after name of configuration option
+    
+    This puts it in the position expected on the command line.
+    
+    Related issue: #469
+    
+    * Move default value after config option name and Type
+    
+    I tried different formats for the default value:
+    
+      --clean Boolean:no
+      --clean Boolean[no]
+    
+    and more formats after I realized that the 'default' value is
+    not applied when the value is omitted, but when the option is
+    not used at all:
+    
+      --clean Boolean (initially: no)
+      --clean Boolean (unset: no)
+    
+    I selected the less confusing format:
+    
+      --clean Boolean (no if unset)
+    
+    which is self-explanatory.
+    
+    Related issue: #469
+    
+    * Clarify that a configuration option cannot be used without a value
+    
+    For example, using --clean without a value is not equivalent to
+    using -clean option:
+    
+      curl -s https://www.google.com | tidy --clean 2&gt;&amp;1 1&gt;/dev/null | head -n 1
+    
+    results in:
+    
+      Config: missing or malformed argument for option: clean
+    
+    Related issue: #469
+    
+    * Add double dash before option names in 'See also' sections
+    
+    This is consistent with the format used at the top of the
+    description of configuration options.
+    
+    Related issue: #469
+    
+    * Fix order of items in comment describing documentation of config options
+    
+    The 'seealso' comes last actually, after the description.
+    
+    * Break long lines to keep source code readable in a terminal (80 characters)
+    
+    This makes no change on the text generated by
+    
+      /usr/bin/groff -Tascii -mandoc -c tidy.1 &gt; tidy.1.txt
+    
+    * Only output an empty line when Example section is present
+    
+    Otherwise, the description starts with an empty line when
+    no Example section is present.
+    
+    Related issue: #469
+    
+    * Simplify matching of example elements with contents
+    
+    Using a template match instead of a named template,
+    I will then add rules with higher priority to ignore
+    examples for certain types of values, which are very
+    redundant (identical for all options of the same type).
+    
+    Related issue: #469
+    
+    * Do not print redundant examples
+    
+    Examples for Boolean and AutoBool are redundant because they are
+    described in the main text and identical for all options of that type.
+    
+    Examples for Tag names are redundant because they are redundant
+    with the name of the Type, and identical for all options of that type.
+    
+    Examples for Integer are redundant because they are identical for
+    all options of that type but one, where the value 0 is followed with
+    a comment, but even in this case the examples are redundant because
+    the comment for the value 0 is also included in the description.
+    
+    Related issue: #469
+    
+    * Rename 'Examples' section to 'Supported values' to clarify
+    
+    I also updated the description related to 'Examples' section
+    in the introduction paragraphs to the configuration options.
+    
+    Related issue: #469
+    
+    * Use italics consistently for the names of option types
+    
+    Related issue: #469
+    
+    * Use capitalization with no extra style consistently for Type
+    
+    Previously, a mix of
+    
+      * Type set in bold font
+      * Type set in regular font
+      * &quot;types&quot; (quoted)
+      * types (unquoted)
+    
+    was found. I replaced all instances by Type in regular font.
+    
+    Related issue: #469
+    
+    * Consistently use bold format for option values
+    
+    Both parameter names and values are now in bold,
+    while keys and values for configuration files are in italics.
+    
+    Related issue: #469
+    
+    * Use the same format as other subsections for 'See also'
+    
+    The subsection is now flush left, in regular font, like
+    the 'Supported values' subsection.
+    
+    The previous format was less adequate when the list wrapped
+    to the next line (--new-inline-tags): wrapping started on
+    the very first column, breaking the alignment of the rest of
+    the description.
+    
+    Related issue: #469
+    
+    * Consistently indent with 2 spaces, use a single line between templates
+    
+    Parts of the file were indented with 2 spaces, others with 3 spaces.
+    Parts of the templates were separated with two empty lines, others
+    with a single one.
+    
+    * Remove temporary files used for step by step comparisons of man page
+    
+    Related issue: #469
+
+commit 91da8c6f7408aefb7a6b3ba426087984776bc16a
+Author: Marcos Caceres &lt;marcos _at_ marcosc _dot_ com&gt;
+Date:   Wed Oct 26 01:41:03 2016 +1100
+
+    style: ansi conforming comments
 
 commit fd0ccb2bbf3f907e5425d5849409fbf1558197bc
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -187,15 +685,17 @@ Date:   Sun Oct 30 23:37:31 2016 +0100
 
     Bad, repeated node iteration! closes #459
 
-diff --git a/version.txt b/version.txt
-index 9c3783d..f9c3f12 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.11
--2016.09.11
-+5.3.12
-+2016.10.14
+commit 92a872251b9323ec4ff2680069bc2c98714c07ad
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Oct 2 16:37:22 2016 +0200
+
+    Change to msvc140 2015 build
+
+commit 951a65bdcf5e372ae4371cb1e9acbe1864c3a977
+Author: Geoff R. McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 11 17:20:43 2016 +0200
+
+    Improve doxy comment formating - no code changes
 
 commit 4edbc2424b311359e825c8c854a92735e44e5403
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -203,14 +703,17 @@ Date:   Sun Sep 11 17:09:09 2016 +0200
 
     Issue #428 - Bump to 5.3.11 for this merge
 
-diff --git a/version.txt b/version.txt
-index c5b09c9..9c3783d 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.10
-+5.3.11
- 2016.09.11
+commit d81a9ad90180b682101fe2e60a0972ba351c1d6e
+Merge: f1ac2db 80e57b2
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 11 16:57:07 2016 +0200
+
+    Merge branch 'issue-428'
+    
+    Conflicts:
+            version.txt
+    
+    This closes #428
 
 commit f1ac2dba580b31d97e3635900ca00c6411bc941f
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -218,15 +721,36 @@ Date:   Sun Sep 11 15:50:42 2016 +0200
 
     Issue #449, merge #450 - Bump to 5.3.10 for this fix.
 
-diff --git a/version.txt b/version.txt
-index c9a735c..c5b09c9 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.9
--2016.08.04
-+5.3.10
-+2016.09.11
+commit a820f06cc8325062a93abc58c557726757ff1d81
+Merge: 59d1fe4 e4ae9c0
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 11 15:46:38 2016 +0200
+
+    Merge pull request #450 from marcoscaceres/as_attribute
+    
+    Add support for link 'as' attribute (closes #449)
+
+commit 59d1fe4d726f67e2398fe22214372dfff2d23e25
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Sep 10 16:01:23 2016 +0200
+
+    Issue #454 - Clearly show `xsltproc' prereqisite, and other additions
+
+commit e4ae9c064d4f5aee646b86c4171594cd36903ffb
+Author: Marcos Caceres &lt;marcos _at_ marcosc _dot_ com&gt;
+Date:   Tue Aug 23 18:36:25 2016 +1000
+
+    Add support for link 'as' attribute (closes #449)
+
+commit 80e57b23bfa7880db66cb7177a69e694a14c250b
+Merge: 7631f25 d2fc252
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Aug 9 00:45:46 2016 +0200
+
+    Merge branch 'master' into issue-428
+    
+    Conflicts:
+            version.txt
 
 commit d2fc25259859abd8c7d0e29dd23e790d48167a2c
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -234,15 +758,32 @@ Date:   Thu Aug 4 15:54:14 2016 +0200
 
     Issue #443, merge #445 - Bump to 5.3.9 for this fix
 
-diff --git a/version.txt b/version.txt
-index 0b34ced..c9a735c 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.8
--2016.07.29
-+5.3.9
-+2016.08.04
+commit edafefb303ae2684f36514bdcb3de915a5796693
+Merge: 09caae3 50557a4
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Aug 4 15:50:57 2016 +0200
+
+    Merge pull request #445 from AdamMajer/fix_buffer_overflow
+    
+    Fix static buffer overrrun (issue #443)
+
+commit 7631f25ed23e3c6e4c1302c6dc226d6f01ff5cb6
+Merge: 09caae3 685f7a6
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Aug 2 18:10:19 2016 +0200
+
+    rebase issue-428
+
+commit 50557a4f633810caa9ccf7841957a57f3e7c7d60
+Author: Adam Majer &lt;amajer _at_ suse _dot_ de&gt;
+Date:   Tue Aug 2 11:10:45 2016 +0200
+
+    Fix static buffer overrrun (issue #443)
+    
+    result[6] is a fixed array of size 6, but in the process
+    of copying data into it, we clobber the last allocated byte.
+    
+    Simplify some of the code by not calling redundant functions.
 
 commit 09caae3b9c4cd66c2f74b668a1cfbb18fc750529
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -256,15 +797,29 @@ Date:   Fri Jul 29 02:58:24 2016 +0200
     
     Thanks @bdesham and @dengeist...
 
-diff --git a/version.txt b/version.txt
-index 9d65f3c..0b34ced 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.7
--2016.07.11
-+5.3.8
-+2016.07.29
+commit 9ea2539d36f2a79cb7a92d543da4e639fba875e4
+Merge: b26271e 5417938
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Jul 29 02:55:54 2016 +0200
+
+    Merge pull request #442 from bdesham/add-integrity-attribute
+    
+    Add support for the &quot;integrity&quot; attribute
+
+commit 54179386be6e94413e56d2228bbdda46f45f1580
+Author: Benjamin Esham &lt;benjamin _at_ esham _dot_ io&gt;
+Date:   Sun Jul 24 10:24:30 2016 -0400
+
+    Add support for the &quot;integrity&quot; attribute
+    
+    This attribute may be used on &quot;link&quot; and &quot;script&quot; elements. See
+    http://www.w3.org/TR/2016/REC-SRI-20160623/#element-interface-extensions
+
+commit b26271e3f81d458264664f3d85dff3ec94297ce3
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 20:40:20 2016 +0200
+
+    Adjust for removal of LICENSE.txt
 
 commit 4a483fd0663e966ac61382f1555113974a8cb4cb
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -277,14 +832,41 @@ Date:   Mon Jul 11 15:32:55 2016 +0200
     
     And coincidentally #427 - an improved french translation!
 
-diff --git a/version.txt b/version.txt
-index 4025a1e..9d65f3c 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.6
-+5.3.7
- 2016.07.11
+commit fa9472abec9f0e01b03bcbd27a67ed7d487bc937
+Merge: 0d25772 1028104
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 15:22:08 2016 +0200
+
+    Merge pull request #433 from nijel/fix-crash-upstream
+    
+    Avoid crash in tidyCleanAndRepair if document was not loaded
+
+commit 0d25772a939904f6a9f7bf4cf2d62b137e21fcab
+Merge: f84effb fa06c0f
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 15:20:27 2016 +0200
+
+    Merge pull request #424 from danielhjames/patch-1
+    
+    Update LICENSE.md
+
+commit f84effb1f5cb95f2ceae812f5e84371908e53a77
+Merge: 2b19d32 27143cc
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 15:17:42 2016 +0200
+
+    Merge pull request #423 from pinotree/glibc
+    
+    Set HAS_FUTIME=0 on any GNU libc platform
+
+commit 2b19d32a6281aa65116d674f46ed00beae652b66
+Merge: 3b73cc1 fb10e80
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 15:12:52 2016 +0200
+
+    Merge pull request #427 from vargenau/master
+    
+    Improve French translation.
 
 commit 3b73cc12c572710bd85b2dd7b24bcc1201d4e27f
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -292,15 +874,30 @@ Date:   Mon Jul 11 00:26:07 2016 +0200
 
     Issue #420 - Bump to 5.3.6 for this merge
 
-diff --git a/version.txt b/version.txt
-index 5075da1..4025a1e 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.5
--2016.07.01
-+5.3.6
-+2016.07.11
+commit 517a2ea72d9fbbef1102759006a79c8606ff0d14
+Merge: d332908 30cc376
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jul 11 00:23:01 2016 +0200
+
+    Merge pull request #420 from AdamMajer/compat_headers
+    
+    Add compatibility headers
+
+commit 10281040ca6b3a54db7880eed9c67957d11622eb
+Author: Michal Čihař &lt;michal _at_ cihar _dot_ com&gt;
+Date:   Wed Jun 29 16:11:10 2016 +0200
+
+    Avoid crash in tidyCleanAndRepair if document was not loaded
+    
+    These services can only be used when there is a document loaded, ie a
+    lexer created.  But really should not be calling a Clean and Repair
+    service with no doc!
+
+commit 685f7a6c5b24908253f7ff453f8a36013e56252c
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Jul 2 20:13:01 2016 +0200
+
+    Issue #428 - Avoid adding form to input if html5
 
 commit d332908e5d09e53191b656402bfd9f743fc82737
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -308,15 +905,25 @@ Date:   Fri Jul 1 15:54:10 2016 +0200
 
     Issue #418 - Bump to 5.3.5 for this enum fix
 
-diff --git a/version.txt b/version.txt
-index 6a24dc9..5075da1 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.4
--2016.06.30
-+5.3.5
-+2016.07.01
+commit 8745f7917730a5ec295257607e9c8c14beb700e7
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Jul 1 15:43:06 2016 +0200
+
+    Issue #418 - Ensure TidyAttrID enum exactly matches table.
+    
+    The file tidyenum.h has an attribute ID enumeration that must exactly
+    match the attribute_defs[] table in attrs.c.
+    
+    Originally some attempt was made to keep this enum in some sort of order
+    but that should now be totally abandonned. Any 'new' attribute
+    enumerations should be added just above the last N_TIDY_ATTRIBS, and
+    likewise in the table, to avoid this problem.
+
+commit fa06c0f44ad5cc69b34d3f88aff221ba291beb96
+Author: Daniel James &lt;daniel _at_ 64studio _dot_ com&gt;
+Date:   Fri Jul 1 10:15:26 2016 +0100
+
+    Merge the two different license files and add contributors
 
 commit 6b3b1624eada2b0d88193cc14d8349be98deae23
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -324,15 +931,50 @@ Date:   Thu Jun 30 18:36:10 2016 +0200
 
     Issue #422 - Bump to 5.3.4 for this fix.
 
-diff --git a/version.txt b/version.txt
-index 15277cb..6a24dc9 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.3
--2016.06.18
-+5.3.4
-+2016.06.30
+commit 7bec2c208279fd1023aa59a29ed7a31f8411b9fd
+Merge: eca7688 84fc451
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Jun 30 18:32:55 2016 +0200
+
+    Merge pull request #422 from sesom42/master
+    
+    prevent buffer overflow in debug output
+
+commit fb10e800997f2be5f13274c76fc9679c3f655dee
+Author: Marc-Etienne Vargenau &lt;Marc-Etienne _dot_ Vargenau _at_ alcatel-lucent _dot_ com&gt;
+Date:   Wed Jun 29 18:12:26 2016 +0200
+
+    Improve French translation.
+
+commit 30cc376f7b14c891b7e7a5cd49c170cf07dba610
+Author: Adam Majer &lt;amajer _at_ suse _dot_ com&gt;
+Date:   Mon Jun 13 11:10:16 2016 +0200
+
+    Add compatibility headers
+    
+    In older versions of tidy, these headers were defined. Now, they are
+    renamed to tidybuffio.h and tidyplatform.h. This may be more of a
+    consistent naming scheme, but it breaks current software.
+    
+    Re-add these headers and add compile time warning when such a header
+    is used.
+
+commit 5b23fd2f7d9f932af166b3df7f3caa46e31ec95b
+Author: Daniel James &lt;daniel _at_ 64studio _dot_ com&gt;
+Date:   Mon Jun 27 15:18:10 2016 +0100
+
+    Update LICENSE.md
+    
+    Change date to match LICENSE.txt
+
+commit 27143cc88e1d7cda7f08bdc4d78ce68dabf7575c
+Author: Pino Toscano &lt;toscano _dot_ pino _at_ tiscali _dot_ it&gt;
+Date:   Fri Jun 24 23:45:10 2016 +0200
+
+    Set HAS_FUTIME=0 on any GNU libc platform
+    
+    GNU libc does not have &lt;sys/utime _dot_ h&gt; but &lt;utime _dot_ h&gt;, so set HAS_FUTIME=0
+    for it; fixes build on non-Linux platforms using GNU libc.
 
 commit eca76889416ebef7b527e84147d21942ee77b501
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -340,14 +982,14 @@ Date:   Sat Jun 18 18:57:09 2016 +0200
 
     Issue #410 - Bump to 5.3.3 for this fix.
 
-diff --git a/version.txt b/version.txt
-index 4591513..15277cb 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.2
-+5.3.3
- 2016.06.18
+commit 97700044cec5dab5480f7bb284825ff2968d7e62
+Merge: 676b36e 04bc8d3
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Jun 18 18:53:53 2016 +0200
+
+    Merge pull request #410 from gagern/varargs
+    
+    Pair va_copy calls with va_end
 
 commit 676b36eff50f3efad2accc5bbba045ca7c82c886
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -355,15 +997,52 @@ Date:   Sat Jun 18 18:26:23 2016 +0200
 
     Issue #418 - add crossorigin attributes
 
-diff --git a/version.txt b/version.txt
-index e9f0bdf..4591513 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.1
--2016.04.16
-+5.3.2
-+2016.06.18
+commit a734be5bdb9df339ceab78d86a2e84fb705b03d0
+Merge: 60c1dd1 941b763
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Jun 18 18:23:37 2016 +0200
+
+    Merge pull request #418 from bdesham/add-crossorigin-attribute
+    
+    Add support for the HTML5 &quot;crossorigin&quot; attribute
+
+commit 84fc451a78bd125e407f953b05ff2c19ec6ce4e9
+Author: Jens Tautenhahn &lt;shogun _at_ tausys _dot_ de&gt;
+Date:   Tue Jun 14 15:42:18 2016 +0200
+
+    prevent buffer overflow in debug output
+
+commit 941b763a8d0f653ebfbd1100a2036e4cd5542aa1
+Author: Benjamin Esham &lt;benjamin _at_ esham _dot_ io&gt;
+Date:   Wed Jun 8 19:40:15 2016 -0400
+
+    Add support for &quot;crossorigin&quot; on audio too
+
+commit d9d8e92e523a66c040edc8ab855e8569323b49f1
+Author: Benjamin Esham &lt;benjamin _at_ esham _dot_ io&gt;
+Date:   Tue Jun 7 22:29:57 2016 -0400
+
+    Allow &quot;crossorigin&quot; on img, script, and video tags too
+
+commit 9377f65f8974bc89347f3e0dba8491b192d85822
+Author: Benjamin Esham &lt;benjamin _at_ esham _dot_ io&gt;
+Date:   Tue Jun 7 22:20:10 2016 -0400
+
+    Add support for the HTML5 &quot;crossorigin&quot; attribute
+    
+    This attribute can only be used on &quot;link&quot; elements.
+    
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes
+
+commit 04bc8d3195c88aca3fbac8019bcf325a9245b55f
+Author: Martin von Gagern &lt;Martin _dot_ vGagern _at_ gmx _dot_ net&gt;
+Date:   Tue May 17 22:37:32 2016 +0200
+
+    Pair va_copy calls with va_end
+    
+    According to the specs, each va_copy call should be matched by a va_end call
+    to ensure proper cleanup.  Furthermore, since message filters might iterate
+    over the list of arguments, we should hand a new copy to each filter.
 
 commit 60c1dd1744914335f787148b4b31024ae56a9685
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -371,15 +1050,20 @@ Date:   Sat Apr 16 20:16:50 2016 +0200
 
     Issue #396, #398 - Bump version.txt to 5.3.1 for this merge
 
-diff --git a/version.txt b/version.txt
-index d6763a7..e9f0bdf 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.3.0
--2016.04.07
-+5.3.1
-+2016.04.16
+commit 0ab4c4871188b65b810b0ad07ef6de7f65d325e7
+Merge: fdf2169 b704a4d
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Apr 16 20:14:22 2016 +0200
+
+    Merge pull request #398 from rtack/issue-396
+    
+    allow zero LI in UL when html5. fix for #396
+
+commit b704a4d0d4587c1dc428fcfdd01fa337c87cec3e
+Author: Raphael Ackermann &lt;raphael _dot_ ackermann _at_ gmail _dot_ com&gt;
+Date:   Fri Apr 8 23:08:56 2016 +0200
+
+    allow zero LI in UL when html5. fix for #396
 
 commit fdf2169ebf4ba5dbdba5f3715189d0697fd1abaa
 Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
@@ -387,18 +1071,18 @@ Date:   Thu Apr 7 16:36:06 2016 +0200
 
     Issue #394 - master reset to 5.3.0
 
-diff --git a/version.txt b/version.txt
-index 4901f78..d6763a7 100644
---- a/version.txt
-+++ b/version.txt
-@@ -1,2 +1,2 @@
--5.1.52
--2016.04.04
-+5.3.0
-+2016.04.07</pre>
+commit 0db9b32e22568921b1f596d79f5b9f2ac17c3ea5
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Apr 4 18:14:33 2016 +0200
 
-<p>Date: from Thu Apr 7 16:36:06 2016 +0200 to Wed Mar 1 15:04:22 2017 +0100</p>
+    Issue #390 - Bump to 5.1.52 for this indent fix</pre>
+<a name="authors"></a>
+
+<p>This log has  89 commits by 15 authors: Michal Čihař 1; Raphael Ackermann 1; Benjamin Esham 4; Marcos Caceres 2; Evgeniy Yurtaev 1; Jens Tautenhahn 1; Marc-Etienne Vargenau 1; Eric Bréchemier 1; Geoff R. McLane 62; Jim Derry 8; Martin von Gagern 1; Pino Toscano 1; Daniel James 2; Adam Majer 2; Onni Hakala 1; </p>
+
+<p>Date: from Mon Apr 4 18:14:33 2016 +0200 to Wed Mar 1 15:06:30 2017 +0100 (330 days)</p>
 
 <p>eof <a href="#top">top</a></p>
 </body>
 </html>
+
