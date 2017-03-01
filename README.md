@@ -16,7 +16,7 @@ README for HTACG GitHub Pages
 This repository consists of the HTML Tidy Advocacy Group (HTACG) homepages.
 
 For ease of maintenance by multiple contributors HTACG's GitHub pages take advantage of
-GitHub’s Jekyll integration. Therefor it is necessary to be slightly familiar with Jekyll
+GitHub’s Jekyll integration. Therefore it is necessary to be slightly familiar with Jekyll
 and GitHub’s implementation of Jekyll in order to make changes to our sites.
 
 

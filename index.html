@@ -5,7 +5,9 @@ title:    "HTML Tidy Binary Releases"
 <h1>HTML Tidy Binary Releases</h1>
 
 <p class="note">
-    Note! These are some tidy-html5 binaries releases! Always a WIP, adding new releases...
+    These are HTACG HTML Tidy official releases. Visit our
+    <a href="https://github.com/htacg/tidy-html5">Github Repository</a>
+    for source code for cutting edge versions.
 </p>
 
 {% for release in site.data.tidy %}
@@ -14,10 +16,13 @@ title:    "HTML Tidy Binary Releases"
             <tr>
                 <td colspan="4">
                     <p>
-                    	{{release.heading}} <a href="{{site.baseurl}}/binaries/{{release.path}}/{{release.notes}}" class="release_notes">(release notes)</a>
-                    	{% if {{release.release != null}} %}
-                    	<a href="https://github.com/htacg/tidy-html5/releases/{{release.release}}" class="release_path">(official release)</a>
+                      {{release.heading}} 
+                    	{% if {{release.notes != null}} %}
+                    	<a href="{{site.baseurl}}/release_notes/{{release.notes}}" class="release_notes">(release notes)</a>
                     	{% endif %}
+                    	<a href="https://github.com/htacg/tidy-html5/releases/tag/{{release.release}}" class="release_path">(official release)</a>
+                    	<a href="https://github.com/htacg/tidy-html5/archive/{{release.release}}.zip" class="">(source .zip)</a>
+                    	<a href="https://github.com/htacg/tidy-html5/archive/{{release.release}}.tar.gz" class="">(source .tar.gz)</a>
                     </p>
                 </td>
             </tr>
@@ -31,7 +36,7 @@ title:    "HTML Tidy Binary Releases"
         <tbody>
             {% for binary in release.binaries %}
             <tr>
-                <td><a href="{{site.baseurl}}/binaries/{{release.path}}/{{binary.filename}}">{{binary.filename}}</a></td>
+                <td><a href="https://github.com/htacg/tidy-html5/releases/download/{{release.release}}/{{binary.filename}}">{{binary.filename}}</a></td>
                 <td>{{binary.modified}}</td>
                 <td>{{binary.filesize}}</td>
                 <td>{{binary.describe}}</td>
