@@ -96,6 +96,35 @@
       modified: 2015/11/23 14:45:40
       describe: Win64 ZIP package.
 
+- release: 5.1.14
+  heading: HTML Tidy version 5.1.14
+  notes: 5.1.14.html
+  binaries:
+    - filename: tidy-5.1.14-64bit.deb
+      filesize: 632K
+      modified: 2015/10/01 14:44:08
+      describe: linux 64-bit DEB.
+
+    - filename: tidy-5.1.14-64bit.rpm
+      filesize: 633K
+      modified: 2015/10/01 14:44:10
+      describe: linux 64-bit RPM.
+
+    - filename: tidy-5.1.14-macosx.dmg
+      filesize: 793K
+      modified: 2015/10/01 12:40:00
+      describe: macOS Disk Image.
+
+    - filename: tidy-5.1.14-win32.zip
+      filesize: 626K
+      modified: 2015/10/01 14:48:15
+      describe: Win32 ZIP package.
+
+    - filename: tidy-5.1.14-win64.zip
+      filesize: 585K
+      modified: 2015/10/01 14:45:40
+      describe: Win64 ZIP package.
+
 - release: 5.0.0
   heading: HTML Tidy version 5.0.0
   notes: 5.0.0.html
