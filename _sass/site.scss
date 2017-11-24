@@ -23,8 +23,9 @@ table.directory
 
 		td { width: 15%; min-width: 12em; }
 		td + td { width: 15%; min-width: 11em;}
-		td + td + td { width: 10%; min-width: 4em; }
-		td + td + td + td { width: auto; }
+		td + td + td { width: 10%; min-width: 5em; }
+		td + td + td + td { width: 15%; min-width: 14em; }
+		td + td + td + td + td { width: auto; }
 	}
 }
 

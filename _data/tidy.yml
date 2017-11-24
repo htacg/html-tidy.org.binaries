@@ -6,31 +6,37 @@
       filesize: 708K
       modified: 2017/03/01 10:00:00
       describe: linux 64-bit DEB.
+      sha256: b6b971534ee6bacc68a7c5f9878b0a146fbd7f50c580db76a19823e8541f92f8
 
     - filename: tidy-5.4.0-64bit.rpm
       filesize: 710K
       modified: 2017/03/01 10:00:00
       describe: linux 64-bit RPM.
+      sha256: 5ba734b99856fac5ec4ec030e4e13b3c2d4ef53111ee1d11afa34954e99e766a
 
     - filename: tidy-5.4.0-macosx.dmg
       filesize: 997K
       modified: 2017/03/01 10:00:00
       describe: macOS Disk Image.
+      sha256: be7c7de5b64afcd441ca14c7e95947b327458db12efd54b6e17bc66385241c1c
 
     - filename: tidy-5.4.0-win32.zip
       filesize: 721K
       modified: 2017/03/01 10:00:00
       describe: Win32 ZIP package.
+      sha256: 3a4d634113ebf41c13a397cd201b5b84ccf41f9d34829eb57114fd098f1a47a4
 
     - filename: tidy-5.4.0-win64.zip
       filesize: 979K
       modified: 2017/03/01 10:00:00
       describe: Win64 ZIP package.
+      sha256: b01d8382ef6da124298e797a4dcc0ca24060aa29fb5fd1b384b598600a1d78fe
 
     - filename: tidy-5.4.0-w32-mt-XP.zip
       filesize: 901K
       modified: 2017/06/03 16:37:00
       describe: Win32 XP ZIP package.
+      sha256: fbc31039c94236b78ebcb31fbdba21da92e18a06bf7dfc1ed81e4d764be21448
 
 - release: 5.2.0
   heading: HTML Tidy version 5.2.0
@@ -40,36 +46,43 @@
       filesize: 688K
       modified: 2016/04/09 14:13:00
       describe: linux 32-bit DEB.
+      sha256: 649ff7a6343a63f00d50107044d018f1103d58e0a7dcdd2c943ca2d9d966066d
 
     - filename: tidy-5.2.0-64bit.deb
       filesize: 728K
       modified: 2016/04/09 14:13:00
       describe: linux 64-bit DEB.
+      sha256: 3eb446058a6eece732c4fe835063805af7b2bcc16c19f8ee830e7493a2e17da0
 
     - filename: tidy-5.2.0-64bit.rpm
       filesize: 728K
       modified: 2016/04/09 14:13:00
       describe: linux 64-bit RPM.
+      sha256: cebc9e2060026e80eaaec86ad8ef4875cd3f342e498fb581525a1b2518c61e66
 
     - filename: tidy-5.2.0-arm7.deb
       filesize: 643K
       modified: 2016/04/09 14:13:00
       describe: linux 32-bit/arm7 DEB.
+      sha256: a92770ae1442528c55727d47923001f498e7546e704cc646bcb30d2dbcddaa49
 
     - filename: tidy-5.2.0-macosx.dmg
       filesize: 1 MB
       modified: 2016/04/09 14:13:00
       describe: macOS Disk Image.
+      sha256: 2eb6f2bbdf9cbaadefcdce943307e23a87fa147344822f884c1a5aa257b38945
 
     - filename: tidy-5.2.0-win32.zip
       filesize: 750K
       modified: 2016/04/09 14:13:00
       describe: Win32 ZIP package.
+      sha256: 94d653498b4f93b14f12a55ca06154e19c540c9b276e5d163f1cf84fa078f97a
 
     - filename: tidy-5.2.0-win64.zip
       filesize: 862K
       modified: 2016/04/09 14:13:00
       describe: Win64 ZIP package.
+      sha256: dd9fd814cc44bc2ffa9b9e547b1a6cbb42b6be7b9358542d3ee7f6e10b676423
 
 - release: 5.1.25
   heading: HTML Tidy version 5.1.25
@@ -79,26 +92,31 @@
       filesize: 634K
       modified: 2015/11/23 14:44:08
       describe: linux 64-bit DEB.
+      sha256: b2e4393c9ddea8b0b8ab82b4145777ee423272763decc651b359c76361b53625
 
     - filename: tidy-5.1.25-64bit.rpm
       filesize: 635K
       modified: 2015/11/23 14:44:10
       describe: linux 64-bit RPM.
+      sha256: 4ccfa17dde3b89e28ba758c379e19f2c7fd2dcbbfcccdf09cc2bcf154cccc9b9
 
     - filename: tidy-5.1.25-macosx.dmg
       filesize: 814K
       modified: 2015/11/24 12:40:00
       describe: macOS Disk Image.
+      sha256: 7e594e8dbe4e07fa631492443827ce40516666b0f1340b254833762ef697efda
 
     - filename: tidy-5.1.25-win32.zip
       filesize: 626K
       modified: 2015/11/23 14:48:15
       describe: Win32 ZIP package.
+      sha256: d3bfb8e79f63ef68734dc6c0f08c9ea7a5f1390e2b201e6a28640f28d701495c
 
     - filename: tidy-5.1.25-win64.zip
       filesize: 585K
       modified: 2015/11/23 14:45:40
       describe: Win64 ZIP package.
+      sha256: ffea896d4b4dd33b01c196eb8aea3305f65896637fb6f871f926b8141015c64c
 
 - release: 5.1.14
   heading: HTML Tidy version 5.1.14
@@ -108,26 +126,31 @@
       filesize: 632K
       modified: 2015/10/01 14:44:08
       describe: linux 64-bit DEB.
+      sha256: dccd791afb6484c3ab248d3d6823446873c5b67fd81b2778ed8c6e06d4926b1a
 
     - filename: tidy-5.1.14-64bit.rpm
       filesize: 633K
       modified: 2015/10/01 14:44:10
       describe: linux 64-bit RPM.
+      sha256: 198d5f6501f7eb8f63f1dc1f5487d6a4f032d91522f7e14b2c760d190493454a 
 
     - filename: tidy-5.1.14-macosx.dmg
       filesize: 793K
       modified: 2015/10/01 12:40:00
       describe: macOS Disk Image.
+      sha256: 332c03bcc7ab183d3db6298709cc746180833624d8e09a6788bece766d3c9f03
 
     - filename: tidy-5.1.14-win32.zip
       filesize: 626K
       modified: 2015/10/01 14:48:15
       describe: Win32 ZIP package.
+      sha256: 57670d753da8eceb0b19e3161c3f0c614f37c83776af6faeb76ce537166533d6
 
     - filename: tidy-5.1.14-win64.zip
       filesize: 585K
       modified: 2015/10/01 14:45:40
       describe: Win64 ZIP package.
+      sha256: 71d70d0f9b45d73e0b2d75087b9f9e9d317ecd03082926725c88a162dadd6a97
 
 - release: 5.0.0
   heading: HTML Tidy version 5.0.0
@@ -137,28 +160,34 @@
       filesize: 625K
       modified: 2015/09/07 12:07:16
       describe: linux 64-bit DEB.
+      sha256: 3bb1500ac561baa395ef2f0b1b67806282a602952922cca4fa0dd424abccc5e2
 
     - filename: tidy-5.0.0-64bit.rpm
       filesize: 626K
       modified: 2015/09/07 12:07:16
       describe: linux 64-bit RPM.
+      sha256: 105a8f3d404bb81f17ee2e720a993ed0e29f5feba63d7e09a8022bceb95e497f
 
     - filename: tidy-5.0.0-macosx.dmg
       filesize: 810K
       modified: 2015/10/19 12:00:00
       describe: macOS Disk Image.
+      sha256: 47073e969c7ca908d834473e63241fafd86712a14ab52274be95871b28457781
 
     - filename: tidy-5.0.0-win32.exe
       filesize: 612K
       modified: 2015/09/07 11:55:47
       describe: Win32 NSIS installer package.
+      sha256: b305a110566ff95b42cec3b74faf324b8e265af86a0d444f40ff526fcc14df43
 
     - filename: tidy-5.0.0-win32.msi
       filesize: 844K
       modified: 2015/09/07 11:55:56
       describe: Win32 MSI installer package.
+      sha256: 46b487d0c444f16f730564299919de1d39601f45582c72029e494ee0c7ac7386
 
     - filename: tidy-5.0.0-win32.zip
       filesize: 624K
       modified: 2015/09/07 11:55:56
       describe: Win32 ZIP package.
+      sha256: 2e6bb28d0dd137b7da7aa62416eb16b69447c86bfeda613d2883ffd918eb58b1

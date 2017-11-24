@@ -7,7 +7,7 @@ title:    "HTML Tidy Binary Releases"
 <p class="note">
     These are HTACG HTML Tidy official releases. Visit our
     <a href="https://github.com/htacg/tidy-html5">Github Repository</a>
-    for source code for cutting edge versions.
+    for source code for cutting edge (“next”-branch) versions.
 </p>
 
 {% for release in site.data.tidy %}
@@ -31,6 +31,7 @@ title:    "HTML Tidy Binary Releases"
                 <td>Last Modified</td>
                 <td>Size</td>
                 <td>Description</td>
+                <td>SHA256</td>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +41,7 @@ title:    "HTML Tidy Binary Releases"
                 <td>{{binary.modified}}</td>
                 <td>{{binary.filesize}}</td>
                 <td>{{binary.describe}}</td>
+                <td>{{binary.sha256}}</td>
             </tr>
             {% endfor %}
         </tbody>
