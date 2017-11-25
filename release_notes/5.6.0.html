@@ -1,0 +1,2423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Release 5.6.0</title>
+<style>
+table {  margin-left: auto; margin-right: auto; }
+table, td, th { border: 1px solid gray; }
+.ctr { text-align: center; }
+.rite { text-align: right; }
+</style>
+</head>
+<body>
+<a id="top"></a>
+<h1>Release 5.6.0</h1>
+<p>Change log for this release. List of <a href="#authors">authors</a></p>
+<pre>
+commit 3a30f6a4300417674026f6dddea5973debc6b808 (HEAD -&gt; refs/heads/release/5.6, tag: refs/tags/5.6.0, refs/remotes/origin/release/5.6, refs/remotes/origin/next, refs/remotes/origin/HEAD, refs/heads/next)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Nov 25 14:54:41 2017 +0100
+
+    Issue #600 - Update README/verhist.log
+
+5.6.0 b869049a9f Geoff McLane Sat Nov 25 14:50:00 2017 +0100
+5.5.86 87dbccdb1b Jim Derry Wed Nov 22 12:34:33 2017 -0500
+commit 2cc140355d5e9a82f6ef35fc8de2785196bbc37e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Nov 22 12:33:12 2017 -0500
+
+    Changed iterator internal logic to use a one-based index instead of 0; an
+    index of 0 can be considered NULL.
+
+5.5.85 19e8796a5b Geoff McLane Wed Nov 22 15:01:44 2017 +0100
+commit d23e22589e751d72e8c20ca87b0b10ad9798bf42
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Nov 22 15:00:14 2017 +0100
+
+    Issue #403 PR #641 - Hot fix for column tabs count
+
+commit 3b0c3779fc8faab4ca8238ea899daf3aed2463be
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Nov 20 09:55:24 2017 -0500
+
+    Regenerated strings to match new string updates.
+
+commit 1f1d0a525a2809d9e7e5614c131f9c1f1ef4c8c4
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Nov 20 09:53:27 2017 -0500
+
+    Fixed missing closing tag preventing man build. No version bump.
+
+5.5.84 c2c7b1dab2 Jim Derry Mon Nov 20 09:32:08 2017 -0500
+commit 6d6eb3797b59b28c64a608b0a9e38d33c3c38032
+Merge: 9e09f1a e4fc470
+
+5.5.83 9e09f1a722 Jim Derry Mon Nov 20 09:29:51 2017 -0500
+commit 9eadf3078e0020f71b8c8b0c448fcc90b3a6dfd8
+Merge: 302660e cea9a46
+
+5.5.82 302660e3cb Jim Derry Mon Nov 20 09:28:48 2017 -0500
+commit 314690ad7f35795b5bc137c1aac44fe3dc6e7f70
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Nov 19 16:58:01 2017 -0500
+
+    Option changed callback now implemented.
+
+5.5.81 b91c728c81 Jim Derry Sun Nov 19 15:46:40 2017 -0500
+commit fcd4e90ea7b45bf290cd68296a568e673fc34498
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Nov 19 12:54:08 2017 -0500
+
+    Fix issue where console app and API can't set an FPI for a doctype without
+    providing a quoted string. This is especially painful in a terminal, which
+    requires escaping quotes. Since all FPI's must start with + or -, this fixes
+    the issue.
+
+commit ae20af4181201be7095207d927b8c7acd24ad20d
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Nov 19 12:02:24 2017 -0500
+
+    Added a new tidyOptionIsList() API service.
+
+commit b34223237896ab49b2d794d858ccb83c69c931a4
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Nov 19 11:02:13 2017 -0500
+
+    Fixed logical issue with new iterators.
+
+commit 8ddc0105f9d8d4ec5da250dc870d1b1f074e997d
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Nov 19 10:21:46 2017 -0500
+
+    Add missing iterators for recently added options mute and priority attributes.
+
+commit 7105dbe0ee8493f300a9b9e17fcb77c962098950
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Nov 17 22:00:29 2017 -0500
+
+    Cosmetic update for doxygen.
+
+commit b2d3bab9d1adb9386e006dd6949aed3ce76f1978
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Nov 17 21:55:46 2017 -0500
+
+    Doxygen fixes for previous.
+
+5.5.80 ac27e0c16e Jim Derry Fri Nov 17 21:52:26 2017 -0500
+commit 7598d9d0a1851633332c260dc9e7c783b3fbaf97
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Nov 17 21:51:35 2017 -0500
+
+    Added internal documentation to parser.h.
+
+commit 79f0d5752f544a6a195eb37f74862bd40bdbcd4e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Nov 17 21:47:26 2017 -0500
+
+    Updated documentation for tidyOptIsReadOnly(). As this is documentation only,
+    no version bump.
+
+commit 2957cb135b8a015f0f60310fd1bd94e7868f4240
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Nov 17 21:39:30 2017 -0500
+
+    Moved orphans from attrapi.c to tidy.c; eliminate attrapi.c. This only affects internal binary representation, but there's not API change, so no version bump.
+
+5.5.79 f5dfd31a76 Jim Derry Fri Nov 17 21:30:40 2017 -0500
+commit e7bacf22455b57c10a6dd82e667011c583aea3f9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Nov 17 21:30:19 2017 -0500
+
+    Allow all parsers to accept NULLSTR input for API consistency.
+
+5.5.78 18874e0b10 Jim Derry Fri Nov 17 20:38:45 2017 -0500
+commit fec21eebba6e51fb18ef0126885b6ecd2d1af515
+Merge: e6c891e 1dd85ad
+
+commit 1dd85ad1c623e647ac3205b6ca28056255143373
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Nov 17 19:16:58 2017 -0500
+
+    Restore alphabetical order to the options enums and structure. No version bump.
+
+commit cea9a465f394192f6d9b8c9c7096a6b761645133 (refs/remotes/origin/issue-643, refs/heads/issue-643)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Nov 17 14:47:24 2017 +0100
+
+    Issue #643 - Fix HTMLVersion function back to what it was!
+
+commit e6c891ea00374c2403bcc9e91260ae94a895605c
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Nov 16 15:07:52 2017 -0500
+
+    Doctype made no sense! It was a write-only property in some cases, and uses
+    itself and DoctypeMode to make up for Tidy's ability to store only a single
+    value for an option. It's a little bit special relative to every single other
+    option, in that it's declared as a string, but also has a picklist. This change
+    makes Doctype behave in the way every other Tidy option behaves, and treats
+    Doctype as a string, but also supports selection via the picklist.
+
+commit a820ff58971d967c6991c5bde2d19c5777940225
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Nov 17 02:52:32 2017 +0100
+
+    Issue #643 - Add VERS_HTML5 to VERS_FROM40
+
+commit 6a3e3fae77f1fdb5957896bd3cfa4dfb111e2478
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Nov 17 02:46:14 2017 +0100
+
+    Issue #643 - Only break lookup if 'code' AND 'version' found.
+
+commit eefd2edda74af088d33963d6ab7e6564ab10b8a1
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Nov 17 02:44:54 2017 +0100
+
+    Issue #643 - Set debug trap - NOT important
+
+commit 54f14ff9fc5bc7e6a6f59a8be4d3b10b1a75f9f1
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Nov 15 15:39:37 2017 +0100
+
+    Issue #643 - Some entity table corrections.
+    
+    Default all the VERS_CHECK to VERS_HTML5
+    Change OverBar to 8254 in place of 175
+    Change UnderBar to 95 in place of 818
+    Change angst to 197 in place of 8491
+    Add bsolhsub 10184
+    Change epsi to 949 over 1013
+    Change epsiv to 1013 over 949
+    Change ohm to 937 over 8486, although appears the same
+    Change phiv to 981 over 966
+    Remove race as a two-value entity
+    Add suphsol 10185
+    Change varepsilon to 1013 over 949
+    Change varphi to 981 over 966
+
+commit bb15427e73e0f1b7c8bc4c7acfa6eba7d185976b
+Merge: d6414a6 cca0e87
+
+commit cca0e8700aa95c4e550fcab558441aef80e8a388
+Author: Aurelio Jargas &lt;verde _at_ aurelio _dot_ net&gt;
+Date:   Mon Nov 13 08:21:35 2017 -0200
+
+    Fix typo
+
+commit 97f7d2a41a94c1503746f9095389fed0ab2d7ba2
+Merge: a754957 33ed10e
+
+commit a754957808bedda5dec982ec928d491aed1c3a87
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Nov 7 19:08:58 2017 +0100
+
+    Issue #643 - Greatly expand entities list
+
+5.5.77 d6414a69ae Geoff McLane Thu Nov 9 19:35:25 2017 +0100
+commit c4c1ca17a263bea95f17dc3dcc6c22947c536488
+Merge: 4b5c86e 08dfa3d
+
+commit 08dfa3db84b4bf562277dd952cd45f0d93b0ba20 (refs/heads/issue-646)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Nov 9 15:00:08 2017 +0100
+
+    Issue #646 - Correct 'INCLUDE_INSTALL_DIR' per 'master'
+
+commit e4fc470592d5f88d4096195bba77c99f6d710649 (refs/remotes/origin/keep-tabs, refs/heads/keep-tabs)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Nov 7 20:36:55 2017 +0100
+
+    Issue #403 - correct spelling
+
+commit 7bbeae3eeaeab7546e3f5639bf1e246c84491aee
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Nov 7 20:29:04 2017 +0100
+
+    Issue #403 - Fix and enhance descripion of keep-tabs option
+
+commit 33ed10e9617ddcd21a97d2071cb6f6e03631944b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue Nov 7 19:08:58 2017 +0100
+
+    Issue #643 - Greatly expand entities list
+
+commit b58abe30d0e0bde495b4ca66d9bb976500d2b0ca
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Nov 5 18:04:52 2017 +0100
+
+    Issue #403 - Special DEBUG change to 'see' tabs
+
+commit 2aeb2eeb7a6cb90779ff6bd840eae8cdb80ef194
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Nov 3 19:16:17 2017 +0100
+
+    Issue #403 - New 'keep-tabs' option to address this.
+
+commit 4b5c86ee47ce167004da6f33af7d55d0840a5cad
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Nov 2 18:42:38 2017 +0100
+
+    Small fix to compile with MSVC10, exposed in #636
+    
+    MSVC10 2010 enforces K&amp;R C that all variables must be declared before code
+    in any given context.
+    
+    Unable to fix a gcc option that will expose this...
+    
+    modified: src/config.c
+
+5.5.76 acd3c6c47e Jim Derry Wed Nov 1 15:07:03 2017 -0400
+commit 86bde4624eaf403f20f1c637515db3064c5c88b6
+Merge: 9c4b040 57f623e
+
+commit 57f623eb7c2a8311ce0c11cdfb2641b9e20beead
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 31 17:41:32 2017 -0400
+
+    Updated PR to make LIBRARY default to the environment language, rather than just console tidy.
+
+commit cc023c26b7fd4f9e70c7b95422438348a16e3aaa
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Oct 30 07:53:35 2017 -0400
+
+    Address #639.
+
+5.5.75 9c4b040771 Jim Derry Sun Oct 29 15:05:53 2017 -0400
+commit 5fb1138840b80c9cd211c71354d0d50d556bf82d
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 29 15:04:51 2017 -0400
+
+    Fixed indentation.
+
+commit f5bdedecafaba36e34b276adc39360cf7a309774
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Oct 27 16:13:08 2017 -0400
+
+    Cleanup
+    - Added doxygen documentation to `tags.h`
+    - Consistency to `tags.c` header.
+    - Moved TY_(DeclareUserTag) to tags.c/.h for consistency with the other list
+      parsing declaratory functions.
+    - Merged user tags parsing into the general list, eliminating a lot of redundant
+      code.
+
+5.5.74 7beb591cf7 Geoff McLane Sun Oct 29 18:32:41 2017 +0100
+commit 319cded6ecc2135ee80af5d5781a4819b1f8f7f3
+Merge: b243e0f ff68144
+
+5.5.73 b243e0f30a Jim Derry Thu Oct 26 19:19:56 2017 -0400
+commit 86e62dbb709b306ec41dc88fd55decfe6893f262
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 26 18:25:55 2017 -0400
+
+    Remove unnecessary AdjustConfig logic.
+
+commit 350f7b4af758558e9c93c4c791f616244ed85b42
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 26 18:08:17 2017 -0400
+
+    Replaced AdjustConfig() with TY_(AdjustConfig)()
+
+commit cc08bae5a9192eed909f665b579edb649d14eeb7
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 26 15:46:26 2017 -0400
+
+    Documentation updates.
+
+5.5.72 6ffb71c2bc Jim Derry Thu Oct 26 14:26:53 2017 -0400
+commit b663c3965f14e3bbbe26d1a50ba63e082efbab48
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 26 14:26:23 2017 -0400
+
+    Regenerate PO and POT for language changes.
+
+commit 056bd85d3d4d2616043b58f75311a7a762fbf614
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 26 14:25:02 2017 -0400
+
+    Touch up option descriptions, particularly the encoding options in order to better describe their interaction.
+
+commit aec686b1a96f912445c8614363682b3a2e31cea6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 26 14:24:35 2017 -0400
+
+    Add a true &quot;default&quot; to TidyCSSPrefix so that it will be shown in documentation.
+
+commit a1a58ec1bdac66b89199d89439495038ffe3d6ed
+Merge: fc3cba8 504d2b3
+
+5.5.71 504d2b3466 Jim Derry Wed Oct 25 19:59:14 2017 -0400
+commit fc3cba86a826e39a5d94f0797a8c213c56d947d2
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Oct 25 15:04:49 2017 -0400
+
+    I guess no one tried to use this before... it's been broken since the initial commit. We've been comparing the config value from a different option the whole time.
+
+commit ff681447247d64db5faff01c5a70bb0f15089792
+Author: Wang Guan &lt;momocraft _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 26 00:54:55 2017 +0900
+
+    use default allocator in place of strdup/free
+
+commit 773f58dbcb1606abad1c5457e693ef23723bc34d (refs/heads/quiet_fix)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Oct 20 08:58:53 2017 -0400
+
+    Updated PO and POT for updated description of TidyQuiet.
+
+commit c12e2b2149dbee81afe75a9007f2b4f5e06b38d9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Oct 20 08:52:37 2017 -0400
+
+    Ensure that `TidyQuiet` silences everything that it currently quiets, plus
+    `TidyConfig` and `TidyInfo` messages. This causes a single regression by hiding
+    `TidyInfo`; will publish PR in testing repo.
+
+5.5.70 4b1c048ee5 Jim Derry Fri Oct 20 07:46:00 2017 -0400
+commit d30255908043edc945775eca9eb3881c759c5b86
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 19 20:46:21 2017 -0400
+
+    Doxygen fix. No bump.
+
+5.5.69 a03ddc03a0 Jim Derry Thu Oct 19 20:33:17 2017 -0400
+commit 7e53038fa876dbfd073edb9307bfd30f1d158192
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 19 20:27:12 2017 -0400
+
+    Updated documentation for doxygen. No version bump.
+
+5.5.68 492c9fb74b Jim Derry Thu Oct 19 20:11:26 2017 -0400
+5.5.67 a354eff596 Jim Derry Thu Oct 19 17:41:35 2017 -0400
+commit 6d8d153143f4d60050ac283588e31a1ea6fedee7
+Merge: 6dd7919 dacb63d
+
+5.5.66 6dd7919d16 Jim Derry Thu Oct 19 17:38:33 2017 -0400
+commit 9c96551fe0b88685a733bc2eb41c5822fe75a125
+Merge: b190e87 41675e7
+
+5.5.65 b190e8724a Jim Derry Thu Oct 19 17:22:47 2017 -0400
+commit 93957e4b172fb82014e56ae3399dab0ca039d499
+Merge: 6309aba 6f51ece
+
+5.5.64 6309abacda Jim Derry Thu Oct 19 17:17:33 2017 -0400
+commit feb0811ba234054e9edb9e92f4e1244a364c3e1d
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 19 17:16:59 2017 -0400
+
+    Use the new tidyPlatform() in console, and fix (!!) bug where no platform is defined.
+
+commit 2340e63f8b412f1c03272a3c5575e4f4110c6d05
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 19 17:11:29 2017 -0400
+
+    Expose the platform name to the public API.
+
+commit c17df6aca250a44460048f1239ad5f0e999dd90a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 19 17:07:38 2017 -0400
+
+    Add platform definitions for other Apple operating systems.
+
+commit 41675e75f798df1ee0e0bb9cfe3b4f24463bf949 (refs/remotes/origin/issue-604, refs/heads/issue-604)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Oct 14 12:27:19 2017 +0200
+
+    Issue #604 - Remove 'sprtf' code if not ENABLE_DEBUG_LOG
+
+commit 3b154dc4077c6d408036f2b4ad7dc26622e6ce55
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Oct 13 20:50:53 2017 +0200
+
+    Issue #604 - Try to fix. Initial cut. WIP
+
+commit dacb63da3182b591b303b86f371d415a4ff94a24
+Author: Wang Guan &lt;momocraft _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 14 01:22:20 2017 +0900
+
+    close stdin and free its FileSource in tidyDocParseStdin
+
+commit 6f51eced5e256cb0bffc4ce60a1021b050235d4a (refs/heads/squelch_reports)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 10 19:30:57 2017 -0400
+
+    Place the last three report messages into the reports range of the enum, taking
+    them out of the dialogue range, so that they can properly be silenced.
+
+commit 1d9194296034886548cc48904c4924fd9fb40aff
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 10 08:21:14 2017 -0400
+
+    Renamed the proposed `squelch` and `squelch-id` to `mute` and `mute-id`,
+    respectively. Updated matching cases in test branch accordingly.
+
+commit bcf4748b9cde48ee4000afeb3d6cca3611a1352a
+Merge: 346ba06 0f86647
+
+5.5.63 0f86647741 Geoff McLane Mon Oct 9 01:27:07 2017 +0200
+commit 1b20d4b7644bebc4ca3ec6691b4a6adc2ce5f937
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Oct 9 01:25:42 2017 +0200
+
+    Default ENABLE_DEBUG_LOG to 'OFF'
+
+commit 346ba063c98f7fdcd98343ba100344854c943ef8
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 12:03:48 2017 -0400
+
+    Expose the new property to the public API.
+
+commit 6f0ada7ffe4cbe1ecde0106d196b5207b0f69f98
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 11:53:36 2017 -0400
+
+    Typo
+
+commit ad03b28318207a5239c7889280ca3b4cd05b40a2
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 11:51:19 2017 -0400
+
+    Remove @todo note.
+
+commit e6f007d8babb21697f16fa6d748ee59a1a6c1006
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 11:44:45 2017 -0400
+
+    Code spacing consistency.
+
+commit f72c3d27e1f29e16b8329b62b66d55d0aebf4bb3
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 11:40:53 2017 -0400
+
+    Show full prototype in forward declaration.
+
+commit 2e58434e8d8939d8c4b00d3b299d1476d524ab1a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 11:30:29 2017 -0400
+
+    Actually, we should only show labels on reports, not dialogue.
+
+commit 0548e67fa5ff653be37777458d6d8dd99ad82bbe
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 11:19:00 2017 -0400
+
+    Oops, need to return.
+
+commit b967065c36e32479b32a7f0e19ec464ba84d4196
+Merge: 6263753 16aa474
+
+5.5.62 16aa474f6a Jim Derry Sun Oct 8 11:06:41 2017 -0400
+commit 626375346d66f5e1cfa3e26382b98910f0608e6f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 10:47:03 2017 -0400
+
+    Adds message squelching (muting) to Tidy, avoiding the need to specify a new
+    option every time we might want to allow or disallow new output. Adds two new
+    options:
+      - `squelch-id` (default **no**) will provide tags during Tidy's output that
+        can be used to silence warnings. For example, `MISSING_ENDTAG_OPTIONAL`
+        will be shown after warnings of that type. Then in the future, the user can
+        use...
+      - `squelch` (default NULL) takes a list of message identification tags.
+        Messages of this tag type will then be muted from output.
+    
+    This gives the user great control over hiding things that he or she doesn't care
+    about seeing. However, muted errors/warnings still count toward error summaries.
+    
+    If we merge this, then TidyShowMetaChange and TidyWarnPropAttrs are candidates
+    for removal (using the deprecation mechanism Tidy now has, these will continue
+    to work, though).
+
+commit 5e668163802c6052142a2006ec8ef52eb484e251
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 8 10:25:09 2017 -0400
+
+    Spacing consistency.
+
+commit ab8a4249df9ed9260fc4a017c5ef3d33d5c55ec1
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 7 18:10:46 2017 -0400
+
+    Added `squelch-id` (TidySquelchShow) so that message ID's will be displayed in
+    the report output table. This can be used to show message ID's that the user
+    can use to filter against in the upcoming `squelch` option.
+
+commit ca2f089e898adac4ca4fb6a7ae50bf86d2f33aa3
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 7 16:25:40 2017 -0400
+
+    Regen pot and po
+
+commit b31dd6fcc2de7fe74a0a9d258d360a5b2cae6838
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 7 16:11:51 2017 -0400
+
+    Added some internal structures and code to support the removal of config
+    options in the future, with full user notification. Right now this code is
+    dead, because no options have been removed. No version bump.
+
+commit 217d05fe495c9ce3cc9f26d91de06d919021e98c
+Merge: 6b14c55 010892c
+
+5.5.61 010892c020 Jim Derry Sat Oct 7 14:59:07 2017 -0400
+commit 0977aa6077efb14ddcb1947e96842cbef22df02c
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 7 14:56:01 2017 -0400
+
+    Removed dependency on NDEBUG, and introduced ENABLE_DEBUG_LOG in CMakeLists.txt.
+    By default Windows will continue to show SPRTF output, and other platforms will
+    require the -DENABLE_DEBUG_LOG to be set in default (debug) configurations.
+    
+    Debug and Release builds on macOS, Windows 10, and Ubuntu 16.04 confirmed
+    working as most people expect.
+
+5.5.60 f26b198213 Jim Derry Sat Oct 7 14:07:12 2017 -0400
+commit 6b14c559f91af7ba740436f75f814cb9c92a9126
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 7 12:14:51 2017 -0400
+
+    Adding some documentation WIP
+
+commit 2e4393e37b7e575ef7daf06a04423f1870c45bed
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 7 11:20:57 2017 -0400
+
+    Works for -config files now, too.
+
+commit 483d17e39b035ecd10e2ffaa97bf83dd38f74e33
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Oct 7 11:04:18 2017 -0400
+
+    Experimentally working.
+
+commit 2e2062ddec265727fa7e83bbf74b1a56f6e6da74
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Oct 6 16:14:54 2017 -0400
+
+    WIP with functioning concept.
+
+5.5.59 4e6d76eb01 Jim Derry Fri Oct 6 09:41:54 2017 -0400
+5.5.58 f1cd84f853 Jim Derry Thu Oct 5 19:29:12 2017 -0400
+commit a413b1264bbd24bc35c2be874f5896a0753dfcf7
+Merge: bd3503e c71b811
+
+5.5.57 c71b8115cc Jim Derry Thu Oct 5 15:09:18 2017 -0400
+commit ac4a79a5ac4574d36a980460f99fc94209100eca
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 5 15:08:46 2017 -0400
+
+    Regenerate languages.
+
+commit fa30773938800b28e67f15075a6d3de62d9eda3e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 5 15:04:22 2017 -0400
+
+    Centralize control of message output to the messageOut() method in order to:
+      - Prevent the message filter from missing possible messages due to dispered
+        control.
+      - Single decision point for the types of messages to be output given current
+        conditions and options settings.
+
+commit bd3503eea509eb57fd9d21a1028397e42636337a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Oct 5 09:26:11 2017 -0400
+
+    Changed the XML classes to use the string representation of the key rather than
+    the translated string of they key, which fix manpage and quickref generation in
+    non-default locales.
+    
+    As a result the translated strings are no longer used and have been deleted.
+
+commit 9565a15f486579e32e1c53ba41ddfc5108f9b6b4
+Merge: 4fa26f4 4c74b14
+
+commit 4c74b14991167d3c0b13f8213e9f9a0add1a614b
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Oct 4 13:40:19 2017 -0400
+
+    Not sure how this got missed.
+
+commit 4fa26f4f5d3eec0a580afddfff0cb81c095405c1
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Oct 4 12:24:07 2017 -0400
+
+    Affects documentation only: updates the manpage (and soon the quickref) by
+    breaking up the existing options into several more logical categories.
+
+5.5.56 7d35bb14ef Jim Derry Wed Oct 4 11:15:45 2017 -0400
+commit 430fc6118d9527dc194b6c064282159d818b1aaf
+Merge: 084ed21 dedcb7b
+
+5.5.55 084ed21735 Jim Derry Wed Oct 4 11:00:04 2017 -0400
+commit dedcb7bb4d7f6417a8d7f68f5fa6f32c6cef5a83
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 22:31:55 2017 -0400
+
+    SPRTF is now compatible with macOS and Linux, and most likely all supported
+    platforms.
+
+commit ee54057d76fe885020189a5c4b5789f2eb0fb859
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 21:09:59 2017 -0400
+
+    Added debug to several files. WIP
+
+commit a137c068e56a0d2d96315b0707005fab8b39bdb5
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 20:56:50 2017 -0400
+
+    Added debug to several files. WIP
+
+commit 4e3c1a1562a7234931134efde5f2ed4bf8d30f1b
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 20:42:29 2017 -0400
+
+    Move all of the sprtf includes into tidyplatform.h
+
+commit 1cd04388495c0b581cd6d4a9ac8d904d73c75f6f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 18:08:10 2017 -0400
+
+    Standard Library file header; termporary notes for me.
+
+commit 8d7e5f7f5a9bcb2aa943df8f3cbdd5e5b86f4817
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 15:30:21 2017 -0400
+
+    Documentation formatting.
+
+commit 5ff6aa8a8b8a9208188d64821301268185da1058
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:46:29 2017 -0400
+
+    Not sure how this got missed...
+
+commit 4d2e75024ee925e0ccf699216e9aabf7c72dc31c
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:26:23 2017 -0400
+
+    Removed unused iconvtc from source
+
+commit e41229749cd96cc3ae7213ddca9a1e1ad990c044
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:24:01 2017 -0400
+
+    TIDY_WIN32_MLANG_SUPPORT has been dead code for ages. Not tested, not maintained.
+
+commit 9706b9e5c49b0cca631e235d72963d0d1c404d6b
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:18:49 2017 -0400
+
+    Purged TIDY_STORE_ORIGINAL_TEXT.
+
+commit 9679d88faed63b7f1b1bb40329202830e7d0d6d1
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:14:59 2017 -0400
+
+    Format macros nicely.
+
+commit ab67229238e74e116379434311a342bb900badb8
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:10:54 2017 -0400
+
+    AUTO_INPUT_ENCODING has been dead since first git commit.
+
+commit ff030aab7a991ddb1ee7412fc923adbc18e32760
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:04:32 2017 -0400
+
+    ELEMENT_HASH_LOOKUP is no longer conditional, and is a permanent part of Tidy.
+
+commit 558082cbfcce569cd3cf85b3f710677af73e88c2
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 14:00:40 2017 -0400
+
+    Cleanup structure.
+
+commit 238b8f0a66dcffb2b8d705697171c249e7b46124
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 13:56:31 2017 -0400
+
+    Wipe out dead code. We use git for a reason, so it's never really deleted.
+
+commit 67f7b77e1fda4e4e6b5977ef7bc122b9acfa1bed
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 13:04:37 2017 -0400
+
+    Added a flag to CMakeLists.txt simply to point out that one can build without
+    support for ISO2022 natively. Of course, we've been doing this by default for
+    years with no ill effect, and all modern operating systems seem to support this
+    natively. It's probably best to keep this in here, unlike the other deletions.
+
+commit a1e4dcc066a3bf87eb2a459d370e55df72c568d8
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 12:45:34 2017 -0400
+
+    Removed option for SUPPORT_ACCESSIBILITY_CHECKS, regen'd strings.
+
+commit dfa2501928e46f2182c5a8d72b40d84fa92b4121
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 12:37:23 2017 -0400
+
+    Removed option for SUPPORT_ASIAN_ENCODINGS, and regen'd strings.
+
+commit 2758939406b76245eb6ee6008f3a573016ffe5cc
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 12:26:38 2017 -0400
+
+    Removed SUPPORT_UTF16_ENCODINGS, and regen'd strings.
+
+commit 7a4a544a5d0f8c844d00db5bd574aff1fc5cc617
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Oct 3 08:57:11 2017 -0400
+
+    Squelch Mac OS X warning during build. No version bump.
+
+5.5.54 8f47c024ac Jim Derry Tue Oct 3 08:26:51 2017 -0400
+commit 77632e2fb8fb243ed702820ad99d1e373e2bd7e7
+Merge: 1e88cf2 b1e7bba
+
+5.5.53 1e88cf2ebc Jim Derry Mon Oct 2 13:35:26 2017 -0400
+commit 0e3cb7c78e5134d9287ab6ff513bf21dce9329f7
+Merge: 3efc0f9 397fd1a
+
+5.5.52 3efc0f92a5 Jim Derry Mon Oct 2 13:31:35 2017 -0400
+commit a4ea6999e875f8a9fb02e2347382a5b5156db847
+Merge: e959c22 d312969
+
+5.5.51 e959c22087 Jim Derry Mon Oct 2 13:27:42 2017 -0400
+commit 47a32891c85b0d1b09f77ccbabab4bbac215e409
+Merge: 4bcff9f 6a2d80e
+
+5.5.50 4bcff9f64e Jim Derry Mon Oct 2 13:21:26 2017 -0400
+commit 6619062aaae75a92d8c9d5a150230b01a33ec18e
+Merge: 78b6154 b0f584f
+
+5.5.49 78b6154a85 Jim Derry Mon Oct 2 13:15:17 2017 -0400
+commit 024f034fa3a2eb88e0d9d4f4f97bb64bbf6816ae
+Merge: 40ca09c 2852ad4
+
+5.5.48 40ca09c189 Jim Derry Mon Oct 2 13:10:45 2017 -0400
+commit 1cb08e90ae654d944178f9d9312f40d38e47b57e
+Merge: 2860160 f2b87cc
+
+commit b1e7bba512bb94e02b720d84ebd1910a8bd059ee
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Oct 2 12:54:03 2017 -0400
+
+    Update the man page to show the actual RC paths, and only if RC's are enabled.
+
+commit 8d6ae76993164e826e579ae926533c480a35677f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Oct 2 12:17:16 2017 -0400
+
+    Heavily comment CMakeLists.txt as part of documentation effort.
+
+commit 9ef66151afb118c6bcb1441badc2ee001be2f73f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Oct 2 10:42:25 2017 -0400
+
+    Ensure that runtime config files are available (non-default) for non-Unix.
+
+commit 9c6a1e47aee7e8b1d07b5d6009a3b614867bab46
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 1 19:49:44 2017 -0400
+
+    Added -export-config and -export-default-config so that users can generate a
+    starting config style with every option, suitable for rc files.
+
+commit 393fdfda3f5582fd968ad810b7197fdcc5ddc3dc
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 1 19:19:47 2017 -0400
+
+    Updated the man page and the help output.
+
+commit 1ad3241d3cc32b431b6ee5bbb2bc807cad929fa9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 1 18:58:17 2017 -0400
+
+    Updated documentation to reflect the rc files Tidy will use on Unix systems,
+    and added a new -help-env service that intelligently displays information about
+    $HTML_TIDY, rc files, and application order.
+
+commit 3168aed3651f2b857a876571958eb665da225c9c
+Merge: a4e0409 2860160
+
+5.5.47 2860160b54 Jim Derry Sun Oct 1 10:42:18 2017 -0400
+commit 298deb0a047da064ee335a194b9533d1c457f1a7
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Oct 1 10:39:30 2017 -0400
+
+    Update CMakeLists and tidyplatform to include automatic support for using
+    runtime configuration files on Unix-like platforms. This addresses #584 in the
+    strictest sense, but some message work needs to happen as a result of this
+    change.
+    
+    Additionally, the tidyplatform.h has been reformatted for legibility as part of
+    the continuing (slow) effort to improve our internal documentation.
+
+commit a4e0409323905ac2b82de2d590c2a203b61ae2e5
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 30 17:06:19 2017 -0400
+
+    Address #584
+    Modify the build system to assume config files by default. Modify tidyplatform
+    to accomodate these changes. Reformat tidyplatform for friendliness to new
+    developers.
+
+commit 3658275f60f533ebebd18ec719a807876d99f22f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 30 09:35:00 2017 -0400
+
+    Documentation-only changes to the public headers for consistency with other
+    headers (part of long term internal documentation project). No version bump
+    as no binary image change.
+
+commit 2852ad4c63bf5ab687775f0ed93e133b463c3da6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 29 15:42:03 2017 -0400
+
+    Fix #588 and #591
+      - Apply @geoffmcl's patches and tested.
+
+commit 397fd1ace01ddefc90158e173ded42afa8ab83b6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 29 15:30:43 2017 -0400
+
+    Address #598
+      - Add the download attribute to the anchor tag.
+
+commit d3129694c7b34006d4c9e92ab037fcb41234a025
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 29 15:15:33 2017 -0400
+
+    Address #616
+      - Fix the declaration and parser for the bdi tag.
+
+commit 6a2d80ef9a966e2324351f5b102e4f5db18ce0a3
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 29 14:46:17 2017 -0400
+
+    Address #521
+      - Tidy will now emit a TidyInfo message when end tags are missing for li tags,
+        unless omit-optional-tags is yes.
+
+commit b0f584fa2499d205fc0601355e093e3b75d8e964
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 29 11:25:17 2017 -0400
+
+    Address #575 by adding a new footnote in TY_(ErrorSummary) suggesting that if
+    this behavior is not wanted, then which option to use to prevent it.
+
+commit f2b87ccd7ba023c5c51d0db691674fb995ad720f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 29 10:42:21 2017 -0400
+
+    Address #542
+    - change message to indicated missing quote is only suspected.
+    - change severity to TidyWarning.
+    - Update POT with new string.
+
+5.5.46 d6c974b672 Jim Derry Fri Sep 29 10:23:45 2017 -0400
+commit be803cef0e7e7cab11dd85e2446be879e662966d
+Merge: 0a8154b 5c224e4
+
+commit 0a8154b97e2dab8cbe87e9c7ea1e5bcf71c4079d
+Merge: df3bde3 021d32b
+
+commit 5c224e4a704998c079c6bc8460a92435ffd38b02
+Author: Geoff R. McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Sep 28 18:43:52 2017 +0200
+
+    Revert 6 files to 0664
+
+commit 37f413e4599adf34da07179d2827f9be9602ed8a
+Author: Geoff R. McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Sep 28 18:42:28 2017 +0200
+
+    revert tidyenum.h to 0664, from 0775
+
+commit 18f52d5916b3507df276c2b3939cb616d755909c
+Author: Geoff R. McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Sep 28 16:43:47 2017 +0200
+
+    Change perm back to 0664, from 0755, for tidy.c
+
+5.5.45 021d32b3a1 Jim Derry Mon Sep 25 21:17:21 2017 -0400
+commit 94111a7fe72f593248b3a9aa14eee53f699d9cd5
+Merge: cd9d46b 965b92a
+
+commit df3bde38ecef7fa0d04c440daf3b7d90aa67dfe8 (refs/heads/issue_476)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 25 15:26:03 2017 -0400
+
+    Introduced `auto` behavior to the `fix-bad-comments` option so that `yes` or
+    `no` could be applied automatically per the document type. This is the new
+    default.
+
+commit c74e47adbb77b41d59cf5b63d28ee3507fa2fa55
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 25 10:50:04 2017 -0400
+
+    Fixed the single hyphen issue. Tests passing. Implementation Ready.
+
+commit 483e0fec9e5968826243ce1363b4fc8af67493ae
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Sep 24 18:15:40 2017 -0400
+
+    Address issue #476, which started out as a simple message update.
+      - Change default value of `--fix-bad-comments` to `no`.
+      - Ensure that when _not_ fixing, nothing is actually fixed.
+      - Ensure that when fixing, initial adjacent hyphens actually are fixed.
+      - Issue tidyinfo for all fixes made.
+      - Issue tidywarning when when not making fixes for non-HTML5 doctypes.
+
+commit 965b92a09c2d0bb36137a357867e42e4095d82be
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Sep 24 13:42:16 2017 -0400
+
+    Addresses #435 by updating documentation.
+
+5.5.44 cd9d46b53d Jim Derry Sat Sep 23 19:21:58 2017 -0400
+commit d4e6f74226421ce857a26760cc7a53197e497e18
+Merge: cf6f47c 20a1b7b
+
+commit 20a1b7bb69a76581ee35a31384c5834c828c1ca7 (refs/heads/issue_434)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 23 07:53:57 2017 -0400
+
+    Updated documentation relating to new option.
+
+commit 64a4302e6cd98d019726b76e96eee616f80c12dc
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 23 07:30:17 2017 -0400
+
+    Migrated the attribute list parser to a general parser for future re-used by
+    other potential list-based options.
+
+commit 70681131d61c6246302f1ff24d12c2d95081918a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 23 07:20:31 2017 -0400
+
+    New config option now drives the list; memory deallocated.
+
+commit 23c28e5b82eb7466d3e8dab3b04ec661cc78bcca
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 22 22:14:59 2017 -0400
+
+    Initial commit of #434; WIP
+
+commit 64fb5640cbf5e1487d3f8bddfd61106d69651ee6 (refs/heads/issue_412)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 22 19:27:47 2017 -0400
+
+    MSVC snuck in some tab characters...
+
+commit c579d5b62c9aa312f0ec939f9275a1f612d37a66
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 22 19:01:31 2017 -0400
+
+    Address #412
+    
+    Add a TidyInfo message each time an unquoted attribute is found. However,
+    refer to #412 for discussion before merging this.
+
+commit cf6f47ca1ccae3599168df60183a9c6925057a60
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Sep 22 17:27:49 2017 -0400
+
+    Squelch some MSVC 2010 warnings, and reset indentation in tidy.c. No version bump.
+
+5.5.43 c30f8537a7 Jim Derry Thu Sep 21 07:39:16 2017 -0400
+commit f1251f74a12f33eb9e4ab18e8598c0b81fdb6503
+Merge: 9614019 b5db02a
+
+commit b5db02aeb94a8ddc2c7ae528d3a779b783355e7f
+Author: Rafael Fontenelle &lt;rafaelff _at_ gnome _dot_ org&gt;
+Date:   Thu Sep 21 00:43:48 2017 -0300
+
+    Update Brazilian Portuguese translation
+
+5.5.42 9614019e8c Jim Derry Wed Sep 20 17:57:42 2017 -0400
+commit 41f946dfc1d802981864755de36c793b91dda04b
+Merge: 2a4dc1a c88f9c3
+
+commit c88f9c318c70228670f31a771634ea9838e7e071
+Merge: 2a4dc1a c1a4f01
+
+5.5.42 2a4dc1af52 Jim Derry Wed Sep 20 17:47:27 2017 -0400
+5.5.40 53cd1c8113 Geoff McLane Wed Sep 20 19:13:39 2017 +0200
+commit 79aa8b7460850181e00f42a37439b0ba93c8da08
+Merge: c38e48b 55d287b
+
+5.5.39 c38e48baeb Geoff McLane Wed Sep 20 17:04:54 2017 +0200
+commit cd9bb76caf73176a3cb5b17ecc41990a05a95d27
+Merge: a79458a 5a50afe
+
+commit f26d70c394cd71f338159f2fd5dec8b8474e11bb (refs/heads/dialogue_cleanup)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Sep 19 15:07:52 2017 -0400
+
+    Added Doxygen documentation to the header. Some of these could be expanded a
+    bit, but they look nice in Doxygen.
+
+commit c1a4f018df3d73ec4719377c88450775782d2524
+Author: Rafael Fontenelle &lt;rafaelff _at_ gnome _dot_ org&gt;
+Date:   Tue Sep 19 15:38:49 2017 -0300
+
+    Add Brazilian Portuguese translation
+
+commit 55ceb55fad9c586b7385cccddfb3fdd5652e6237
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Sep 19 14:03:45 2017 -0400
+
+    Updated PO's and languages with minor changes from English.
+
+5.5.37-exp-jsd 51e2e0f3bd Jim Derry Thu Sep 7 21:06:44 2017 -0400
+commit 55d287bc9d566dd0cf0cfe9633af88bca7c20d5c (refs/heads/memory-test)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Sep 18 19:47:52 2017 +0200
+
+    Issue #597 - Free the 'node' not stacked, and add 'message'
+
+commit eb81a531652d6800cb28e17fa17d1621625df643
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Sep 18 19:46:46 2017 +0200
+
+    Issue #597 - Free the 'message' structure, in messageobj.c
+
+commit d5ba3d89393a683552eed144f2e8d217a5e54a8e
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 17 16:30:37 2017 +0200
+
+    Issue #597 - Switch to 'stderr' in sprtf.c
+
+commit a14cffc5985d5c1bd6cc66d8948f43573feb3517
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 17 16:29:47 2017 +0200
+
+    Issue #597 - Avoid reporting root node in lexer.c
+
+commit 5d017fe53239c7ae1ae7e6bfe0ceb47645d22e60
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 17 16:28:39 2017 +0200
+
+    Issue #597 - Minor enhancement of memory debug in alloc.c
+
+commit 3e2788210950e816cdb905bc32b9e414aa45742c
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 17 16:27:17 2017 +0200
+
+    Issue #597 - Add WIN CRT memory debug in tidy.c
+
+commit 98eb7b20ba2189e3bd58de3b90fb7e454f1689b6
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Sep 17 16:25:05 2017 +0200
+
+    Issue #597 - Add some memory diagnostics options in CMakeLists.txt
+
+commit 5a50afe42cec1d532d70eba85881e905036a8aaa
+Author: Andrew Blackton &lt;andrew _at_ blackton _dot_ net&gt;
+Date:   Mon Sep 11 14:00:11 2017 -0500
+
+    Parse XML element names beginning with Valid NameChar
+
+5.5.38 a79458a0ef Jim Derry Fri Sep 8 19:41:25 2017 -0400
+commit 45096954457068e0ab730e59ed2c3e23e81a7b30
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Sep 6 21:25:19 2017 -0400
+
+    Updated documentation in file.
+    Simplified the update counting.
+
+commit 6bce1b377fa423824c029e6e042fd00fb0ab4c3e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Sep 6 20:55:36 2017 -0400
+
+    Updated the POs and POT to reflect the re-sorted strings.
+    Updated language_fr.h reflect the re-sorted strings.
+
+commit 6b3dfda263f1441646bb9f24f387a0d6817d46b7
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Sep 6 20:50:31 2017 -0400
+
+    Updated the MESSAGES.md readme for the updated message system.
+    At this point:
+      - MSVC on Windows 10 compiles without warnings or errors.
+      - GCC on Ubuntu 16.04 compiles without warnings or errors.
+      - Test cases in `testbase` are clean on all of:
+        - macOS
+        - Windows 10
+        - Ubunutu
+
+commit 279dd55280285d5b6fc9adf9bbdf839133e89269
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 17:46:07 2017 -0400
+
+    Regenerated PO's and POT.
+
+commit 80cb74fece57c8a1014202c59d1305f783960f9a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 17:43:06 2017 -0400
+
+    Removed comments from and sorted error messages, as they are documented elsewhere in code now, here, too.
+
+commit a743c86e3f1c8711b7a40ace6e970f2d72a8d2c9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 17:41:19 2017 -0400
+
+    Removed comments from and sorted error messages, as they are documented elsewhere in code now.
+
+commit d8220c061f4eff4eb7bd73ea36b1d4db8b305e23
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 17:35:57 2017 -0400
+
+    Updated the remaining items, including all of the accessibility module items.
+    Note that there are several regressions in the accessibility test suit that
+    are not related to output messages. These are a result of previous work, and
+    these results should be updated in the test suite when this item is merged.
+
+commit 832b4772add90827df61a7b3d4997e6548339ee7
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 16:49:49 2017 -0400
+
+    A bit of organizational cleanup.
+
+commit bc4388e3171bc2d0debfd5e496bea22e94cb7b7f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 16:38:07 2017 -0400
+
+    Migrated surrogate errors; removed break after return.
+
+commit 5b6edb581331e9b24d29c8e2c1bc50eb551a25c6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 16:12:01 2017 -0400
+
+    EncodingWarning and MissingAttr migrated.
+
+commit f49c4199083b1aca2089b3298c71800081b3c579
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 15:50:45 2017 -0400
+
+    Implement formatter for encoding reports.
+
+commit 8cb41987247decc674cc7136c15daac9206feb00
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 15:28:08 2017 -0400
+
+    Entity errors migrated.
+
+commit 18754c701d48379d2ef32d06cb5d1c881db681e3
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 11:44:54 2017 -0400
+
+    Transitioned formatCustomTagDetected to the general formatter.
+
+commit e3893eb8b309376ef64c005f5ccf906b83334941
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 11:40:34 2017 -0400
+
+    Also merged reportBadArgument into standard formatter as above.
+
+commit be22ad3d03f7dd4b15cdaa37ccfea6fc36757659
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 11:35:49 2017 -0400
+
+    Move file errors into the standard formatter. Local context is preserved with
+    braces to not pollute stack for other cases.
+
+commit 283f8974c3319fe1af07b6701e8cbf25b7c334c9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 11:24:48 2017 -0400
+
+    Migrated reports using formatFileError and formatStandard to flexible messaging system. Migrated old reportNotice() to report().
+
+commit 1d2c019162b1629ddbb65b365e78f1813d41151a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Sep 4 11:23:37 2017 -0400
+
+    Added a new string to disambiguate between config files and other file types.
+
+commit 66e4d1f8e6035653b18d6f7a6f36b9be7f97f47f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 2 18:04:51 2017 -0400
+
+    Migrated reports using formatter formatCustomTagDetected.
+
+commit 0c8f684a4b47a5e87c38ea360727824ae8ae3f05
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 2 18:00:46 2017 -0400
+
+    Migrated messages using formatter formatBadArgument to new message system. All tests passing.
+
+commit 46aa9605eedfa61be1a67942a26002495086a045
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 2 17:29:56 2017 -0400
+
+    All reports that can use formatAttributeReport are now using it. Moved the
+    badAccess flag to the point of detection.
+
+commit 00178113c83094d93d0f7f453e5fbda56f04423f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 2 16:47:14 2017 -0400
+
+    A *complete* inventory of every message has been completed, and the dispatchTable
+    reflects such. Some fleshed in report formatters are included with cases for
+    several of Tidy's reports, but nothing is yet enabled. All reporting is status
+    quo, and this is just a bunch of dead code at this point.
+
+commit 83263466f206931711bb71d48993f6938bd0c533
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Sep 2 12:54:02 2017 -0400
+
+    Cleanup ReportNotice() a bit by introducing an HTMLVersion() function.
+
+commit 951ed381a3ef99fadce01785e79af587e6267761
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Aug 31 13:45:01 2017 -0400
+
+    Restore message logic. No bump.
+
+5.5.37 5df01d314e Jim Derry Thu Aug 31 13:18:11 2017 -0400
+commit e5a05ae5a8a5c8d04ef69a9df7e83012675c6dca
+Merge: 1562c42 2c82cfa
+
+5.5.36 2c82cfa23b Jim Derry Thu Aug 31 12:55:32 2017 -0400
+commit 38814f9e3b2c136af0926c686027916cac1f082e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Aug 31 10:57:54 2017 -0400
+
+    Sort message labels for simpler inventorying.
+
+commit e1cbafd647df566829a7c24d6c7b2f3dfc744c2a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Aug 31 10:44:16 2017 -0400
+
+    Handle message outlook properly in messageOut().
+
+5.5.35 5cd2603a68 Jim Derry Wed Aug 30 20:04:03 2017 -0400
+commit e5eb09198d2a86dbb55ba63665a7bd7eb5fad19f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Aug 30 20:01:44 2017 -0400
+
+    Begin migration towards &quot;one output function to rule them all.&quot; Consolidated
+    the basic reporting functions that share the same signature. This also resulted
+    in eliminating a string, and adding a new string to disambiguate between
+    errors and warnings.
+
+commit 1562c42c2ebf804625202023bdd7196ded1c26a2
+Merge: b32e14a 7badd93
+
+5.5.34 7badd93417 Jim Derry Mon Aug 28 14:29:02 2017 -0400
+commit 1f3cf24e82ededa96ef9b52d7e4e9615909f4cf5
+Merge: 2780f01 52465c6
+
+commit 2780f01e9a46ee9ff53dd4d3d501b3abd2540c94
+Merge: 6533181 090e3fc
+
+commit 6533181edf984997d6ab36da1aa8a9224536c7df
+Merge: e8e83db f7658b2
+
+commit 52465c6142534f72f530b6d58c79c5f5283e0876
+Author: Michael Thorpe &lt;mthorpe7 _at_ bloomberg _dot_ net&gt;
+Date:   Thu Aug 24 17:24:42 2017 +0100
+
+    Fix NULL pointer issue with Word2000 empty attributes.
+    
+    This appears to be an issue with Word2000 handling of empty attributes.
+    
+    A reproduction case can be seen here:
+    
+    ```
+    $ cat test.html
+    &lt;html xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
+        &lt;body&gt;
+            &lt;table&gt;
+                &lt;img class=&quot;&quot; /&gt;
+            &lt;/table&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+    
+    $ ./tidy --tidy-mark no --word-2000 yes test.html
+    line 1 column 1 - Warning: missing &lt;!DOCTYPE&gt; declaration
+    line 3 column 1 - Warning: &lt;img&gt; isn't allowed in &lt;table&gt; elements
+    line 2 column 1 - Info: &lt;table&gt; previously mentioned
+    line 1 column 57 - Warning: inserting missing 'title' element
+    line 3 column 1 - Warning: &lt;img&gt; lacks &quot;alt&quot; attribute
+    line 3 column 1 - Warning: &lt;img&gt; lacks &quot;src&quot; attribute
+    line 2 column 1 - Warning: trimming empty &lt;table&gt;
+    line 1 column 1 - Warning: &lt;html&gt; proprietary attribute &quot;xmlns:o&quot;
+    [2]    52405 segmentation fault  ./tidy --tidy-mark no --word-2000 yes test.html
+    ```
+    
+    This was called from https://github.com/htacg/tidy-html5/blob/6f2fb6e0e72c651978d9fc2efb0656670ccf9bf8/src/clean.c#L1710.
+    
+    (It is technically undefined behaviour to call strncmp with `NULL` pointers however).
+
+commit e8e83dbe9f5322a4e9f50c08a57a71100f91e46e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Aug 28 10:05:46 2017 -0400
+
+    Regenerated POs and POT for new strings. No version bump required.
+
+5.5.33 f28e809a36 Jim Derry Mon Aug 28 10:03:38 2017 -0400
+commit 561d43c7e52b437494aeea127f1192bf30532b1c
+Merge: d4a11b5 50859e8
+
+commit d4a11b553ed5966cea31c5614dace926193ed28b
+Merge: a26c4e0 09f1806
+
+5.5.32 a26c4e0a18 Jim Derry Sat Aug 26 12:50:33 2017 -0400
+commit f4c64966f021c963bf147f21d9ebc95d17a779ec
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Aug 26 12:47:18 2017 -0400
+
+    Added TidyConfigCallback and deprecated TidyOptCallback for consistency with
+    the remainder of the callbacks. TidyConfigCallback is now given a reference
+    to the instance of the TidyDoc that caused the callback to occur.
+    
+    +    TidyConfigCallback
+
+commit 090e3fca73597f4a134d41f12d02af2e361d0545
+Author: Nic Sandfield &lt;niczero _at_ wow _dot_ com&gt;
+Date:   Thu Aug 24 11:28:17 2017 +0100
+
+    Fixed some en_gb spellings
+
+commit f7658b2c8926984b8c8edca2f71effeed562369b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Aug 4 14:23:14 2017 +0200
+
+    Issue #582 - Remove extra new line in 'classic' mode
+
+commit fa18c51871b0e0d7d78951416848b6b766954c6f
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Aug 2 20:29:09 2017 +0200
+
+    Add a 'next' branch check to Win64/build-me.bat
+    
+    No code change, so no version bump for this...
+
+commit 09f1806834629dc292594b1a0dac732aa123a37d (refs/heads/issue-572)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Jul 8 19:40:47 2017 +0200
+
+    Issue #572 - discard an all space text node.
+    
+    An earlier patch now passes back an all space text node. Previously this
+    would have been skipped. So add code in ParseList to detect, and discard
+    such a node.
+    
+    Change committed:
+            modified:   src/parser.c
+
+commit f26a06880991e13dd0600322bdbff9b1ca08263f
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Jul 2 21:10:20 2017 +0200
+
+    Issue #572 - More conditions for #396
+
+commit 50859e82583c383a866e76a4289f601352c335b7
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Jun 28 20:34:16 2017 +0200
+
+    Issue #567 - add option, messages, and fix node iteration.
+    
+    Add option TidyStyleTags, --fix-style-tags, Bool, to turn off
+    this action.
+    
+    Add warning messages MOVED_STYLE_TO_HEAD, and FOUND_STYLE_IN_BODY.
+    
+    Fully iterate ALL nodes in the body, in search of style tags...
+    
+    Changes to be committed:
+            modified:   include/tidyenum.h
+            modified:   src/clean.c
+            modified:   src/config.c
+            modified:   src/language_en.h
+            modified:   src/message.c
+
+commit d4ca02adfbef30faca50c703ebebaa058f86bcf8
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Jun 18 20:06:24 2017 +0200
+
+    Issue #567 - Branch 'issue-567-2' to move all 'style' to 'head'
+
+commit b32e14a8eab1e14bb0e02ee804abe30fc94759d9 (refs/heads/issue-456)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Jun 9 03:11:39 2017 +0200
+
+    Issue #456 - add new option `show-meta-change`
+
+commit 97292646f6b008f6008b7a8b93e104e1e9f88198
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Jun 5 17:16:53 2017 +0200
+
+    Issue #456 - Add 'Info:' message when charset replaced
+
+commit a4770daa2ba73c7a7fd50acc95d5cfb63992f4c9
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Jun 4 20:34:22 2017 +0200
+
+    Issue #456 - Add 'Info:' message, when meta added.
+    
+    It also fixes the addition of the constant 'http-equiv=&quot;Content-Type&quot;
+    attribute.
+
+commit 13b34c9d8b4c2e9322034d8fc8b5fc028d04017b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Jun 4 15:41:16 2017 +0200
+
+    Issue #456 - BAH! Fix a stupid logic reversal
+
+commit e28ec7230161aeeb5981e4353868ce756f250add
+Merge: 722a841 e48b06b
+
+5.5.31 e48b06b8c0 Geoff McLane Tue May 30 18:17:13 2017 +0200
+commit 2c096dfa681baaef1d8a435e35361cf241e97696
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue May 30 18:15:25 2017 +0200
+
+    Issue #550 - K&amp;R/MSVC10 fix - tidy.c
+
+commit eb127a5c5b19edbb705c2b6885fb36403eb7413e
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue May 30 18:14:58 2017 +0200
+
+    Issue #550 - K&amp;R/MSVC10 fix - message.c
+
+commit 722a841ce286742f6a7e4c0f00936153baeafce6
+Merge: 40e1d64 dbe8a6a
+
+5.5.30 dbe8a6a767 Geoff McLane Mon May 29 14:28:34 2017 +0200
+commit 4136d85a9c806e379681ec6b482bde14a0ccf559
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 29 14:26:55 2017 +0200
+
+    Issue #395, #564 - Oops, restore orig char if not closing
+
+commit 40e1d64963ab082385e4fd3c0d685753999a7577
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat May 27 20:13:51 2017 +0200
+
+    Issue #456 - A desparate commit to get this WIP right, but...
+
+commit 8a932f96eb1f243427cfa1b31f4529fd25f67a00
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat May 27 18:52:49 2017 +0200
+
+    Issue #456 - Oops, incorrect merge conflict
+
+commit 049bc6c2884e48e464edb12396810c22db3a0e89
+Merge: 21f0085 34d3700
+
+5.5.29 34d37002c9 Geoff McLane Sat May 27 18:26:14 2017 +0200
+commit e23f29b1457d4674b0624254328c6bc880db2277
+Merge: 59a0629 c61b5b7
+
+commit c61b5b7b0cf7ea9b9a5cbd3d17a117cde6275c5f
+Merge: c9c1d7a 59a0629
+
+5.5.28 59a06293ab Geoff McLane Sat May 27 16:36:08 2017 +0200
+commit 4224227cb291c16e5683ffd355fbe88a19199038
+Merge: 5d057ab 825ad59
+
+commit 825ad59262db264da6b486ab1dd6d31ad22d679b
+Merge: 6f05041 5d057ab
+
+5.5.27 5d057abdcb Jim Derry Sun May 21 14:33:10 2017 -0400
+commit cefe56dda5ef7a9303287d25695fd4f188c0c6a8
+Merge: 47c27ec 08399b5
+
+5.5.26 47c27ecf8e Jim Derry Sun May 21 14:29:13 2017 -0400
+commit 7080ed970a5028da7f1ddb2d3604fcaf48d75eba
+Merge: b475ca5 e07b54a
+
+5.5.25 b475ca593d Jim Derry Sun May 21 14:24:57 2017 -0400
+commit 996ddb813d0b95788fa248ff6bd8706eacbca5ac
+Merge: ec03beb 9b2cd06
+
+commit c9c1d7ae55d43692cd4d8488acc736edc0b325a8
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun May 21 01:47:36 2017 +0200
+
+    Issue #395 - a potential fix
+
+commit 6f05041b5ea6d0e840a9b49de025396a287c8ca8
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun May 21 00:18:43 2017 +0200
+
+    Issue #392 - a simple fix, but maybe incomplete
+
+commit ec03beb361dbcb177975ae20c5beb66c0a42734e
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri May 19 18:37:44 2017 +0200
+
+    Issue #552 - remove no 'case default:' warning in most gcc versions
+    
+    Seems too small for a version bump. Closes #552
+
+commit e07b54a4da9a9937ece7b7565dee1120d5c7cd95
+Author: Sébastien Ballesté-Antich &lt;sballeste _at_ airjibe _dot_ fr&gt;
+Date:   Tue May 16 22:38:39 2017 +0200
+
+    Improve french language with poconvert.
+
+commit cc4ad195c5a409cee330a6f193ee28544b0c56d4
+Author: Sébastien Ballesté-Antich &lt;sballeste _at_ airjibe _dot_ fr&gt;
+Date:   Tue May 16 21:38:08 2017 +0200
+
+    Add 3 msgid introduced in commit 5791c55
+
+commit 7feab964801ce7c0a9417b6487f4472291267798
+Author: Sébastien Ballesté-Antich &lt;sballeste _at_ airjibe _dot_ fr&gt;
+Date:   Tue May 16 19:03:12 2017 +0200
+
+    Improve french translations.
+
+commit 21f008501abc8e386c37726ef0893cdbfd5f6007
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 15 16:51:34 2017 +0200
+
+    Issue #456 - Oops, also out of 'lexer.h'
+
+commit a7a4cd6a1607ae06645f88734229f4d78811c36a
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 15 16:42:49 2017 +0200
+
+    Issue #456 - avoid head work if showing body only
+
+commit f310f1d5de8ba7ce8adc1659b0e586a83ca8e47f
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 15 16:39:53 2017 +0200
+
+    Issue #456 - Move new TidyMetaCharset to clean
+
+commit 6ebd12be67101df684ce468474619a5ef15a728b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun May 14 19:08:29 2017 +0200
+
+    Issue #456 - More work on this option
+
+commit 9b2cd06711f2f523d1ac0227649b8c78eaa1a420
+Merge: d18b21b 8a639bf
+
+5.5.24 8a639bf91b Jim Derry Sat May 13 22:25:12 2017 -0400
+commit 66d0825e58060289763424720742a90ec421c61b
+Merge: 5fad225 5791c55
+
+5.5.23 5fad2252d2 Jim Derry Sat May 13 22:20:36 2017 -0400
+commit eb6bd1c1d5fca5fac53693da76033f1426b6bcf2
+Merge: 86338b2 0f1e625
+
+commit 5791c55081e7f62648ef4f594a88284e2a567daf
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat May 13 21:07:02 2017 -0400
+
+    Update languages against current English.
+
+commit 0f1e625324fae174540bb00ccfab03895abe8cb0
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat May 13 20:46:48 2017 -0400
+
+    Address #378
+    
+    Addresses issue #378 by NOT emitting warnings if `fix-uri` is `no`, for HTML5
+    documents. This preserves existing behavior for legacy document types.
+
+commit d18b21b94c43c992276bee0a284ade29dbf8f873
+Merge: 982504e 86338b2
+
+5.5.22 86338b2634 Jim Derry Sat May 13 19:51:28 2017 -0400
+commit b6bf48c24af06102959ec47327985a9b8bfd54af
+Merge: 66bed8b a399725
+
+commit a399725a1e0d4b15914f8ee9ca3f4475ad2458a6 (refs/heads/new_picklists)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat May 13 11:39:13 2017 -0400
+
+    Fixed ParseAutoBool error.
+
+commit 884319937038f76ac0104d32a1a13b23630b887f
+Merge: 66bed8b aff76be
+
+commit 08399b52033c319540115a9ccb405266fee8d7e8
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri May 12 10:52:59 2017 -0400
+
+    Cleanup -help-config output to better show new enumerator types from new parsers and picklists.
+
+commit 982504eee0612c0cb9772afa9ef0a33a31f7f1fc
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri May 12 08:28:11 2017 -0400
+
+    Case insensitive compare is safe here, and prevents erroneous propriertary attribute errors.
+
+commit e7c28636b9a6f807d5358a974c976e515ea86164
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri May 12 07:30:20 2017 -0400
+
+    Fixed cause of assertions -- funny, these don't pop up in XCode.
+
+commit 29766afcfd7011382dd16f4d8c2f8d46e87041c8
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu May 11 18:12:56 2017 -0400
+
+    Initial take on issue 365. This is based off of the simplification of the
+    parser and picklist system. Console application needs to be updated to fix
+    the description, as it shows autobool, and for some reason on the current
+    system I'm not getting assertion failures.
+
+5.5.21 66bed8b9a0 Jim Derry Thu May 11 15:25:46 2017 -0400
+commit 7112fba553d98b24014b7227267bea4bbdf91995
+Merge: 590a030 f7e7554
+
+commit 1ba4bcb7532f54ec8516e1e94ddff7976f1c7283
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu May 11 14:54:53 2017 -0400
+
+    Update the OPTIONS.md readme file.
+
+commit aeb9a24fabf316079fb9a67eeaca505528bb075d
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon May 8 16:14:35 2017 -0400
+
+    Refactor Picklists and Option Parsers
+    
+    This PR refactors how picklists and option parsers are implemented in LibTidy,
+    making is vastly easier to implement new picklists in the future, as well as
+    modify some of the existing picklists such that they have more logical names.
+    
+    Picklist arrays are now arrays of structures that include the possible strings
+    capable of setting a particular option value, and a new parser has been written
+    to work with these structures.
+    
+    In addition, several of the existing parsers were removed, as they are now
+    redundant, and a couple of the remaining parsers were refactored to take
+    advantage of the new parser.
+    
+    In effect, this means that:
+    
+    - New parsers don't have to be written in the majority of cases where new
+      options are added that exceed yes/no/auto.
+    - Some of the existing options can have more meaningful names than yes/no/auto,
+      in a backward compatible way. For example, vertical-spacing &quot;auto&quot; currently
+      in no way reflects &quot;auto&quot; when used.
+
+commit f7e7554c95d31cd8adbc47c66084f671161bbcb4 (refs/heads/issue_391)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue May 9 19:24:20 2017 +0200
+
+    Close the file before the _WIN32 switch
+
+5.5.20 590a030756 Jim Derry Mon May 8 17:37:55 2017 -0400
+commit acaab679c5aed5dfa43e0f69efcc340c6747b337
+Merge: 6f2fb6e 77420b9
+
+commit 77420b94d0e49469b20df43d7913150f9668e6ac (refs/heads/issue_352)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon May 8 18:37:04 2017 +0200
+
+    Fix for 'isalnum' in Windows
+    
+    According to the MSN documentation 'isalnum(c)' is only valid when c equals
+    EOF, or is in the range 0 to 255 inclusive. It states the behavior is
+    undefined outside this range, and in Debug mode triggers an assert dialog.
+
+commit ce105dcf099699e2446f1aa76072283b75194fa1
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun May 7 17:04:53 2017 -0400
+
+    Address #391. Tested on macOS and Win10.
+    
+    - Add a check upon opening a file for validity of the file.
+    - Add a new message to indicate that the path is not a file.
+
+5.5.19 6f2fb6e0e7 Jim Derry Sun May 7 15:03:04 2017 -0400
+commit 8244052cd1f27742a230794111c7669243f944bf
+Merge: fe451ea 09d1802
+
+commit fe451eaa7d39a2fc4e61d9e1766831f224559f78
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat May 6 19:18:01 2017 -0400
+
+    Address #452.
+
+commit fd773121752cc839483c0d6e3524cf8fbe2c4c30
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat May 6 18:54:42 2017 -0400
+
+    Attempt to address issue #352. This patch correctly address the specific issues
+    in #352, but I'm worried that there's some over-reach here.
+    
+    Currently only implemented as a warning, with no switch to turn it off, which
+    maintains current behavior other than the warning.
+    
+    In general, we're treating any string as a complete URL, rather than breaking
+    URL's into component parts. Thus the `IsURLCodePoint()` check includes a few
+    other generic characters that strictly speaking aren't valid codepoints, but
+    are valid as escape characters and delimiters.
+    
+    When addressing #338, I ran into a similar situation in not having a built-in
+    method to separate path components (although a simple generalized solution was
+    good enough in that case).
+    
+    Thus without introducing a new structure and functions to deconstruct a URL
+    into scheme, authority, path, parameters, etc., some variation of this patch
+    will have to be used to address #352.
+
+commit 09d1802298177e4e55259a1eb3fb20ee66957e10
+Merge: 49b833f fd2400d
+
+commit fd2400d55b5b96b7eef0dc8b1fa5d9014ff4aaf4
+Merge: 61d19c9 846b3cd
+
+5.5.18 61d19c9a86 Geoff McLane Sat May 6 15:37:56 2017 +0200
+commit d4978608e7793d88b7e2ed0c619fe41b71018774
+Merge: 1257a49 87169d8
+
+5.5.17 1257a49823 Geoff McLane Sat May 6 15:26:09 2017 +0200
+commit 6839dfe601108f576c1443b66faaacfc8771e7a1
+Merge: 5942757 d142527
+
+5.5.16 594275712c Geoff McLane Sat May 6 14:51:19 2017 +0200
+commit 6da0fff256a0252d959931b95612e60c8182eaa1
+Merge: f9edab1 a19d271
+
+5.5.15 f9edab1c33 Geoff McLane Sat May 6 14:21:13 2017 +0200
+commit 6e8fcaa0e5cf65c191a444935cf1d0fc4aa4c4d4
+Merge: bbaad83 b035986
+
+commit 846b3cde55cfe6a36c1f959d511cf0585276db8c
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu May 4 13:45:06 2017 -0400
+
+    Address #436 just to close it.
+
+commit d142527a8ebc23f800ad9c6df976ca49b447e31e (refs/heads/issue_338)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu May 4 17:36:39 2017 +0200
+
+    Issue #338 - Deal with two other spurious access warnings
+
+commit bbaad8356d2a3d5f1dc939d1b0d3e1c4b7e887d8
+Merge: 7f8394e 14f5980
+
+commit 7f8394e050de1b4f1c640e9239719ecbbaa778e1
+Merge: d883948 3333ca7
+
+commit 14f5980117d7aab655b8be9b2903954254c251bb
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu May 4 09:50:36 2017 -0400
+
+    macOS fixes.
+
+commit 49b833f63bd1cc1022b3775aba9b259495105e25
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed May 3 18:16:03 2017 -0400
+
+    WIP
+
+commit 8b2f92f625ed7c0b5d0de6fdf60e1248b7953626
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed May 3 16:15:44 2017 -0400
+
+    Issue #338 occurs because the existing routines assume that any URI with an
+    extension is a file, and so links to TLD's ending with .pl, .au, etc., will
+    cause accessibility warnings. This fix attempts to distinguish between URI's
+    that are likely to be files versus links to domains.
+
+commit 3333ca7d6942b270048d76f9fd8729d4d2f5f21e
+Author: Laurent Arnoud &lt;laurent _at_ spkdev _dot_ net&gt;
+Date:   Tue May 2 20:28:48 2017 +0200
+
+    Fix pkgconfig install path on package
+
+commit b03598652ff104bae9aaf802b851d4a3dfad91f9 (refs/heads/issue-461)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Tue May 2 19:39:16 2017 +0200
+
+    Issue #461 - alternative patch for this issue
+
+commit 87169d89539cb93aaf736660fc8d13c696ace37f
+Author: Alexander Zolotarev &lt;me _at_ alex _dot_ bio&gt;
+Date:   Wed Apr 19 14:47:27 2017 -1000
+
+    Correctly process 'bookmarks' in html exported from Google Doc.
+
+commit 4066171ea2ea145b7464800f0808ed47c5f793bd
+Author: Laurent Arnoud &lt;laurent _at_ spkdev _dot_ net&gt;
+Date:   Tue Apr 18 00:21:07 2017 +0200
+
+    Generate pkgconfig file for tidy
+
+commit a19d271f47f0dfa2e760fa91d290abc034aec17d
+Author: lhchavez &lt;lhchavez _at_ lhchavez _dot_ com&gt;
+Date:   Sat Apr 15 03:17:16 2017 +0000
+
+    Add a flag to warn on proprietary attributes
+    
+    This change adds the TidyWarnPropAttrs flag (default=on) that emits a
+    warning every proprietary attribute it finds.
+
+commit d8839485a419f02035530867d09866b73fd4fa4a
+Merge: 72612b6 24afc6a
+
+5.5.14 72612b6ca3 Geoff McLane Sun Apr 9 02:08:58 2017 +0200
+commit 219a5c797be0f4509a61fdb01b15181f5a518c77
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Apr 9 02:08:03 2017 +0200
+
+    Issue #524 - Remove obsolete message
+
+commit d1e0b22be7d8a2a4c9b5a8da9a26ed45d07a83ba
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Apr 4 14:42:47 2017 -0400
+
+    Removed TidyDropFontTags. Note that POs and POT were _not_ updated.
+
+commit 24afc6a6fad2cba04fab88448b2305a1584fdbb8
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Apr 4 14:32:29 2017 -0400
+
+    Fixed some casting issues that Ubuntu object to.
+    
+    - Test on macOS, Win10, Ubuntu.
+    - No version bump for this change.
+
+commit ce1e638a0f5aa9c11ab2567df9ac03cbb0687204
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Apr 4 14:07:20 2017 -0400
+
+    Added documentation to tidy.c for potential developers to look at and
+    understand.
+    
+    - No version bump as no API was changed; just comments and reorganization.
+    - Built and tested in macOS, Win10, and Ubuntu.
+
+5.5.13 19c0655333 Jim Derry Fri Mar 31 13:36:15 2017 -0400
+commit 2ad675556df4fa044c64845d433e0beae4c74172
+Merge: 17354ff dfad372
+
+commit dfad372af0c97e19af17701d8ac794a8f1d0e442 (refs/heads/issue-333)
+Merge: 22dcea0 bbb37b6
+
+commit 22dcea067e1f93216ef26e3765a0a0d7f677db21
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Mar 20 18:40:59 2017 +0100
+
+    Issue #335, maybe #333, to output indent char, reduce if tab
+
+commit 5f884524878afd892c19e0c5c8d34877ffd5641f
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Mar 20 16:54:50 2017 +0100
+
+    Issue #333 - create exception for span/meta
+
+5.5.12 17354ff927 Geoff McLane Fri Mar 24 15:26:09 2017 +0100
+commit fe3efcd035341eb5e22e9aa065acbd63d6677b8c
+Merge: 1a66455 d3e8cf3
+
+commit d3e8cf3901787ffe969a194a4e2ff1aec5a23e41
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Mar 24 15:19:07 2017 +0100
+
+    Make LICENSE.txt equivalent to LICENSE.md
+
+commit 04f536ec5c8dbc85dbe5eede3678056877787e93
+Merge: 03e96e3 22bc8da
+
+commit 03e96e36d45a1fb997a894c9bcfaf384721cde25
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Mar 23 15:13:28 2017 +0100
+
+    Since CPack can miss some system DLLs, make option ADD_SYSTEM_RUNTIMES, def OFF
+
+commit 29f106b48353a82bf6a40abb7c559435d0312a49
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Mar 23 15:05:05 2017 +0100
+
+    Use one compatible license file for all
+
+commit 525fe9c1347c66b3530e69dd095f7c36f64e38b9
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Mar 23 14:53:44 2017 +0100
+
+    Issue #515 - Add option to use MSVC statis runtime /MT
+
+commit ba073a288291c2598f8b77ab7506cf1e99c57d21
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 22 04:11:32 2017 +0100
+
+    Issue #515 - Add system DLLs to installers
+
+commit 6b0dd4131ab635337443529a96e739120da202be
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 22 04:10:13 2017 +0100
+
+    add LICENSE.txt for WIN32 bin package
+
+commit 22bc8da5838c71432ecca1ac6188e6be56eb226b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Mar 23 15:13:28 2017 +0100
+
+    Since CPack can miss some system DLLs, make option ADD_SYSTEM_RUNTIMES, def OFF
+
+commit 25f51604d0256bcea07e941f098b566839cfd391
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Mar 23 15:05:05 2017 +0100
+
+    Use one compatible license file for all
+
+commit 5416bfb8ae2023ea76429b1e8740222ec7114d2a
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Thu Mar 23 14:53:44 2017 +0100
+
+    Issue #515 - Add option to use MSVC statis runtime /MT
+
+5.5.11 1a66455052 Jim Derry Wed Mar 22 16:14:17 2017 -0400
+commit 5f05add439c1df9c9bb62caa7c7823d1dc6e0fc2
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Mar 20 21:07:53 2017 -0400
+
+    Continue the documentation effort!
+    - Many, many updates to the public header files.
+    - tidyenum.h was reorganized substantially in order to better generate
+      documentation with Doxygen.
+    - This was also a good time to clean up all of the various enums for languages
+      and strings. Everything is simple and in a single enum now, other than a
+      couple of cases (TidyOptionId, for example, doesn't need to be redefined).
+    - A full and complete audit of the strings meant some opportunities to delete
+      useless strings.
+    - Reorganized the order of the strings in language_en.h in order to better
+      find things when programmers want to make changes. There are a lot fewer
+      internal &quot;sections&quot; now, and everything has been painstakingly sorted within
+      the remaining sections.
+    - Consequently rebased all of the PO's, POT, and other language files.
+    - Updated several of the READMEs with the newest information.
+    - Made the READMEs easier to copy into the Doxygen project by changing some of
+      the code format for compatibility, mainly the use of tildes instead of
+      backslashes for code blocks.
+    - Added tidyGetMessageCode() to message API. Despite the huge diff, this is the
+      only externally-visible change, other than removing some enums (but not their
+      values!).
+    - Passing `next` tests on Mac, Linux, Win10.
+
+commit ce7b5cd55eaedf2b492d85bc16f0cc5384c91c5b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 22 04:11:32 2017 +0100
+
+    Issue #515 - Add system DLLs to installers
+
+commit 187545771bffb745fcb2a373dfe414c1f29f875b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 22 04:10:13 2017 +0100
+
+    add LICENSE.txt for WIN32 bin package
+
+commit 8de67cf4d647ffb97366ea8baea2ccbf272fdace
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 22 02:45:43 2017 +0100
+
+    Some improvement to 'build-bins.bat' - no bump
+
+commit bbb37b6354cdd6c501a2dba917192e7697298de4
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Mar 20 18:40:59 2017 +0100
+
+    Issue #335, maybe #333, to output indent char, reduce if tab
+
+5.5.10 be5e80f5a7 Jim Derry Mon Mar 20 12:22:45 2017 -0400
+commit 929575afb4256af7a254da364fe5aad25d7b7b3e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Mar 20 12:20:51 2017 -0400
+
+    Picklist enums should all start at zero for external LibTidy user compatibility.
+    Restore the new custom-tags enum to this state, and add separate string keys.
+    Updated PO's to reflect; no change to headers.
+
+commit b9d1e1f037081d8350071e11399025713b7563c2
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Mon Mar 20 16:54:50 2017 +0100
+
+    Issue #333 - create exception for span/meta
+
+commit 0be7ed8e33422920b38ab919c0de11d50343f8d6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 19 16:39:13 2017 -0400
+
+    Removed TODO comment; no version bump.
+
+5.5.9 3b9fd6bd5e Jim Derry Sun Mar 19 15:44:18 2017 -0400
+commit a4f752f274b42712810f6a963c8ab6e0ea3caaaf
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sun Mar 19 15:41:51 2017 -0400
+
+    Implement TODO:
+    - tidyDetectedHtmlVersion()
+    - tidyDetectedXhtml()
+    - added two new fields to W3C_Doctypes[] in order to simplify this.
+    - added TY_(HTMLVersionNumberFromCode)() to enable lookup.
+    - Implement tidyDetectedGenericXml()
+    - Added a warning message if an XML declaration exists but the document is not
+      XHTML.
+    - Remove dead commented code.
+    - Updated POs and POT. Headers not affected, but translators should check
+      their translations.
+    - Testing is clean on Mac OS X, Ubuntu 16.04, and Windows 10.
+
+5.5.8 068e6bf42a Jim Derry Sun Mar 19 09:53:16 2017 -0400
+commit 13122e8862e0b7292cb11bfc4c8bbc58516d2911
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Mar 16 16:46:01 2017 -0400
+
+    Added tidyErrorCodeFromKey()
+    Added tidyGetMessageDoc()
+    Improved the Public API documentation.
+
+5.5.7 1dbacc9c43 Jim Derry Sun Mar 19 08:09:43 2017 -0400
+commit b3d6dc3d8a567d34c6f3db2f3a49eb76209acdae
+Merge: 96bb670 c8f366b
+
+commit c8f366b76e68b67fbc26583c25b21446bacc0e3d (refs/heads/custom_tags)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sat Mar 18 18:52:48 2017 +0100
+
+    Issue #119 - Remove 3 newline chars, that crept in...
+
+commit 89e4a0215ac83a2cd82c58b9deeb5137fdc6066a
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Mar 18 11:20:56 2017 -0400
+
+    Fixed the enum, which has TidyCustomTags and TidyUseCustomTags documented backwards.
+
+commit 73f68e2b2a204d6cea78440b3b647293b5dd562b
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Fri Mar 17 18:02:11 2017 +0100
+
+    Issue #119 - remove old debug code
+
+commit da55a6e4ac23f969e94515451680cd0a873e6277
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Mar 16 08:00:05 2017 -0400
+
+    Removed unused declaration.
+
+commit 0c5550b06f086b2136a139ee2a75c5b692d1a80e
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Mar 15 17:36:05 2017 -0400
+
+    I think the messages are where I want them to be. Will generate test cases
+    for comparison. Also regen'd all pots and language headers.
+
+commit 61692401ce27923ee4595ebbc51392384d8715a5
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 15 19:57:47 2017 +0100
+
+    Issue #119 - be able to set RC number during lib build
+
+commit 5606f32f13be3d9579e544e2282d0746e398feb6
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Mar 14 21:50:10 2017 -0400
+
+    WIP; messaging much more logical, except @todo noted.
+
+commit 66ade9def43f1a86e5c6a933edc2f80ce1b3a380
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Mar 14 16:27:11 2017 -0400
+
+    Still noisy, but adds HTML5 dependent output message upon detection.
+
+commit ed5a1d84ea56d2cf6fc8c9ab5f3b3f52f18de387
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Mar 14 15:44:46 2017 -0400
+
+    Add TY_(nodeIsAutonomousCustomTag), so we can use it elsewhere.
+
+commit 8273491e16811296bd45eceb341286181ed26c19
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Mar 14 15:16:11 2017 -0400
+
+    Change allowed values for custom-tags, and make y equal to inline.
+
+commit 66de84bc2bc61fec8d1651602d5da443790cdeb9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Mar 13 13:45:32 2017 -0400
+
+    - Add support for the `is` attribute.
+    - Add support for autonomous custom elements.
+
+5.5.6 96bb67045f Jim Derry Mon Mar 13 13:31:35 2017 -0400
+commit 11178d775ba22ef52b4cdc881f61447c4b170fec
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Mar 13 13:28:57 2017 -0400
+
+    Massive Revamp of the Messaging System
+    
+    This is a rather large refactoring of Tidy's messaging system. This was done
+    mostly to allow non-C libraries that cannot adequately take advantage of
+    arg_lists a chance to query report filter information for information related
+    to arguments used in constructing an error message.
+    
+    Three main goals were in mind for this project:
+    
+    - Don't change the contents of Tidy's existing output sinks. This will ensure
+      that changes do no affect console Tidy users, or LibTidy users who use the
+      output sinks directly. This was accomplished 100% other than some improved
+      cosmetics in the output. See tidy-html5-tests repository, the `refactor` and
+      `more_messages_changes` branches for these minor diffs.
+    - Provide an API that is simple and also extensible without having to write new
+      error filters all the time. This was accomplished by adding the new message
+      callback `TidyMessageCallback` that provides callback functions an opaque
+      object representing the message, and an API to query the message for wanted
+      details. With this, we should never have to add a new callback routine again,
+      as additional API can simply be written against the opaque object.
+    - The API should work the same as the rest of LibTidy's API in that it's
+      consistent and only uses simple types with wide interoperability with other
+      languages. Thanks to @gagern who suggested the model for the API in #409.
+      Although the API uses the &quot;Tidy&quot; way off accessing data via an iterator
+      rather than an index, this can be easily abstracted in the target language.
+    
+    There are two *major* API breaking changes:
+    
+    - Removed TidyReportFilter2
+      - This was only used by one application in the entire world, and was a hacky
+        kludge that served its purpose. TidyReportCallback (né TidyReportFilter3)
+        is much better. If, for some reason, this affects you, I recommend using
+        TidyReportCallback instead. It's a minor change for your application.
+    - Renamed TidyReportFilter3 to TidyReportCallback
+      - This name is much more semantic, and much more sensible in light of
+        improved callback system. As the name implies, it remains capable of
+        *only* receiving callbacks for Tidy &quot;reports.&quot;
+    
+    Introducing TidyMessageCallback, and a new message interrogation API.
+    
+    - As its name implies, it is able to capture (and optionally suppress) *all*
+      of Tidy's output, including the dialogue messages that never make it to
+      the existing report filters.
+    - Provides an opaque `TidyMessage` and an API that can be used to query against
+      it to find the juicy goodness inside.
+      - For example, `tidyGetMessageOutput( tmessage )` will return the complete,
+        localized message.
+      - Another example, `tidyGetMessageLine( tmessage )` will return the line the
+        message applies to.
+    - You can also get information about the individual arguments that make up a
+      message. By using the `tidyGetMessageArguments( tmessage )` itorator and
+      `tidyGetNextMessageArgument` you will obtain an opaque `TidyMessageArgument`
+      which has its own interrogation API. For example:
+        - tidyGetArgType( tmessage, &amp;iterator );
+        - tidyGetArgFormat( tmessage, &amp;iterator );
+        - tidyGetArgValueString( tmessage, &amp;iterator );
+        - …and so on.
+    
+    Other major changes include refactoring `messages.c` to use the new message
+    &quot;object&quot; directly when emitting messages to the console or output sinks. This
+    allowed replacement of a lot of specialized functions with generalized ones.
+    
+    Some of this generalizing involved modifications to the `language_xx.h` header
+    files, and these are all positive improvements even without the above changes.
+
+5.5.5 4dc8a2cf9a Jim Derry Fri Mar 10 08:24:23 2017 -0500
+commit 81b8ec0c90ea99e39a3198622ccb41ebf8cfab2e
+Merge: ac242e9 f88328b
+
+commit ac242e9ea469ab2a800028fd3d0075c0d3a4dce8
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Mar 9 16:04:03 2017 -0500
+
+    hotfix
+
+commit f88328b8930b77f1eb698da6be2ae09e02bfa99f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Mar 9 16:04:03 2017 -0500
+
+    hotfix
+
+5.5.4 b0bd27e9c1 Jim Derry Thu Mar 9 13:01:39 2017 -0500
+commit cca276673c7f9816e6d14f0edbbca6f1947e0642
+Merge: f9f908b e27cc26
+
+commit e27cc262fe1e406a6bb200a7497f0a5d5bbdf127
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Mar 9 12:44:48 2017 -0500
+
+    Bring the local vars into the context, which is allowed in C89.
+
+commit f9f908b70afcb276b1f84617fe76aad190b2c78b
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Mar 8 16:53:59 2017 -0500
+
+    Addresses #492.
+
+commit 005127c733cfe20d08adf2332e63c847564720c0
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Wed Mar 8 10:29:41 2017 -0500
+
+    Address issue #472.
+
+5.5.3 b047e32a18 Jim Derry Tue Mar 7 20:18:06 2017 -0500
+commit 978756a48250d73fa517a283e3337a68e4977b93
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Tue Mar 7 20:11:31 2017 -0500
+
+    Restore the previous status of `gnu-emacs-file`
+    
+    - Updated strings files to match.
+    - Inhibit internal options from being output via the iterator. Internals should
+      never have the chance to be exposed if they shouldn't be use.
+    - Added tidySetEmacsFile() and TidyGetEmacsFile() to the public API, and use it
+      instead of secret API to set the filename in the console application.
+    
+    The end result is that `gnu-emacs-file` (and also `doctype-mode`) officially no
+    longer exist to CLI users nor to API users, and tidy console behaves properly
+    by using a published API to set the filename for emacs.
+
+5.5.2 1ebae18c9a Jim Derry Mon Mar 6 17:09:33 2017 -0500
+commit 50ff29af54a40583ba5ddabfa11ad491809f5a70
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Mar 6 17:08:32 2017 -0500
+
+    Applied fix to `eqconfig` as well, which solves the man page generation issue.
+
+commit 05720721481413449c4b898a06553f33021099a8 (refs/heads/issue_492)
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Mon Mar 6 12:12:39 2017 -0500
+
+    Make sure that -xml-help uses localized names instead of format specifiers.
+
+5.5.1 b5885dee46 Jim Derry Mon Mar 6 07:07:40 2017 -0500
+commit f3e3e1708b8c508a71a2eb9cc3d382dee36f70ed
+Merge: 906f2e7 03f0192
+
+commit 906f2e7f4946849f09af5faf2effccdd6519c3b3
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Sun Mar 5 16:27:19 2017 +0100
+
+    ignore msvc140 *.VC.db
+
+commit 03f0192f51014c972c0b4c5135ebf16f0eaafb7c
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Sat Mar 4 15:31:25 2017 -0500
+
+    How did this get back in there???
+
+commit 432f43dd2f4f9ddd035ebbf6e3359c6c14acb24f
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Fri Mar 3 07:17:28 2017 -0500
+
+    Corrected description of pointer operator-macro order.
+
+commit 74a4fa40494b7408baaffee0e4cf83e2d337e51b
+Merge: c54c10f ab183b8
+
+commit ab183b8ae542a65b29459f744104e25388b56b14
+Merge: 3e23225 3be515b
+
+commit 3be515b1f96d9105340932ec32d1b38e2271f623
+Merge: 92621d6 3e23225
+
+commit 92621d6f99fd724ad4d7168d210b79f05de341a9
+Author: Jim Derry &lt;balthisar _at_ gmail _dot_ com&gt;
+Date:   Thu Mar 2 09:32:02 2017 -0500
+
+    MSVC Compatibility
+      - Changed location of pointer operator in declarations.
+      - Updated `CODESTYLE.md` to reflect this.
+      - Updated `API_AND_NAMESPACE.md` to reflect this.
+
+5.5.0 3e23225288 Geoff McLane Wed Mar 1 15:33:22 2017 +0100
+commit 0016e0083505ccee25a5c76dcf64cfe336765128 (tag: refs/tags/5.4.0, tag: refs/tags/5.1.14, refs/remotes/origin/master)
+Author: Geoff McLane &lt;ubuntu _at_ geoffair _dot_ info&gt;
+Date:   Wed Mar 1 15:06:30 2017 +0100
+
+    Update verhist.log to 5.4.0 release
+
+5.4.0 17b33753ae Geoff McLane Wed Mar 1 15:04:22 2017 +0100</pre>
+<a name="authors"></a>
+
+<p>This log has  440 commits by 12 Authors. 
+'T' is total, 'V' is version.txt, 'M' is merges. 
+</p>
+<table>
+<tr>
+<th>Author</th>
+<th>T</th>
+<th>V</th>
+<th>M</th>
+<th>Author</th>
+<th>T</th>
+<th>V</th>
+<th>M</th>
+<th>Author</th>
+<th>T</th>
+<th>V</th>
+<th>M</th>
+<th>Author</th>
+<th>T</th>
+<th>V</th>
+<th>M</th>
+</tr>
+<tr>
+<td>Sébastien Ballesté-Antich</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>Aurelio Jargas</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Alexander Zolotarev</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Wang Guan</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Nic Sandfield</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Michael Thorpe</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Geoff R. McLane</td>
+<td>117</td>
+<td>19</td>
+<td>22</td>
+<td>lhchavez</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Jim Derry</td>
+<td>308</td>
+<td>71</td>
+<td>59</td>
+<td>Andrew Blackton</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>Laurent Arnoud</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>Rafael Fontenelle</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</table>
+
+<p>Date: from Wed Mar 1 15:04:22 2017 +0100 to Sat Nov 25 14:54:41 2017 +0100 (268 days)</p>
+<p class='rite'>5.6.0.html, by emailobfuscate.pl, on 2017/11/25 15:11:53, from 'git log'</p>
+
+<p>eof <a href="#top">top</a></p>
+</body>
+</html>
+
