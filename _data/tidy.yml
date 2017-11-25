@@ -9,7 +9,7 @@
       sha256: 59ac22427a3d759c72108814f6a8f0e98511b12f87744ca19e0a500a00687be8
 
     - filename: tidy-5.6.0-macos.dmg
-      filesize: 710K1.13MB
+      filesize: 1.13MB
       modified: 2017/11/25 10:00:00
       describe: macOS Disk Image.
       sha256: d42fc3297cff5ffae69b4dd4df628d50b520b26f24d7e7671c0a6b6f30d66b28
