@@ -26,6 +26,12 @@
       describe: Win64 ZIP (MSVC10).
       sha256: cdca0599077b83bdadcb9f4cfab1bf2c187ad1bfa50843d6e5cef3d11a9bc349
 
+    - filename: tidy-5.6.0-vc10-32b.zip
+      filesize: 1.02MB
+      modified: 2017/11/28 14:48:00
+      describe: Win32 ZIP (MSVC10).
+      sha256: d2ec40d5d9338f51328af36a753ff39374357baf5db01412cb6d0e2e86cbb8b1
+
 - release: 5.4.0
   heading: HTML Tidy version 5.4.0
   notes: 5.4.0.html
