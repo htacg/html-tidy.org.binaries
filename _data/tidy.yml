@@ -5,8 +5,14 @@
     - filename: tidy-5.6.0-vc14-64b.zip
       filesize: 1.12MB
       modified: 2017/11/25 10:00:00
-      describe: Win64 ZIP package (built with MSVC14).
+      describe: Win64 ZIP (MSVC14).
       sha256: 59ac22427a3d759c72108814f6a8f0e98511b12f87744ca19e0a500a00687be8
+
+    - filename: tidy-5.6.0-vc14-32b.zip
+      filesize: 1.02MB
+      modified: 2017/11/28 14:30:00
+      describe: Win32 ZIP (MSVC14).
+      sha256: 03c8ae9359290a3523d9fd5131456e670d2bc2564fb20aed7c6456f86b8433e2
 
     - filename: tidy-5.6.0-macos.dmg
       filesize: 1.13MB
