@@ -20,6 +20,12 @@
       describe: macOS Disk Image.
       sha256: d42fc3297cff5ffae69b4dd4df628d50b520b26f24d7e7671c0a6b6f30d66b28
 
+    - filename: tidy-5.6.0-vc10-64b.zip
+      filesize: 1.02MB
+      modified: 2017/11/28 14:44:00
+      describe: Win64 ZIP (MSVC10).
+      sha256: cdca0599077b83bdadcb9f4cfab1bf2c187ad1bfa50843d6e5cef3d11a9bc349
+
 - release: 5.4.0
   heading: HTML Tidy version 5.4.0
   notes: 5.4.0.html
