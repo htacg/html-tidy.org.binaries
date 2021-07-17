@@ -1,0 +1,243 @@
+<h1 id="changelog">Changelog</h1>
+<h2 id="section"><a href="https://github.com/htacg/tidy-html5/tree/5.8.0">5.8.0</a> (2021-07-10)</h2>
+<p><a href="https://github.com/htacg/tidy-html5/compare/5.6.0...5.8.0">Full Changelog</a></p>
+<p><strong>Fixed bugs:</strong></p>
+<ul>
+<li>Details open, Value added to Attribute <a href="https://github.com/htacg/tidy-html5/issues/925">#925</a></li>
+<li>Fix handling of percent symbols in CheckLength validation routine <a href="https://github.com/htacg/tidy-html5/issues/910">#910</a></li>
+<li>What is the true purpose and use case of the –bare option? <a href="https://github.com/htacg/tidy-html5/issues/896">#896</a></li>
+<li>Warning about missing &lt;/summary&gt; <a href="https://github.com/htacg/tidy-html5/issues/895">#895</a></li>
+<li>DecodeMacRoman() is missing an upper bounds check before indexing into Mac2Unicode array <a href="https://github.com/htacg/tidy-html5/issues/891">#891</a></li>
+<li>Can’t disable wrap <a href="https://github.com/htacg/tidy-html5/issues/858">#858</a></li>
+<li>Recursion limit exceeded <a href="https://github.com/htacg/tidy-html5/issues/850">#850</a></li>
+<li>template tag should be allowed in head <a href="https://github.com/htacg/tidy-html5/issues/836">#836</a></li>
+<li>tag_defs + AdjustTags() and ResetTags() during parsing is not thread-safe (tags.c) <a href="https://github.com/htacg/tidy-html5/issues/816">#816</a></li>
+<li>Unexpected parsing with uppercase DOCTYPE <a href="https://github.com/htacg/tidy-html5/issues/815">#815</a></li>
+<li>bugfix for messageobj.c for windows vc++ <a href="https://github.com/htacg/tidy-html5/issues/800">#800</a></li>
+<li>Tidy 5.7.20 GetSurrogatePair can use uninitialised value processing malformed entity refs <a href="https://github.com/htacg/tidy-html5/issues/798">#798</a></li>
+<li>regression tests fail if /etc/tidy.conf or ~/.tidyrc exists <a href="https://github.com/htacg/tidy-html5/issues/778">#778</a></li>
+<li>AddByte allocAmt overflows for large input files <a href="https://github.com/htacg/tidy-html5/issues/761">#761</a></li>
+<li>–strict-tags-attributes no doesn’t ignore &lt;td align&gt; <a href="https://github.com/htacg/tidy-html5/issues/729">#729</a></li>
+<li>“Too many title elements in &lt;title&gt;” should say “Too many title elements in &lt;head&gt;” <a href="https://github.com/htacg/tidy-html5/issues/692">#692</a></li>
+<li>Tidy 5.6.0 on Mac says Not a file when file is not writeable <a href="https://github.com/htacg/tidy-html5/issues/681">#681</a></li>
+<li>Tidy fails if html contains a section &lt;![endif]—&gt; <a href="https://github.com/htacg/tidy-html5/issues/487">#487</a></li>
+<li>“Malformed” Word 2000 sequence may cause Tidy to skip document content <a href="https://github.com/htacg/tidy-html5/issues/462">#462</a></li>
+<li>Change open tag to Boolean <a href="https://github.com/htacg/tidy-html5/pull/932">#932</a> (<span class="citation" data-cites="arrmo">@arrmo</span>)</li>
+<li>Is #729 - Show ‘warnings’ in all td cases <a href="https://github.com/htacg/tidy-html5/pull/928">#928</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Issue #692 - too many titles <a href="https://github.com/htacg/tidy-html5/pull/927">#927</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Is. #681 - read-only files, and dirs <a href="https://github.com/htacg/tidy-html5/pull/926">#926</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Free attributes before return NULL <a href="https://github.com/htacg/tidy-html5/pull/899">#899</a> (<span class="citation" data-cites="ltx2018">@ltx2018</span>)</li>
+<li>Is. #896 - make ‘bear’ docs match code <a href="https://github.com/htacg/tidy-html5/pull/898">#898</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Correction for issue-895 <a href="https://github.com/htacg/tidy-html5/pull/897">#897</a> (<span class="citation" data-cites="arrmo">@arrmo</span>)</li>
+<li>fix memleak in GetTokenFromStream <a href="https://github.com/htacg/tidy-html5/pull/884">#884</a> (<span class="citation" data-cites="ltx2018">@ltx2018</span>)</li>
+<li>Protect against NULL in PruneSection. <a href="https://github.com/htacg/tidy-html5/pull/853">#853</a> (<span class="citation" data-cites="esclim">@esclim</span>)</li>
+<li>Is #815 - Use case-insensitive test ‘html’ <a href="https://github.com/htacg/tidy-html5/pull/832">#832</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Is. #761 - just deal with the ‘uint’ wrap <a href="https://github.com/htacg/tidy-html5/pull/830">#830</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Tidy 5.7.20 crashes if allocator replaced <a href="https://github.com/htacg/tidy-html5/issues/797">#797</a></li>
+<li>–mute should suppress non-zero exit code <a href="https://github.com/htacg/tidy-html5/issues/794">#794</a></li>
+<li>Seems tidy.c has sprung a leak <a href="https://github.com/htacg/tidy-html5/issues/791">#791</a></li>
+<li>Cannot handle read-only html files (possibly regression?) <a href="https://github.com/htacg/tidy-html5/issues/789">#789</a></li>
+<li>setlocale( LC_ALL, ““) changes the locale for the entire application <a href="https://github.com/htacg/tidy-html5/issues/770">#770</a></li>
+<li>mute in ~/.tidyrc runs fine but triggers exit(1) <a href="https://github.com/htacg/tidy-html5/issues/752">#752</a></li>
+<li>Duplicate IDs are not detected if the ID has an uppercase letter <a href="https://github.com/htacg/tidy-html5/issues/726">#726</a></li>
+<li>Tidy gets confused with a &lt;span&gt; around a block element <a href="https://github.com/htacg/tidy-html5/issues/709">#709</a></li>
+<li>Tidy seems to get confused by HTML strings in JavaScript blocks. <a href="https://github.com/htacg/tidy-html5/issues/700">#700</a></li>
+<li>tidy indent+wrap breaks &lt;pre&gt; formatting <a href="https://github.com/htacg/tidy-html5/issues/697">#697</a></li>
+<li>-export-config creates invalid configuration file <a href="https://github.com/htacg/tidy-html5/issues/679">#679</a></li>
+<li>Segmentation Fault <a href="https://github.com/htacg/tidy-html5/issues/656">#656</a></li>
+<li>Maybe a problem with some vsnprintf implementations? <a href="https://github.com/htacg/tidy-html5/issues/655">#655</a></li>
+<li>Why is libtidy complaining &lt;data&gt; isn’t approved by W3C? <a href="https://github.com/htacg/tidy-html5/issues/649">#649</a></li>
+<li>Is. #791 - free some allocations <a href="https://github.com/htacg/tidy-html5/pull/809">#809</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Issue 726 upper case anchors <a href="https://github.com/htacg/tidy-html5/pull/731">#731</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Is #673 - Revert 350f7b4 and 86e62db AdjustConfig logic <a href="https://github.com/htacg/tidy-html5/pull/705">#705</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Issue #655 - Fix unsafe use of output buffer as input param <a href="https://github.com/htacg/tidy-html5/pull/662">#662</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Issue #656 - protect against NULL node set in loop <a href="https://github.com/htacg/tidy-html5/pull/661">#661</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+</ul>
+<p><strong>Closed issues:</strong></p>
+<ul>
+<li>No NPM? <a href="https://github.com/htacg/tidy-html5/issues/960">#960</a></li>
+<li>Where can I find the list of known tags? <a href="https://github.com/htacg/tidy-html5/issues/958">#958</a></li>
+<li>fix non-standard static library name <a href="https://github.com/htacg/tidy-html5/issues/952">#952</a></li>
+<li>Lot of config options; but where are the defaults specified <a href="https://github.com/htacg/tidy-html5/issues/948">#948</a></li>
+<li>Any Windows Binaries for 5.7.28, just like 5.6? <a href="https://github.com/htacg/tidy-html5/issues/947">#947</a></li>
+<li>Setup continuous integration and testing <a href="https://github.com/htacg/tidy-html5/issues/944">#944</a></li>
+<li>Linux binaries for latest releases <a href="https://github.com/htacg/tidy-html5/issues/939">#939</a></li>
+<li>Outdated warnings <a href="https://github.com/htacg/tidy-html5/issues/938">#938</a></li>
+<li>Umlauts/special characters not converted to correct html entities <a href="https://github.com/htacg/tidy-html5/issues/936">#936</a></li>
+<li>tidy hanging <a href="https://github.com/htacg/tidy-html5/issues/935">#935</a></li>
+<li>Tidy catches repeated attributes, but misses identical ids <a href="https://github.com/htacg/tidy-html5/issues/924">#924</a></li>
+<li>drop-empty-elements is not removing empty Table elements <a href="https://github.com/htacg/tidy-html5/issues/923">#923</a></li>
+<li>Tag “main” is shown as error <a href="https://github.com/htacg/tidy-html5/issues/922">#922</a></li>
+<li>Unexpected parsing a tag in table <a href="https://github.com/htacg/tidy-html5/issues/919">#919</a></li>
+<li>beginner on windows – tidy reports: document: “a0.htm” is not a file! – But it is <a href="https://github.com/htacg/tidy-html5/issues/918">#918</a></li>
+<li>tidy says this misplaced &lt;/dl&gt; is OK <a href="https://github.com/htacg/tidy-html5/issues/917">#917</a></li>
+<li>Tidy can’t deal with &lt;中文&gt; XML tags <a href="https://github.com/htacg/tidy-html5/issues/913">#913</a></li>
+<li>Support extended color names in HTML 5 <a href="https://github.com/htacg/tidy-html5/issues/908">#908</a></li>
+<li>Unknown type uint trying to use the shared lib. <a href="https://github.com/htacg/tidy-html5/issues/906">#906</a></li>
+<li>&lt;/select&gt; ending tag missing <a href="https://github.com/htacg/tidy-html5/issues/904">#904</a></li>
+<li>SVG attributes flagged as proprietary <a href="https://github.com/htacg/tidy-html5/issues/903">#903</a></li>
+<li>tidy-mark option is not working <a href="https://github.com/htacg/tidy-html5/issues/901">#901</a></li>
+<li>Need help controlling output <a href="https://github.com/htacg/tidy-html5/issues/894">#894</a></li>
+<li>Say how to deal with XHTML input <a href="https://github.com/htacg/tidy-html5/issues/893">#893</a></li>
+<li>Help output refers to a non-existent -options option <a href="https://github.com/htacg/tidy-html5/issues/892">#892</a></li>
+<li>Tidy gets confused with u tags and underline styles <a href="https://github.com/htacg/tidy-html5/issues/890">#890</a></li>
+<li>how to forbid auto insert tag? <a href="https://github.com/htacg/tidy-html5/issues/889">#889</a></li>
+<li>Incorrectly changing — to - (emdash [alt 0151]) to hypens. <a href="https://github.com/htacg/tidy-html5/issues/885">#885</a></li>
+<li>html-tidy site does not work with https <a href="https://github.com/htacg/tidy-html5/issues/883">#883</a></li>
+<li>Use with TextPad 8 <a href="https://github.com/htacg/tidy-html5/issues/882">#882</a></li>
+<li>Translation: TidyKeepTabs <a href="https://github.com/htacg/tidy-html5/issues/880">#880</a></li>
+<li>&lt;img&gt; proprietary attribute “loading” <a href="https://github.com/htacg/tidy-html5/issues/879">#879</a></li>
+<li>Versioning seems a bit off <a href="https://github.com/htacg/tidy-html5/issues/877">#877</a></li>
+<li>–quote-ampersand yes doesn’t work <a href="https://github.com/htacg/tidy-html5/issues/876">#876</a></li>
+<li>Convert spaces to non-breaking space <a href="https://github.com/htacg/tidy-html5/issues/875">#875</a></li>
+<li>Tidy 5.6.0 mangled html / php code. <a href="https://github.com/htacg/tidy-html5/issues/872">#872</a></li>
+<li>Even with -utf8 tidy replaces UTF8 code U+00A0 into numeric entity &amp;#160; <a href="https://github.com/htacg/tidy-html5/issues/871">#871</a></li>
+<li>http-equiv metas should trigger helpful upgrade messages <a href="https://github.com/htacg/tidy-html5/issues/868">#868</a></li>
+<li>HTML Tidy website does not render propertly when using HTTPS <a href="https://github.com/htacg/tidy-html5/issues/867">#867</a></li>
+<li>[-Wignored-qualifiers] warning in tidy <a href="https://github.com/htacg/tidy-html5/issues/866">#866</a></li>
+<li>Wrong character encoding <a href="https://github.com/htacg/tidy-html5/issues/863">#863</a></li>
+<li>Missing semicolon after html entity sometimes returns generic ‘unknown entity’ warning instead of specific ‘missing semicolon’ <a href="https://github.com/htacg/tidy-html5/issues/862">#862</a></li>
+<li>Warning: unescaped &amp; or unknown entity “&amp;P” when encoding as utf-8 <a href="https://github.com/htacg/tidy-html5/issues/861">#861</a></li>
+<li>Tidy output clutter <a href="https://github.com/htacg/tidy-html5/issues/857">#857</a></li>
+<li>Trailing backspace removed <a href="https://github.com/htacg/tidy-html5/issues/856">#856</a></li>
+<li>Only wrap at tags <a href="https://github.com/htacg/tidy-html5/issues/854">#854</a></li>
+<li>ENABLE_DEBUG_LOG is ignored on Windows <a href="https://github.com/htacg/tidy-html5/issues/852">#852</a></li>
+<li>Kill off alphabetical ordering clause for publicly-exposed enum defs <a href="https://github.com/htacg/tidy-html5/issues/851">#851</a></li>
+<li>For Sublime Text 3 <a href="https://github.com/htacg/tidy-html5/issues/849">#849</a></li>
+<li>&lt;li&gt; tags skipped in tidy result shown on screen <a href="https://github.com/htacg/tidy-html5/issues/847">#847</a></li>
+<li>man page missing header causing appending to XML discussion <a href="https://github.com/htacg/tidy-html5/issues/846">#846</a></li>
+<li>&lt;input type=“file”&gt; needs name= <a href="https://github.com/htacg/tidy-html5/issues/845">#845</a></li>
+<li>Expose node-&gt;last in the public API <a href="https://github.com/htacg/tidy-html5/issues/844">#844</a></li>
+<li>Support EJS? <a href="https://github.com/htacg/tidy-html5/issues/842">#842</a></li>
+<li>Tidy 5.2 cleaned up curly quotes but 5.6 doesn’t <a href="https://github.com/htacg/tidy-html5/issues/841">#841</a></li>
+<li>Jekyll headings removed <a href="https://github.com/htacg/tidy-html5/issues/840">#840</a></li>
+<li>Should tidy allow an empty title element? <a href="https://github.com/htacg/tidy-html5/issues/839">#839</a></li>
+<li>Missing tags for 5.7.* <a href="https://github.com/htacg/tidy-html5/issues/834">#834</a></li>
+<li>Python binding? <a href="https://github.com/htacg/tidy-html5/issues/826">#826</a></li>
+<li>Self-closing tags are not correctly recognized <a href="https://github.com/htacg/tidy-html5/issues/813">#813</a></li>
+<li>Different output when parsing HTML <a href="https://github.com/htacg/tidy-html5/issues/790">#790</a></li>
+<li>Continuously fuzzing tidy-html5 with OSS-Fuzz <a href="https://github.com/htacg/tidy-html5/issues/788">#788</a></li>
+<li>I18N isn’t working (mostly) via changing the environment variables <a href="https://github.com/htacg/tidy-html5/issues/783">#783</a></li>
+<li>5.6.0 and breakage with php-tidy <a href="https://github.com/htacg/tidy-html5/issues/780">#780</a></li>
+<li>Tidy needs a changelog <a href="https://github.com/htacg/tidy-html5/issues/776">#776</a></li>
+<li>TidyNodeGetText returns text with a new line appended <a href="https://github.com/htacg/tidy-html5/issues/775">#775</a></li>
+<li>Breaks microseconds after call tidy_repair_string <a href="https://github.com/htacg/tidy-html5/issues/771">#771</a></li>
+<li>Typos in language_en.h, etc <a href="https://github.com/htacg/tidy-html5/issues/765">#765</a></li>
+<li>Document accessibility priority numbers better <a href="https://github.com/htacg/tidy-html5/issues/756">#756</a></li>
+<li>Xcode not working with tidylib <a href="https://github.com/htacg/tidy-html5/issues/751">#751</a></li>
+<li>Intent-To-Package: Snaps are Universal Linux Packages <a href="https://github.com/htacg/tidy-html5/issues/748">#748</a></li>
+<li>Can’t parse UTF16 html string <a href="https://github.com/htacg/tidy-html5/issues/744">#744</a></li>
+<li>libtidy.so.5 has removed symbols between 5.2.0 and 5.6.0, but kept SONAME <a href="https://github.com/htacg/tidy-html5/issues/743">#743</a></li>
+<li>Tidy 5.7.16 -&gt; empty result <a href="https://github.com/htacg/tidy-html5/issues/740">#740</a></li>
+<li>Crash with malformed &lt;meta&gt; tag <a href="https://github.com/htacg/tidy-html5/issues/739">#739</a></li>
+<li>bug(encoding): non-ASCII characters in configuration file <a href="https://github.com/htacg/tidy-html5/issues/737">#737</a></li>
+<li>Improve documentation re: wrap-script-literals <a href="https://github.com/htacg/tidy-html5/issues/736">#736</a></li>
+<li>feature_request(validation): “preserve-entities yes” by default <a href="https://github.com/htacg/tidy-html5/issues/732">#732</a></li>
+<li>Tidy emits warnings that aren’t in order <a href="https://github.com/htacg/tidy-html5/issues/696">#696</a></li>
+<li>Option to disable tidy code fixing option <a href="https://github.com/htacg/tidy-html5/issues/693">#693</a></li>
+<li>tidy change html view when deal with white-space:pre tag <a href="https://github.com/htacg/tidy-html5/issues/685">#685</a></li>
+<li>CLI option to stop insertion/deletion of tags <a href="https://github.com/htacg/tidy-html5/issues/682">#682</a></li>
+<li>Tidy does not strip leading and trailing spaces in HTML href <a href="https://github.com/htacg/tidy-html5/issues/678">#678</a></li>
+<li>Use tidy with json custom attributes on custom components <a href="https://github.com/htacg/tidy-html5/issues/677">#677</a></li>
+<li>[Question] How to use tidy for multiple files? <a href="https://github.com/htacg/tidy-html5/issues/668">#668</a></li>
+<li>How to run a test-kit from terminal? <a href="https://github.com/htacg/tidy-html5/issues/667">#667</a></li>
+<li>Dependency on DLLs not Documented <a href="https://github.com/htacg/tidy-html5/issues/666">#666</a></li>
+<li>tidylib.c fails to compile on Visual Studio 2010 <a href="https://github.com/htacg/tidy-html5/issues/665">#665</a></li>
+<li>Minify HTML <a href="https://github.com/htacg/tidy-html5/issues/628">#628</a></li>
+<li>Do not insert newlines into TEXT when wrapping! <a href="https://github.com/htacg/tidy-html5/issues/625">#625</a></li>
+<li>Configuration Options “cleanup” <a href="https://github.com/htacg/tidy-html5/issues/609">#609</a></li>
+<li>Next Release 5.6.0 <a href="https://github.com/htacg/tidy-html5/issues/600">#600</a></li>
+<li>anchor-as-name: false replaces name attribute of a form tag with id attribute <a href="https://github.com/htacg/tidy-html5/issues/571">#571</a></li>
+<li>Why does tidy format the ‘&lt;’ and ‘&gt;’ numeric operator? <a href="https://github.com/htacg/tidy-html5/issues/485">#485</a></li>
+<li>span with display: inline-block is treated as inline <a href="https://github.com/htacg/tidy-html5/issues/448">#448</a></li>
+<li>wrap-php multiple lines <a href="https://github.com/htacg/tidy-html5/issues/437">#437</a></li>
+<li>Option to always encode double ampersands <a href="https://github.com/htacg/tidy-html5/issues/827">#827</a></li>
+<li>[ENH] Add meta options to disable/enable cleanup and repair option <a href="https://github.com/htacg/tidy-html5/issues/819">#819</a></li>
+<li>–vertical-space yes adds too much after comment <a href="https://github.com/htacg/tidy-html5/issues/811">#811</a></li>
+<li>Line breaking on “|” <a href="https://github.com/htacg/tidy-html5/issues/810">#810</a></li>
+<li>Installs library in /usr/local/lib/lib instead of /usr/local/lib <a href="https://github.com/htacg/tidy-html5/issues/807">#807</a></li>
+<li>Publishing in VS2015 - System.DllNotFoundException <a href="https://github.com/htacg/tidy-html5/issues/804">#804</a></li>
+<li>can not fix script async Attr to async=“async” <a href="https://github.com/htacg/tidy-html5/issues/799">#799</a></li>
+<li>Feature Request: Omit boilerplate <a href="https://github.com/htacg/tidy-html5/issues/795">#795</a></li>
+<li>html conversion to xml leaves many tags unclosed <a href="https://github.com/htacg/tidy-html5/issues/792">#792</a></li>
+<li>NppTidy 5.6.0 quickref.html link broken - please fix <a href="https://github.com/htacg/tidy-html5/issues/787">#787</a></li>
+<li>Redundant blank lines when printing -help <a href="https://github.com/htacg/tidy-html5/issues/781">#781</a></li>
+<li>–css-prefix option no longer adds a hyphen to its built classes <a href="https://github.com/htacg/tidy-html5/issues/777">#777</a></li>
+<li>Build error on Android (Termux): unknown type name ‘ulong’ <a href="https://github.com/htacg/tidy-html5/issues/773">#773</a></li>
+<li>alter default config file processing <a href="https://github.com/htacg/tidy-html5/issues/772">#772</a></li>
+<li>Tidy output going to stderr <a href="https://github.com/htacg/tidy-html5/issues/763">#763</a></li>
+<li>–tidy-mark no inserts blank line <a href="https://github.com/htacg/tidy-html5/issues/760">#760</a></li>
+<li>tidy -access: &lt;doctype&gt; NOT missing <a href="https://github.com/htacg/tidy-html5/issues/758">#758</a></li>
+<li>type qualifiers ignored on function return type [-Werror=ignored-qualifiers] <a href="https://github.com/htacg/tidy-html5/issues/746">#746</a></li>
+<li>tidy dies on unexpected character <a href="https://github.com/htacg/tidy-html5/issues/745">#745</a></li>
+<li>tidy 5.6.0 warning <code>inserting missing 'title' element</code> appears in php-only files <a href="https://github.com/htacg/tidy-html5/issues/728">#728</a></li>
+<li>bug(build): tidyBufAppend(&amp;buf1, d-&gt;def, strlen(d-&gt;def)); <a href="https://github.com/htacg/tidy-html5/issues/721">#721</a></li>
+<li>Allow specify ranges of code that do not get checked <a href="https://github.com/htacg/tidy-html5/issues/720">#720</a></li>
+<li>README/CONTRIBUTING.md <a href="https://github.com/htacg/tidy-html5/issues/718">#718</a></li>
+<li>tidy’s error messages should include filename somewhere <a href="https://github.com/htacg/tidy-html5/issues/713">#713</a></li>
+<li>Tidy does not complain about valign in &lt;tr&gt;, &lt;th&gt; or &lt;td&gt; <a href="https://github.com/htacg/tidy-html5/issues/711">#711</a></li>
+<li>tidy converts ‘&amp;’ in query parameters (&amp;aen=true =&gt; &amp;aen=true) in relative paths <a href="https://github.com/htacg/tidy-html5/issues/710">#710</a></li>
+<li>TidyHtml not working properly in C++ <a href="https://github.com/htacg/tidy-html5/issues/707">#707</a></li>
+<li>Unescaped <code>&amp;</code> emitted despite using **output-xhtml** key bindings in 5.6.0 in PHP bindings <a href="https://github.com/htacg/tidy-html5/issues/704">#704</a></li>
+<li>How to ignore specific warnings <a href="https://github.com/htacg/tidy-html5/issues/699">#699</a></li>
+<li>Mention the need for a <code>:</code> before options’ value in the configuration file <a href="https://github.com/htacg/tidy-html5/issues/698">#698</a></li>
+<li>Tidy 5.6.0 -&gt; bug with pre tag <a href="https://github.com/htacg/tidy-html5/issues/690">#690</a></li>
+<li>Is there any way to remove inline styles? <a href="https://github.com/htacg/tidy-html5/issues/689">#689</a></li>
+<li>feature request(safari): Pinned Tab Icons support <a href="https://github.com/htacg/tidy-html5/issues/686">#686</a></li>
+<li>Adopt Cygwin tidy package <a href="https://github.com/htacg/tidy-html5/issues/680">#680</a></li>
+<li>Clarification on releases / release tarballs missing <a href="https://github.com/htacg/tidy-html5/issues/676">#676</a></li>
+<li>–fix-uri no does not turn off check <a href="https://github.com/htacg/tidy-html5/issues/675">#675</a></li>
+<li>Unexpected behavior of ‘add-xml-space’ setting when used with ‘wrap’ =&gt; 0 and saveBuffer is called twice in tidy-html5 5.6.0 <a href="https://github.com/htacg/tidy-html5/issues/673">#673</a></li>
+<li>show-body-only <a href="https://github.com/htacg/tidy-html5/issues/672">#672</a></li>
+<li>Tidy deletes empty tags <a href="https://github.com/htacg/tidy-html5/issues/669">#669</a></li>
+<li>unbalanced #endif’s <a href="https://github.com/htacg/tidy-html5/issues/663">#663</a></li>
+<li>Feature request: option to replace inline styles with classes + <code>&lt;style&gt;</code> tag styles <a href="https://github.com/htacg/tidy-html5/issues/638">#638</a></li>
+<li>Windows 32-bit XP Release <a href="https://github.com/htacg/tidy-html5/issues/568">#568</a></li>
+<li>Release an updated HTML::Tidy perl library <a href="https://github.com/htacg/tidy-html5/issues/562">#562</a></li>
+<li>&lt;Script&gt; tag gets removed <a href="https://github.com/htacg/tidy-html5/issues/528">#528</a></li>
+<li>Word filtered html doesn’t convert accents to utf8 <a href="https://github.com/htacg/tidy-html5/issues/512">#512</a></li>
+<li>option to ignore attribute-errors if attribute contains pseudo-elements <a href="https://github.com/htacg/tidy-html5/issues/505">#505</a></li>
+<li>Allow &lt;div&gt; inside &lt;pre&gt; <a href="https://github.com/htacg/tidy-html5/issues/479">#479</a></li>
+</ul>
+<p><strong>Merged pull requests:</strong></p>
+<ul>
+<li>Fixes #743. <a href="https://github.com/htacg/tidy-html5/pull/966">#966</a> (<span class="citation" data-cites="balthisar">@balthisar</span>)</li>
+<li>Fixed merge conflict; fixed non-build issue on macOS. RC for testing. <a href="https://github.com/htacg/tidy-html5/pull/965">#965</a> (<span class="citation" data-cites="balthisar">@balthisar</span>)</li>
+<li>README.md: add Wikidata link <a href="https://github.com/htacg/tidy-html5/pull/961">#961</a> (<span class="citation" data-cites="vitaly-zdanevich">@vitaly-zdanevich</span>)</li>
+<li>Fix issues with user-specified settings changing <a href="https://github.com/htacg/tidy-html5/pull/959">#959</a> (<span class="citation" data-cites="balthisar">@balthisar</span>)</li>
+<li>Automated Testing <a href="https://github.com/htacg/tidy-html5/pull/957">#957</a> (<span class="citation" data-cites="balthisar">@balthisar</span>)</li>
+<li>simple fix for the range of the condition. <a href="https://github.com/htacg/tidy-html5/pull/953">#953</a> (<span class="citation" data-cites="ihsinme">@ihsinme</span>)</li>
+<li>Add muted and playsinline video attributes for HTML5. <a href="https://github.com/htacg/tidy-html5/pull/949">#949</a> (<span class="citation" data-cites="drichardson">@drichardson</span>)</li>
+<li>Add German Language <a href="https://github.com/htacg/tidy-html5/pull/943">#943</a> (<span class="citation" data-cites="balthisar">@balthisar</span>)</li>
+<li>Link macOS console application with required plist <a href="https://github.com/htacg/tidy-html5/pull/942">#942</a> (<span class="citation" data-cites="balthisar">@balthisar</span>)</li>
+<li>Is. #839 - new message for ‘blank’ title <a href="https://github.com/htacg/tidy-html5/pull/930">#930</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Support extended color names in HTML 5 validation <a href="https://github.com/htacg/tidy-html5/pull/914">#914</a> (<span class="citation" data-cites="cqcallaw">@cqcallaw</span>)</li>
+<li>Fix percentage validation in CheckLength <a href="https://github.com/htacg/tidy-html5/pull/912">#912</a> (<span class="citation" data-cites="cqcallaw">@cqcallaw</span>)</li>
+<li>Add SVG paint attributes <a href="https://github.com/htacg/tidy-html5/pull/907">#907</a> (<span class="citation" data-cites="cqcallaw">@cqcallaw</span>)</li>
+<li>Is. #879: add loading attribute for img, iframe <a href="https://github.com/htacg/tidy-html5/pull/902">#902</a> (<span class="citation" data-cites="sidvishnoi">@sidvishnoi</span>)</li>
+<li>COMPILE_FLAGS property only once per target, avoid overwriting. <a href="https://github.com/htacg/tidy-html5/pull/886">#886</a> (<span class="citation" data-cites="SvenPStarFinanz">@SvenPStarFinanz</span>)</li>
+<li>Complete pt_br translation <a href="https://github.com/htacg/tidy-html5/pull/881">#881</a> (<span class="citation" data-cites="hugotiburtino">@hugotiburtino</span>)</li>
+<li>Support the &lt;slot&gt; tag <a href="https://github.com/htacg/tidy-html5/pull/848">#848</a> (<span class="citation" data-cites="lhchavez">@lhchavez</span>)</li>
+<li>Issue #437 - re-use of ‘wrap-php’ option <a href="https://github.com/htacg/tidy-html5/pull/645">#645</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Change “tidyLocalMapItem” to “tidyLocaleMapItem” <a href="https://github.com/htacg/tidy-html5/pull/829">#829</a> (<span class="citation" data-cites="MrSorcus">@MrSorcus</span>)</li>
+<li>added OS __ANDROID__ in tidyplatform.h <a href="https://github.com/htacg/tidy-html5/pull/823">#823</a> (<span class="citation" data-cites="naveedpash">@naveedpash</span>)</li>
+<li>Update BRANCHES.md <a href="https://github.com/htacg/tidy-html5/pull/793">#793</a> (<span class="citation" data-cites="SConaway">@SConaway</span>)</li>
+<li>Is. #783 - Fix language detection <a href="https://github.com/htacg/tidy-html5/pull/785">#785</a> (<span class="citation" data-cites="Lin-Buo-Ren">@Lin-Buo-Ren</span>)</li>
+<li>Is. #781 - Drop redundant blank lines in -help <a href="https://github.com/htacg/tidy-html5/pull/782">#782</a> (<span class="citation" data-cites="Lin-Buo-Ren">@Lin-Buo-Ren</span>)</li>
+<li>Issue 649 adding tag &lt;data&gt; <a href="https://github.com/htacg/tidy-html5/pull/769">#769</a> (<span class="citation" data-cites="AntoniosHadji">@AntoniosHadji</span>)</li>
+<li>Issue 752 <a href="https://github.com/htacg/tidy-html5/pull/764">#764</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>PHP ≥ 7.1.0 recognizes tidy-html5 <a href="https://github.com/htacg/tidy-html5/pull/762">#762</a> (<span class="citation" data-cites="cmb69">@cmb69</span>)</li>
+<li>Fix typo <a href="https://github.com/htacg/tidy-html5/pull/753">#753</a> (<span class="citation" data-cites="Lin-Buo-Ren">@Lin-Buo-Ren</span>)</li>
+<li>Fix extra const modifier <a href="https://github.com/htacg/tidy-html5/pull/747">#747</a> (<span class="citation" data-cites="drizt">@drizt</span>)</li>
+<li>Is #721 - cast away some gcc warnings <a href="https://github.com/htacg/tidy-html5/pull/722">#722</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Doc nits <a href="https://github.com/htacg/tidy-html5/pull/717">#717</a> (<span class="citation" data-cites="ler762">@ler762</span>)</li>
+<li>Is #709 - Improve message if ‘implict’ <a href="https://github.com/htacg/tidy-html5/pull/714">#714</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Make global attribute <code>dir</code> accept auto as well. <a href="https://github.com/htacg/tidy-html5/pull/712">#712</a> (<span class="citation" data-cites="doronbehar">@doronbehar</span>)</li>
+<li>Is #697 - Add NOWRAP to print of pre tag <a href="https://github.com/htacg/tidy-html5/pull/708">#708</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Is #700 - change script parsing if in html5 mode <a href="https://github.com/htacg/tidy-html5/pull/703">#703</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Issue 698 - docs update <a href="https://github.com/htacg/tidy-html5/pull/702">#702</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Is #686 - Add attr COLOR to W3CAttrsFor_LINK <a href="https://github.com/htacg/tidy-html5/pull/701">#701</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Issue 679 <a href="https://github.com/htacg/tidy-html5/pull/695">#695</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+<li>Issue 663 - fixes for Haiku port <a href="https://github.com/htacg/tidy-html5/pull/664">#664</a> (<span class="citation" data-cites="geoffmcl">@geoffmcl</span>)</li>
+</ul>
+<p>* <em>This Changelog was automatically generated by <a href="https://github.com/github-changelog-generator/github-changelog-generator">github_changelog_generator</a></em></p>
