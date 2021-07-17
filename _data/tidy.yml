@@ -5,37 +5,37 @@
     - filename: tidy-5.8.0-Linux-64bit.deb
       filesize: 987KB
       modified: 2021/07/16 23:56:46
-      describe: ''
+      describe: Linux .deb Package (Ubunutu/Debian/etc.)
       sha256: 59e594312207234f5a17455683c13c6bc47a89cb7bf994d493acfffb591d9830
 
     - filename: tidy-5.8.0-Linux-64bit.rpm
       filesize: 988KB
       modified: 2021/07/16 23:56:48
-      describe: ''
+      describe: Linux .rpm Package (Redhat/Fedora/etc.)
       sha256: 8fbee5284c25f8c28004f352c0acd0efca667856251af6bbcc18a1b2992bad7d
 
     - filename: tidy-5.8.0-macOS-x86_64+arm64.pkg
       filesize: 3.2KB
       modified: 2021/07/16 23:57:18
-      describe: ''
+      describe: macOS Installer Packager (unsigned)
       sha256: ccc60d33fba7cf2ea8d54c275f44b02e476c6b90f23f00a25564779023f6b74a
 
     - filename: tidy-5.8.0-win64.exe
       filesize: 1.2MB
       modified: 2021/07/16 23:58:29
-      describe: ''
+      describe: Windows 64-bit Self-Contained Installer
       sha256: 4202bad43dca64494f3968b8e0d2af151755a02e04c3bfa280f0bc64a1377eef
 
     - filename: tidy-5.8.0-win64.msi
       filesize: 1.7MB
       modified: 2021/07/16 23:58:38
-      describe: ''
+      describe: Windows 64-bit Installer Package
       sha256: e022cd20af5d82141faa54de94322f47eb35800302543a51e6812c8217dfd7f9
 
     - filename: tidy-5.8.0-win64.zip
       filesize: 1.4MB
       modified: 2021/07/16 23:58:38
-      describe: ''
+      describe: Windows 64-bit files (no installer)
       sha256: ffb2f86484c66e70e6a6da369cb8f0f459ad2ffec7c7ca80d09a13445ee51a40
 
 - release: 5.6.0
