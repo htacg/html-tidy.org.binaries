@@ -14,11 +14,17 @@
       describe: Linux .rpm Package (Redhat/Fedora/etc.)
       sha256: 8fbee5284c25f8c28004f352c0acd0efca667856251af6bbcc18a1b2992bad7d
 
-    - filename: tidy-5.8.0-macOS-x86_64+arm64.pkg
-      filesize: 3.2KB
-      modified: 2021/07/16 23:57:18
-      describe: macOS Installer Packager (unsigned)
-      sha256: ccc60d33fba7cf2ea8d54c275f44b02e476c6b90f23f00a25564779023f6b74a
+    - filename: tidy-5.8.0-macos-x86_64+arm.dmg
+      filesize: 2.4MB
+      modified: 2021/07/21 17:41:37
+      describe: 'macOS notarized disk image.'
+      sha256: d57df3333dc2d8dbe8698ae4eb76963c0ba62b713d39e97f36e947d9fd27e862
+
+    - filename: tidy-5.8.0-macos-x86_64+arm.pkg
+      filesize: 1.8MB
+      modified: 2021/07/21 17:41:38
+      describe: 'macOS signed installer package.'
+      sha256: f56fb4a5b6053d878dd319f6d02509adb1ca8699c58cc0399bd08dda5e2963fe
 
     - filename: tidy-5.8.0-win64.exe
       filesize: 1.2MB
