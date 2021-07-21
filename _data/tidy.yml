@@ -17,13 +17,13 @@
     - filename: tidy-5.8.0-macos-x86_64+arm64.dmg
       filesize: 2.4MB
       modified: 2021/07/21 18:20:05
-      describe: macOS notarized disk image file for Intel and Apple Silicon.
+      describe: macOS disk image file for Intel and Apple Silicon.
       sha256: a5798d155615f686818668ef56cc8e6ad351de9ace3dead7c1d1a0efb586c0b4
 
     - filename: tidy-5.8.0-macos-x86_64+arm64.pkg
       filesize: 1.8MB
       modified: 2021/07/21 18:20:05
-      describe: macOS notarized installer package for Intel and Apple Silicon.
+      describe: macOS installer package for Intel and Apple Silicon.
       sha256: c5225ae5c4dc7150b01716bd5e194ac3191991511875364cd51c7bcdfe8e37
 
     - filename: tidy-5.8.0-win64.exe
